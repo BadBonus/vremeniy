@@ -3,7 +3,6 @@
     <MainBlock />
     <Sertificates />
     <GameRegistration />
-    <PeriodOfEvent />
     <Footer />
   </div>
 </template>
@@ -64,6 +63,9 @@ body {
   // color: @main_color2;
   font-family: "Roboto", 'Sans-serif';
   // background-color: @main_color3;
+  background-image: url('./assets/background_m.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 b {

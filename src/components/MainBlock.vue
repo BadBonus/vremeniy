@@ -1,12 +1,17 @@
 <template>
   <div class="MainBlock">
-      MainBlock
+      <Splicer value='Еженедельный розыгрыш призов' />
   </div>
 </template>
 
 <script>
+import Splicer from './Splicer'
+
 export default {
   name: "MainBlock",
+  components:{
+    Splicer,
+  },
   data() {
     return {};
   },
