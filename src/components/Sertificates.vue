@@ -24,8 +24,28 @@
           :shop="'в торговую сеть Гиппо'"
         />
       </ul>
+      <a href="">asd</a>
+      <a href="" class="btn">Зарегистрироваться</a>
     </div>
-    <div class="Sertificates__container"></div>
+    <div class="Sertificates__container">
+      <ul class="Sertificates__listItems">
+        <SertificateItem
+          :img="ser_images.green50"
+          :value="'50'"
+          :shop="'в торговую сеть Green'"
+        />
+        <SertificateItem
+          :img="ser_images.green100"
+          :value="'100'"
+          :shop="'в торговую сеть Green'"
+        />
+        <SertificateItem
+          :img="ser_images.green200"
+          :value="'200'"
+          :shop="'в торговую сеть Green'"
+        />
+      </ul>
+    </div>
     <div class="Sertificates__container"></div>
   </div>
 </template>
@@ -36,6 +56,9 @@ import SertificateItem from "./SertificateItem";
 import gip50 from "./../assets/card50gip.png";
 import gip100 from "./../assets/card100gip.png";
 import gip200 from "./../assets/card200gip.png";
+import green50 from "./../assets/card50gr.png";
+import green100 from "./../assets/card100gr.png";
+import green200 from "./../assets/card200gr.png";
 
 export default {
   name: "Sertificates",
@@ -49,6 +72,9 @@ export default {
         gip50,
         gip100,
         gip200,
+        green50,
+        green100,
+        green200,
       },
     };
   },

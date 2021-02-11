@@ -61,9 +61,9 @@ export default {
 
 body {
   // color: @main_color2;
-  font-family: "Roboto", 'Sans-serif';
+  font-family: "Roboto", "Sans-serif";
   // background-color: @main_color3;
-  background-image: url('./assets/background_m.png');
+  background-image: url("./assets/background_m.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -103,19 +103,22 @@ a {
 
 .btn {
   cursor: pointer;
-  // font-weight: bold;
-  // text-transform: uppercase;
-  // display: block;
-  // font-size: 5.4vw;
-  // box-sizing: border-box;
-  // background: @main_color1;
-  // color: #fff;
-  // width: 75vw;
-  // margin: auto;
-  // border-radius: 200px;
-  // padding: 3.4vw 0;
-  // border: none;
-  // font-family: "Harmonia Sans Pro Cyr";
+  width: 94.2vw;
+  height: 11.3vw;
+  background: @main_color1;
+  border: 3px solid #f0dac0;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px #0f390a;
+  border-radius: 91px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "Lobster";
+  color: @main_color2;
+  font-size: 6.5vw;
+  margin: auto;
   &[disabled] {
     opacity: 0.5;
     cursor: not-allowed;
@@ -127,11 +130,8 @@ a {
     // padding: 1.5vw 0;
 
     &:hover:not([disabled]) {
-      // font-size: 2.45vw;
-      // padding-left: 0.5vw;
-      // padding-right: 0.5vw;
-      // color: @main_color1;
-      // background: #fff;
+      color: @main_color1;
+      background: @main_color2;
     }
   }
 }
