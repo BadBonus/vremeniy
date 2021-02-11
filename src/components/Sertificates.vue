@@ -1,12 +1,10 @@
 <template>
-  <div class="MainBlock">
-      MainBlock
-  </div>
+  <div class="Sertificates">Sertificates</div>
 </template>
 
 <script>
 export default {
-  name: "MainBlock",
+  name: "Sertificates",
   data() {
     return {};
   },
@@ -18,14 +16,14 @@ export default {
 @import "../styles/variables.less";
 
 @-moz-document url-prefix() {
-  .MainBlock {
+  .Sertificates {
     @media @desktop {
     }
   }
 }
 
-.MainBlock {
+.Sertificates {
   @media @desktop {
-    }
+  }
 }
 </style>

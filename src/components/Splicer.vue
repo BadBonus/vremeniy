@@ -1,12 +1,10 @@
 <template>
-  <div class="MainBlock">
-      MainBlock
-  </div>
+  <div class="Splicer">Sertificates</div>
 </template>
 
 <script>
 export default {
-  name: "MainBlock",
+  name: "Splicer",
   data() {
     return {};
   },
@@ -18,14 +16,14 @@ export default {
 @import "../styles/variables.less";
 
 @-moz-document url-prefix() {
-  .MainBlock {
+  .Splicer {
     @media @desktop {
     }
   }
 }
 
-.MainBlock {
+.Splicer {
   @media @desktop {
-    }
+  }
 }
 </style>

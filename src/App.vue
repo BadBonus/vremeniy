@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MainBlock />
-    <Conditions />
+    <Sertificates />
     <GameRegistration />
     <PeriodOfEvent />
     <Footer />
@@ -11,12 +11,11 @@
 <script>
 import "reset-css";
 import "animate.css";
-import "./assets/fonts/stylesheet.css";
+// import "./assets/fonts/stylesheet.css";
 
 import Footer from "./components/Footer.vue";
 import MainBlock from "./components/MainBlock";
-import Conditions from "./components/Conditions";
-import PeriodOfEvent from "./components/PeriodOfEvent";
+import Sertificates from "./components/Sertificates";
 import GameRegistration from "./components/GameRegistration";
 
 export default {
@@ -25,8 +24,7 @@ export default {
     Footer,
     MainBlock,
     GameRegistration,
-    Conditions,
-    PeriodOfEvent,
+    Sertificates,
   },
   data() {
     return {
@@ -63,9 +61,9 @@ export default {
 }
 
 body {
-  color: @main_color2;
-  font-family: "Harmonia Sans Pro Cyr";
-  background-color: @main_color3;
+  // color: @main_color2;
+  font-family: "Roboto", 'Sans-serif';
+  // background-color: @main_color3;
 }
 
 b {
@@ -103,35 +101,35 @@ a {
 
 .btn {
   cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: block;
-  font-size: 5.4vw;
-  box-sizing: border-box;
-  background: @main_color1;
-  color: #fff;
-  width: 75vw;
-  margin: auto;
-  border-radius: 200px;
-  padding: 3.4vw 0;
-  border: none;
-  font-family: "Harmonia Sans Pro Cyr";
+  // font-weight: bold;
+  // text-transform: uppercase;
+  // display: block;
+  // font-size: 5.4vw;
+  // box-sizing: border-box;
+  // background: @main_color1;
+  // color: #fff;
+  // width: 75vw;
+  // margin: auto;
+  // border-radius: 200px;
+  // padding: 3.4vw 0;
+  // border: none;
+  // font-family: "Harmonia Sans Pro Cyr";
   &[disabled] {
     opacity: 0.5;
     cursor: not-allowed;
   }
   @media @desktop {
-    width: 31vw;
-    font-size: 2.35vw;
-    text-transform: none;
-    padding: 1.5vw 0;
+    // width: 31vw;
+    // font-size: 2.35vw;
+    // text-transform: none;
+    // padding: 1.5vw 0;
 
     &:hover:not([disabled]) {
-      font-size: 2.45vw;
-      padding-left: 0.5vw;
-      padding-right: 0.5vw;
-      color: @main_color1;
-      background: #fff;
+      // font-size: 2.45vw;
+      // padding-left: 0.5vw;
+      // padding-right: 0.5vw;
+      // color: @main_color1;
+      // background: #fff;
     }
   }
 }
