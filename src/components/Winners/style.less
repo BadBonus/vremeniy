@@ -1,0 +1,147 @@
+@import "../../styles/media.less";
+@import "../../styles/variables.less";
+
+@-moz-document url-prefix() {
+  .Winners {
+    @media @desktop {
+    }
+  }
+}
+
+.Winners {
+  // background: #fff;
+  width: 95%;
+  margin: auto;
+  margin-top: auto;
+  margin-top: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  min-height: 60vw;
+  border-radius: 25px;
+  @media @desktop {
+  }
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+
+    @media @desktop {
+      font-size: 120px;
+    }
+  }
+
+  &__filterBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1vw;
+    input {
+      padding-left: 0.5vw;
+    }
+    @media @desktop {
+    }
+  }
+
+  &__SelectTournament {
+    @media @desktop {
+    }
+  }
+
+  &__winners {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    font-size: 3vw;
+    background-color: #fff;
+    border-radius: 25px;
+    @media @desktop {
+      font-size: 20px;
+    }
+    thead {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    tr {
+      padding-bottom: 1vw;
+      border-bottom: 1px solid lightgray;
+      border-radius: 100px;
+    }
+    td {
+      padding: 1vw 0;
+      width: 33%;
+    }
+  }
+  .VuePagination {
+    text-align: center;
+    &__count {
+      display: none;
+    }
+
+    .page-link {
+      cursor: pointer;
+    }
+
+    &__pagination-item-prev-chunk,
+    &__pagination-item-next-chunk {
+      display: none;
+    }
+  }
+
+  .Winners__SelectTournament.vs--open {
+    min-width: 12.65vw;
+  }
+
+  input {
+    color: #000;
+    width: 100%;
+    height: 6vw;
+    font-size: 3vw;
+    @media @desktop {
+      font-size: 20px;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+.VuePagination__pagination.pagination.VuePagination__pagination {
+  width: 40vw;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  margin-top: 2.5vw;
+  @media @desktop {
+    width: 12vw;
+  }
+
+  li {
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid @main_color2;
+    padding: 0.2vw 0.8vw;
+
+    @media @desktop {
+      padding: 0.2vw 0.4vw;
+      margin: 0 0.1vw;
+    }
+    &.active {
+      background-color: @main_color1;
+      color: #fff;
+    }
+  }
+}
+
+.VuePagination__pagination-item .page-item a {
+}
+#app > div.Registration > div.Winners > div.VuePagination > nav > ul > li a {
+  color: #000 !important;
+  margin: 0 2vw;
+  padding: 1vw 2.5vw;
+  font-size: 4vw;
+  @media @desktop {
+    font-size: 14px;
+    margin: auto;
+    padding: 16px 20px;
+  }
+}
