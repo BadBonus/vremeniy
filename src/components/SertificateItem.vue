@@ -49,6 +49,7 @@ export default {
 }
 
 .SertificateItem {
+  margin-bottom: 11.4vw;
   img {
     width: 80.9vw;
   }
@@ -60,18 +61,26 @@ export default {
     font-size: 6.2vw;
     text-align: center;
     margin-top: 1.6vw;
+    @media @desktop {
+    }
     span {
       text-decoration: underline;
       display: inline-block;
       // margin-right: 1vw;
+      @media @desktop {
+      }
     }
 
     & > p {
       margin-top: 3.2vw;
       font-size: 9.3vw;
       text-decoration: underline;
+      @media @desktop {
+      }
       & > span:nth-child(2) {
         margin: 0 2vw;
+        @media @desktop {
+        }
       }
     }
 
@@ -80,11 +89,15 @@ export default {
       text-decoration: none;
       margin-top: 5.3vw;
       font-size: 4.7vw;
+      @media @desktop {
+      }
     }
   }
   &__itemTextBlockFirst {
     & > span:first-child {
       margin-right: 2vw;
+      @media @desktop {
+      }
     }
   }
 }

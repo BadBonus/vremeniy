@@ -13,6 +13,16 @@
           :value="'50'"
           :shop="'в торговую сеть Гиппо'"
         />
+        <SertificateItem
+          :img="ser_images.gip100"
+          :value="'100'"
+          :shop="'в торговую сеть Гиппо'"
+        />
+        <SertificateItem
+          :img="ser_images.gip200"
+          :value="'200'"
+          :shop="'в торговую сеть Гиппо'"
+        />
       </ul>
     </div>
     <div class="Sertificates__container"></div>
@@ -24,6 +34,8 @@
 import Splicer from "./Splicer";
 import SertificateItem from "./SertificateItem";
 import gip50 from "./../assets/card50gip.png";
+import gip100 from "./../assets/card100gip.png";
+import gip200 from "./../assets/card200gip.png";
 
 export default {
   name: "Sertificates",
@@ -35,6 +47,8 @@ export default {
     return {
       ser_images: {
         gip50,
+        gip100,
+        gip200,
       },
     };
   },
@@ -64,7 +78,8 @@ export default {
     .bcgImage("../assets/background_cards_m.png");
     background-position: center;
     background-size: 94% 100%;
-    height: 404.8vw;
+    // height: 404.8vw; //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
+    height: 395.8vw;
     @media @desktop {
     }
   }
@@ -78,7 +93,7 @@ export default {
     @media @desktop {
     }
 
-    .SertificateItem{
+    .SertificateItem {
       margin-right: 3.7vw;
     }
   }
@@ -87,6 +102,13 @@ export default {
     display: block;
     width: 43.6vw;
     padding-top: 8.5vw;
+  }
+
+  & .SertificateItem:nth-of-type(2n) {
+    img {
+      position: relative;
+      right: 1.8vw;
+    }
   }
 }
 </style>
