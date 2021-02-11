@@ -1,6 +1,6 @@
 <template>
   <div class="MainBlock">
-      <Splicer value='Еженедельный розыгрыш призов' />
+
   </div>
 </template>
 
