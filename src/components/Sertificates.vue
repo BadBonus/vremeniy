@@ -30,7 +30,7 @@
       <a href="" class="btn">Зарегистрироваться</a>
     </div>
     <Splicer value="Еженедельный розыгрыш призов" />
-    <div class="Sertificates__container" :style="{'background-size':'94%'}">
+    <div class="Sertificates__container" :style="{ 'background-size': '94%' }">
       <img
         src="../assets/green_logo2.png"
         alt="logo of green"
@@ -153,6 +153,7 @@ export default {
     background-position: top;
     background-size: 94% 395.8vw;
     // background-size: 94% 404.8vw;  //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
+    margin-bottom: 22.7vw;
     @media @desktop {
     }
   }
