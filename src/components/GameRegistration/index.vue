@@ -9,7 +9,7 @@
         @submit.prevent="onSubmit"
         v-if="!isFinishedRegistration"
       >
-        <h2>Регистрация</h2>
+        <Splicer value="Регистрация" />
         <div class="GameRegistration__formContent">
           <span
             class="GameRegistration__blockContentTitle GameRegistration__blockContentTitle-duoBlock"
@@ -335,6 +335,7 @@ import {
 import axios from "axios";
 
 import CustomSelector from "../CustomSelector.vue";
+import Splicer from "../Splicer.vue";
 import "./style.less";
 import { takeDatePeriodes, periodOfNumbers } from "../../helpers";
 import { getGoods, postRegistration } from "../../API";
@@ -375,6 +376,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     CustomSelector,
+    Splicer
   },
   props: {},
 

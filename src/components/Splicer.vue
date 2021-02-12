@@ -38,12 +38,15 @@ export default {
   font-size: 6.4vw;
   .bcgImage("../assets/decor_splicer_m.png");
   color: @main_color2;
-  text-align: right;
+  text-align: center;
+  width: 97.4vw;
+  margin-left: auto;
   background-position: right;
-  background-size: 97.4vw 100%;
-  padding: 5.7vw 3.5vw 8.4vw 0;
+  background-size: 100%;
+  padding: 5.7vw 0 8.4vw 0;
   span {
     display: inline-block;
+    padding-left: 1.2vw;
   }
   @media @desktop {
   }
