@@ -2,25 +2,27 @@
   <div class="TournamentsWinners">
     <Splicer value="Розыгрыши и победители" />
     <div class="TournamentsWinners__content">
-      <button class="btn">
+      <button class="btn" @click="choosePrize('first')">
         Подарочный сертификат <br />
         <p>на 50 рублей</p>
       </button>
-      <button class="btn">
+      <button class="btn" @click="choosePrize('second')">
         Подарочный сертификат <br />
         <p>на 100 рублей</p>
       </button>
-      <button class="btn">
+      <button class="btn" @click="choosePrize('third')">
         Подарочный сертификат <br />
         <p>на 200 рублей</p></button
-      ><button class="btn">Календарь розыгрышей</button>
+      ><button class="btn" @click="isOpenCalendar = true">
+        Календарь розыгрышей
+      </button>
     </div>
     <transition name="fade">
       <Winners
         v-on:closeFunction="closeModal"
-        :items="winners"
-        :header="choosedHeader"
-        v-if="choosedHeader"
+        :items="choosedWinners"
+        :header="choosedPrize"
+        v-if="choosedPrize"
         :perPage="8"
       />
     </transition>
@@ -235,14 +237,34 @@ export default {
   },
   data() {
     return {
-      winners: [],
-      choosedHeader: null,
+      winners: {
+        first: {
+          prize: "Подарочный сертификат на 50 рублей",
+          winners: [...mock_winners1],
+        },
+        second: {
+          prize: "Подарочный сертификат на 100 рублей",
+          winners: [...mock_winners2],
+        },
+        third: {
+          prize: "Подарочный сертификат на 200 рублей",
+          winners: [...mock_winners3],
+        },
+      },
+      choosedPrize: null,
+      isOpenCalendar: false,
+      choosedWinners: [],
     };
   },
+  computed: {},
   methods: {
     closeModal() {
-      this.winners = [];
-      this.choosedHeader = null;
+      this.choosedPrize = null;
+      this.currentHeader = null;
+    },
+    choosePrize(prize) {
+      this.choosedPrize = this.winners[prize].prize;
+      this.choosedWinners = this.winners[prize].winners;
     },
   },
 };
