@@ -248,9 +248,7 @@ import {
   email,
   alpha,
   min,
-  max,
   length,
-  number,
   image,
   size,
   mimes,
@@ -310,28 +308,16 @@ export default {
       finishedMessage: null,
       formErrors: [],
       inputErrors: {},
-      selectArray: ["МТС", "А1", "Life"],
       items: [],
       model: {
         name: null,
         surname: null,
         email: null,
         lastName: null,
-        checkNumber: null,
         file: null,
         file_name: null,
         phone: null,
         shop: null,
-        operator: "МТС",
-        day: "1",
-        month: "февраля 2021",
-        choosedItems: [
-          {
-            name: null,
-            count: "1",
-            cost: null,
-          },
-        ],
         rule1: false,
         rule2: false,
       },
@@ -389,13 +375,9 @@ export default {
       this.model["surname"] = null;
       this.model["lastName"] = null;
       this.model["email"] = null;
-      this.model["checkNumber"] = null;
       this.model["file"] = null;
       this.model["file_name"] = null;
       this.model["phone"] = null;
-      this.model["operator"] = "МТС";
-      this.model["day"] = "1";
-      this.model["choosedItems"] = [{ cost: null, count: "1", name: null }];
       this.model["rule1"] = false;
       this.model["rule2"] = false;
       this.$nextTick(() => {
@@ -446,14 +428,14 @@ export default {
           name,
           surname,
           email,
-          checkNumber,
           file,
-          file_name,
+          lastName,
           phone,
           operator,
           day,
           month,
           choosedItems,
+          address,
         },
       } = this;
 
@@ -469,14 +451,14 @@ export default {
 
       form.append("name", name);
       form.append("email", email);
-      form.append("check_number", checkNumber);
       form.append("file", file);
       form.append("phone", phone);
       form.append("purchase_date", day + " " + month);
       form.append("surname", surname);
       form.append("day", day);
       form.append("operator", operator);
-      form.append("address", "-");
+      form.append("address", address);
+      form.append("lastName", lastName);
 
       axios
         .post(postRegistration, form)
