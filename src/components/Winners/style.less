@@ -16,24 +16,28 @@
   margin-top: 1vw;
   padding-top: 1.5vw;
   padding-bottom: 1.5vw;
-  min-height: 60vw;
+  // min-height: 60vw;
   border-radius: 25px;
-
-  background-color: #1e7d14d6;
+  background-color: #031701d6;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  height: 100vw;
+  height: 90%;
+  max-height: 100vw;
+  z-index: 99999;
+  overflow: scroll;
+  padding-bottom: 1.5vw;
   @media @desktop {
   }
 
   h1 {
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 5%;
+    margin-top: 2.5%;
+    padding-bottom: 2.5%;
     color: #fff;
     font-size: 6vw;
 
@@ -99,6 +103,7 @@
   }
   .VuePagination {
     text-align: center;
+    margin-bottom: 3.5vw;
     &__count {
       display: none;
     }
@@ -126,6 +131,26 @@
       font-size: 20px;
       width: auto;
       height: auto;
+    }
+  }
+
+  &__closeBtn {
+    margin: auto;
+    margin-bottom: auto;
+    display: block;
+    margin-bottom: 4vw;
+    border-radius: 100px;
+    padding: 1.6vw 2.4vw;
+    background: green;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid #fff;
+    font-size: 3vw;
+    cursor: pointer;
+    &:hover{
+      background-color: @main_color2;
+      color:@main_color1;
     }
   }
 }

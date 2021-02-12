@@ -43,6 +43,7 @@
       :texts="{}"
     >
     </pagination>
+    <button v-if="$listeners.closeFunction" @click="close" class="Winners__closeBtn">X</button>
   </div>
 </template>
 
@@ -53,265 +54,7 @@ import Pagination from "vue-pagination-2";
 import "vue-select/dist/vue-select.css";
 import "./style.less";
 
-const mock_winners = [
-  {
-    date: new Date("December 17, 2021"),
-    winners: [
-      {
-        id: "00000165",
-        name: "Валюженич Маринав Владимировна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000122",
-        name: "Букатова Натальяв Витальевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000572",
-        name: "Нестёркина Галинав Викторовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000500",
-        name: "Тихонович Алинав Алексеевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000412",
-        name: "Ануфреенок Ярославав Сергеевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000472",
-        name: "Игнатик Еленав Александровна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000158",
-        name: "Вируцкая Светланав Владимировна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000090",
-        name: "Акулич Маринав Иосифовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000523",
-        name: "Криштопенко Люсяв Ивановна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000313",
-        name: "Штоп Анжелав Владимировна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000545",
-        name: "Сокол Татьянав Александровна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000561",
-        name: "Габинет Екатеринав Олеговна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000448",
-        name: "Беломестных Алексейв Николаевич",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000503",
-        name: "Струнович Татьянав Юрьевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000387",
-        name: "Ерофеева Екатеринав Михайловна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000284",
-        name: "Дубовская Иринав Александровна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000315",
-        name: "Булко Натальяв Сергеевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000210",
-        name: "Масюк Татьянав Юрьевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000103",
-        name: "Германова Татьянав Александровна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000481",
-        name: "Пастушенко Вероникав Викторовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000147",
-        name: "Шахнович Татьянав Вячеславовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000266",
-        name: "Иваненко Ольгав Сергеевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000569",
-        name: "Юрченкова Иннав Максимовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000121",
-        name: "Тереня Татьянав Игоревна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000565",
-        name: "Бутримович Анастасияв Евгеньевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000288",
-        name: "Лупарева Иринав Владимировна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000066",
-        name: "Горбатенко Марияв Юрьевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000088",
-        name: "Кушнер Верав Леонидовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000055",
-        name: "Буевич Марияв Вадимовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000404",
-        name: "Подгруша Галинав Станиславовна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000125",
-        name: "Хаджинова Ольгав Михайловна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000555",
-        name: "Выглазов Юрийв Владимирович",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000317",
-        name: "Дмитрук Янав Анатольевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000163",
-        name: "Максимюк Михаилв Владимирович",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000583",
-        name: "Бондарева Маринав Олеговна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000199",
-        name: "Липницкий Кириллв Борисович",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000580",
-        name: "Макаренко Снежанав Михайловна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000086",
-        name: "Климович Кристинав Александровна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000380",
-        name: "Хвощ Галинав Владимировна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000045",
-        name: "Стокин-Гершаньв Татьянав Николаевна",
-        prise: "Фотоаппарат White",
-      },
-      {
-        id: "00000021",
-        name: "Кореневская Ольгав Юрьевна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000302",
-        name: "Тылец Янав Ивановна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000602",
-        name: "Тараданюк Натальяв Ивановна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000255",
-        name: "Клыбик Вероникав Александровна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000035",
-        name: "Хмельницкая Маринав Геннадьевна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000439",
-        name: "Каравай Андрейв Сергеевич",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000067",
-        name: "Шрамова Светланав Сергеевна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000024",
-        name: "Пудова Маринав Владимировна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000470",
-        name: "Ковалёва Наталияв Андреевна",
-        prise: "Фотоаппарат Gray",
-      },
-      {
-        id: "00000068",
-        name: "Ярошевич Полинав Сергеевна",
-        prise: "Фотоаппарат Gray",
-      },
-    ],
-  },
-];
-
-export default {
+ export default {
   name: "Winner",
   components: {
     Pagination,
@@ -333,6 +76,7 @@ export default {
       require: false,
       default: 10,
     },
+
   },
   data() {
     return {
@@ -397,7 +141,7 @@ export default {
       }
     },
     foundedWinners() {
-      let foundedNames = []
+
       if (this.searchName.length) {
         return this.items.filter((el) =>
           el.name.match(new RegExp(this.searchName, "gi"))
@@ -414,16 +158,19 @@ export default {
   },
   methods: {
     callback: function (page) {
-      console.log(`Page ${page} was selected. Do something about it`);
+      // console.log(`Page ${page} was selected. Do something about it`);
     },
+    close(){
+      this.$emit('closeFunction');
+    }
   },
   mounted() {
-    this.winners.push(...mock_winners);
-    this.tournaments.push(
-      ...mock_winners.map(({ date }) =>
-        date.toLocaleString("ru", this.timeOptions)
-      )
-    );
+    // this.winners.push(...mock_winners);
+    // this.tournaments.push(
+    //   ...mock_winners.map(({ date }) =>
+    //     date.toLocaleString("ru", this.timeOptions)
+    //   )
+    // );
   },
 };
 </script>
