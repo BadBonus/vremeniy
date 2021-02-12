@@ -3,6 +3,7 @@
     <MainBlock />
     <Sertificates />
     <GameRegistration />
+    <TournamentsWinners />
     <Footer />
   </div>
 </template>
@@ -16,6 +17,7 @@ import Footer from "./components/Footer.vue";
 import MainBlock from "./components/MainBlock";
 import Sertificates from "./components/Sertificates";
 import GameRegistration from "./components/GameRegistration";
+import TournamentsWinners from "./components/TournamentsWinners";
 
 export default {
   name: "App",
@@ -24,6 +26,7 @@ export default {
     MainBlock,
     GameRegistration,
     Sertificates,
+    TournamentsWinners,
   },
   data() {
     return {
