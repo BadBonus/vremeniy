@@ -45,6 +45,19 @@
               <input v-model="model.name" type="text" placeholder="Имя*" />
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
+            <ValidationProvider
+              tag="div"
+              name="lastName"
+              v-slot="{ errors }"
+              class="ValidationProvider"
+            >
+              <input
+                v-model="model.lastName"
+                type="text"
+                placeholder="Отчетство"
+              />
+              <span class="errorContainer">{{ errors[0] }}</span>
+            </ValidationProvider>
           </div>
           <span
             class="GameRegistration__blockContentTitle GameRegistration__blockContentTitle-duoBlock"
@@ -71,19 +84,6 @@
                 />
                 <span class="errorContainer">{{ errors[0] }}</span>
               </ValidationProvider>
-              <ValidationProvider
-                tag="div"
-                name="operator"
-                rules="required"
-                v-slot="{ errors }"
-                class="ValidationProvider"
-              >
-                <CustomSelector
-                  v-model="model.operator"
-                  :errors="errors"
-                  :options="selectArray"
-                />
-              </ValidationProvider>
             </div>
 
             <ValidationProvider
@@ -97,52 +97,33 @@
 
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
-          </div>
-          <span class="GameRegistration__blockContentTitle">
-            Информация о покупке
-          </span>
-          <div
-            class="GameRegistration__blockContent GameRegistration__checkInfo"
-          >
-            <div class="GameRegistration__checkInfo__Date">
-              <ValidationProvider
-                tag="div"
-                name="day"
-                rules="required"
-                v-slot="{ errors }"
-                class="ValidationProvider"
-              >
-                <CustomSelector
-                  v-model="model.day"
-                  :errors="errors"
-                  :options="febrDays"
-                />
-              </ValidationProvider>
-              <ValidationProvider
-                tag="div"
-                name="month"
-                rules="required"
-                v-slot="{ errors }"
-                class="ValidationProvider"
-              >
-                <input v-model="model.month" type="text" disabled />
-
-                <span class="errorContainer">{{ errors[0] }}</span>
-              </ValidationProvider>
-            </div>
             <ValidationProvider
               tag="div"
-              class="ValidationProvider ValidationProvider-mlS"
+              class="ValidationProvider"
               v-slot="{ errors }"
               rules="required"
-              name="checkNumber"
+              name="address"
             >
               <input
-                v-model="model.checkNumber"
-                placeholder="Номер чека*"
+                v-model="model.address"
+                placeholder="Адрес проживания*"
                 type="text"
               />
 
+              <span class="errorContainer">{{ errors[0] }}</span>
+            </ValidationProvider>
+            <ValidationProvider
+              tag="div"
+              rules="required"
+              v-slot="{ validate, errors }"
+              :name="'itemName' + index"
+              class="ValidationProvider"
+            >
+              <CustomSelector
+                v-model="model.shop"
+                placeholder="Выберите торговую сеть"
+                :options="['Гиппо', 'Green', 'Виталюр']"
+              />
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
@@ -167,74 +148,18 @@
                     model.file_name ? model.file_name : "Загрузить фото чека*"
                   }}
                 </span>
-                <div class="customFileInput__helper">?</div>
+                <div class="customFileInput__helper">
+                  <img src="./../../assets/icons/camera.svg" alt="" />
+                </div>
               </div>
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
         </div>
-        <span class="GameRegistration__blockContentTitle">
-          Акционные товары
-        </span>
-        <div class="GameRegistration__ItemBlock">
-          <ul class="GameRegistration__ItemList">
-            <li
-              :style="{ zIndex: 500 - index, position: 'relative' }"
-              v-for="(item, index) in model.choosedItems"
-              :key="index"
-            >
-              <ValidationProvider
-                tag="div"
-                rules="required"
-                v-slot="{ validate, errors }"
-                :name="'itemName' + index"
-                class="GameRegistration__ItemList__name ValidationProvider"
-              >
-                <CustomSelector
-                  v-model="item.name"
-                  placeholder="Выберите товар"
-                  :maxLetters="isMobileSize ? 50 : false"
-                  :options="modItems"
-                />
-                <span class="errorContainer">{{ errors[0] }}</span>
-              </ValidationProvider>
-              <div class="GameRegistration__ItemListCountCost">
-                <ValidationProvider
-                  tag="div"
-                  rules="required"
-                  v-slot="{ validate, errors }"
-                  :name="'itemCount' + index"
-                  class="GameRegistration__ItemList__count ValidationProvider"
-                >
-                  <CustomSelector
-                    v-model="item.count"
-                    :errors="errors"
-                    :options="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-                  />
-                </ValidationProvider>
-                <ValidationProvider
-                  tag="div"
-                  rules="required|min_value:1"
-                  v-slot="{ validate, errors }"
-                  :name="'itemCost' + index"
-                  class="GameRegistration__ItemList__cost ValidationProvider"
-                >
-                  <input
-                    type="text"
-                    v-model="item.cost"
-                    placeholder="Стоимость товара*"
-                    @keypress="isNumber($event, item.cost)"
-                  />
-                  <span class="errorContainer">{{ errors[0] }}</span>
-                </ValidationProvider>
-              </div>
-            </li>
-          </ul>
-          <button class="GameRegistration__ItemBlockSbm" @click="addItem">
-            +
-          </button>
-        </div>
         <div class="GameRegistration__RulesBlock">
+          <div class="GameRegistration__messageForRequired">
+            *поля, обязательные для заполнения
+          </div>
           <ValidationProvider
             tag="div"
             :rules="{ required: { allowFalse: false } }"
@@ -376,7 +301,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     CustomSelector,
-    Splicer
+    Splicer,
   },
   props: {},
 
@@ -391,10 +316,12 @@ export default {
         name: null,
         surname: null,
         email: null,
+        lastName: null,
         checkNumber: null,
         file: null,
         file_name: null,
         phone: null,
+        shop: null,
         operator: "МТС",
         day: "1",
         month: "февраля 2021",
@@ -460,6 +387,7 @@ export default {
     reset() {
       this.model["name"] = null;
       this.model["surname"] = null;
+      this.model["lastName"] = null;
       this.model["email"] = null;
       this.model["checkNumber"] = null;
       this.model["file"] = null;

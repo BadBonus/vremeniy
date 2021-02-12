@@ -104,7 +104,7 @@ a {
 .btn {
   cursor: pointer;
   width: 94.2vw;
-  height: 11.3vw;
+  padding: 1.6vw 0;
   background: @main_color1;
   border: 3px solid #f0dac0;
   box-sizing: border-box;
