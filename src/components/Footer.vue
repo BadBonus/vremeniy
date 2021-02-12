@@ -27,7 +27,7 @@
     <button class="btn" @click="isOpenWinners = !isOpenWinners">
       Победители рекламной игры "Живи моментом с Always"
     </button>
-    <Winners v-if="isOpenWinners" />
+    <!-- <Winners v-if="isOpenWinners" /> -->
   </footer>
 </template>
 

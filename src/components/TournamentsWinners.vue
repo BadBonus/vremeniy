@@ -1,13 +1,15 @@
 <template>
   <div class="TournamentsWinners">
     <Splicer value="Розыгрыши и победители" />
-    <Winners
-      v-on:closeFunction="test"
-      :items="winners"
-      :header="choosedHeader"
-      v-if="choosedHeader"
-      :perPage="8"
-    />
+    <transition name="fade">
+      <Winners
+        v-on:closeFunction="closeModal"
+        :items="winners"
+        :header="choosedHeader"
+        v-if="choosedHeader"
+        :perPage="8"
+      />
+    </transition>
   </div>
 </template>
 
@@ -120,8 +122,9 @@ export default {
     };
   },
   methods: {
-    test() {
-      console.log("ss");
+    closeModal() {
+      this.winners = [];
+      this.choosedHeader = null;
     },
   },
 };
