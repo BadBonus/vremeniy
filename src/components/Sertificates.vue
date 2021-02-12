@@ -24,10 +24,18 @@
           :shop="'в торговую сеть Гиппо'"
         />
       </ul>
-      <a href="">asd</a>
+      <a href="" class="Sertificates__linkRegistration"
+        >Правила использования сертификатов</a
+      >
       <a href="" class="btn">Зарегистрироваться</a>
     </div>
-    <div class="Sertificates__container">
+    <Splicer value="Еженедельный розыгрыш призов" />
+    <div class="Sertificates__container" :style="{'background-size':'94%'}">
+      <img
+        src="../assets/green_logo2.png"
+        alt="logo of green"
+        class="Sertificates__logo"
+      />
       <ul class="Sertificates__listItems">
         <SertificateItem
           :img="ser_images.green50"
@@ -45,8 +53,41 @@
           :shop="'в торговую сеть Green'"
         />
       </ul>
+      <a href="" class="Sertificates__linkRegistration"
+        >Правила использования сертификатов</a
+      >
+      <a href="" class="btn">Зарегистрироваться</a>
     </div>
-    <div class="Sertificates__container"></div>
+
+    <Splicer value="Еженедельный розыгрыш призов" />
+    <div class="Sertificates__container">
+      <img
+        src="../assets/vita_logo2.png"
+        alt="logo of green"
+        class="Sertificates__logo"
+      />
+      <ul class="Sertificates__listItems">
+        <SertificateItem
+          :img="ser_images.vit50"
+          :value="'50'"
+          :shop="'в торговую сеть Виталюр'"
+        />
+        <SertificateItem
+          :img="ser_images.vit100"
+          :value="'100'"
+          :shop="'в торговую сеть Виталюр'"
+        />
+        <SertificateItem
+          :img="ser_images.vit200"
+          :value="'200'"
+          :shop="'в торговую сеть Виталюр'"
+        />
+      </ul>
+      <a href="" class="Sertificates__linkRegistration"
+        >Правила использования сертификатов</a
+      >
+      <a href="" class="btn">Зарегистрироваться</a>
+    </div>
   </div>
 </template>
 
@@ -59,6 +100,9 @@ import gip200 from "./../assets/card200gip.png";
 import green50 from "./../assets/card50gr.png";
 import green100 from "./../assets/card100gr.png";
 import green200 from "./../assets/card200gr.png";
+import vit50 from "./../assets/card50vit.png";
+import vit100 from "./../assets/card100vit.png";
+import vit200 from "./../assets/card200vit.png";
 
 export default {
   name: "Sertificates",
@@ -75,6 +119,9 @@ export default {
         green50,
         green100,
         green200,
+        vit50,
+        vit100,
+        vit200,
       },
     };
   },
@@ -103,9 +150,9 @@ export default {
   &__container {
     .bcgImage("../assets/background_cards_m.png");
     background-position: center;
-    background-size: 94% 100%;
-    // height: 404.8vw; //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
-    height: 395.8vw;
+    background-position: top;
+    background-size: 94% 395.8vw;
+    // background-size: 94% 404.8vw;  //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
     @media @desktop {
     }
   }
@@ -135,6 +182,16 @@ export default {
       position: relative;
       right: 1.8vw;
     }
+  }
+  &__linkRegistration {
+    font-family: "Lobster";
+    color: @main_color1;
+    text-align: center;
+    display: block;
+    margin-top: 4.4vw;
+    font-size: 4.6vw;
+    margin-bottom: 5.8vw;
+    text-decoration: underline;
   }
 }
 </style>
