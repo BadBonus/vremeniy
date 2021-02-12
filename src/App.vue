@@ -4,6 +4,7 @@
     <Sertificates />
     <GameRegistration />
     <TournamentsWinners />
+    <Questions />
     <Footer />
   </div>
 </template>
@@ -18,6 +19,7 @@ import MainBlock from "./components/MainBlock";
 import Sertificates from "./components/Sertificates";
 import GameRegistration from "./components/GameRegistration";
 import TournamentsWinners from "./components/TournamentsWinners";
+import Questions from "./components/Questions";
 
 export default {
   name: "App",
@@ -27,6 +29,7 @@ export default {
     GameRegistration,
     Sertificates,
     TournamentsWinners,
+    Questions,
   },
   data() {
     return {
