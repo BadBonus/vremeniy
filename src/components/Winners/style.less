@@ -18,6 +18,15 @@
   padding-bottom: 1.5vw;
   min-height: 60vw;
   border-radius: 25px;
+
+  background-color: #1e7d14d6;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100vw;
   @media @desktop {
   }
 
@@ -25,6 +34,8 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 5%;
+    color: #fff;
+    font-size: 6vw;
 
     @media @desktop {
       font-size: 120px;
@@ -39,6 +50,7 @@
     margin-bottom: 1vw;
     input {
       padding-left: 0.5vw;
+      text-align: center;
     }
     @media @desktop {
     }
@@ -53,7 +65,7 @@
     text-align: center;
     width: 90%;
     margin: auto;
-    font-size: 3vw;
+    font-size: 4vw;
     background-color: #fff;
     border-radius: 25px;
     @media @desktop {
@@ -62,6 +74,7 @@
     thead {
       font-weight: 600;
       text-transform: uppercase;
+      pointer-events: none;
     }
     tr {
       padding-bottom: 1vw;
@@ -71,6 +84,17 @@
     td {
       padding: 1vw 0;
       width: 33%;
+      cursor: default;
+      &:hover {
+        background-color: @main_color1;
+        color: @main_color2;
+      }
+    }
+
+    tbody {
+      tr:last-child {
+        border: none;
+      }
     }
   }
   .VuePagination {
@@ -97,7 +121,7 @@
     color: #000;
     width: 100%;
     height: 6vw;
-    font-size: 3vw;
+    font-size: 4vw;
     @media @desktop {
       font-size: 20px;
       width: auto;

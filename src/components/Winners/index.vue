@@ -1,6 +1,6 @@
 <template>
   <div class="Winners">
-    <h1>Победители</h1>
+    <h1>{{ header }}</h1>
 
     <div class="Winners__filterBlock">
       <!-- <vSelect
@@ -19,14 +19,14 @@
         <tr>
           <td>ФИО</td>
           <!-- <td>Дата розыгрыша</td> -->
-          <td>Приз</td>
+          <!-- <td>Приз</td> -->
         </tr>
       </thead>
       <tbody>
         <tr v-for="(winner, index) in calculatedChoosedWinners" :key="index">
           <td>{{ winner.name }}</td>
           <!-- <td>{{ winner.date }}</td> -->
-          <td>{{ winner.prise }}</td>
+          <!-- <td>{{ winner.prise }}</td> -->
         </tr>
         <tr v-if="!calculatedChoosedWinners.length">
           <td></td>
@@ -38,7 +38,7 @@
     <pagination
       :records="choosedWinners.length"
       v-model="page"
-      :per-page="10"
+      :per-page="perPage"
       @paginate="callback"
       :texts="{}"
     >
@@ -317,7 +317,23 @@ export default {
     Pagination,
     // vSelect,
   },
-  props: {},
+  props: {
+    header: {
+      type: String,
+      require: false,
+      default: "Победители",
+    },
+    items: {
+      type: Array,
+      require: false,
+      default: [],
+    },
+    perPage: {
+      type: Number,
+      require: false,
+      default: 10,
+    },
+  },
   data() {
     return {
       page: 1,
@@ -353,31 +369,37 @@ export default {
 
       if (this.searchName.length) return this.foundedWinners;
 
-      if (this.choosedTournament === "Все розыгрыши") {
-        choosedWinners = this.allWinners;
-      } else {
-        choosedWinners = this.winners
-          .find(
-            ({ date }) =>
-              date.toLocaleString("ru", this.timeOptions) ===
-              this.choosedTournament
-          )
-          .winners.map((el) => ({ ...el, date: this.choosedTournament }));
-      }
+      // if (this.choosedTournament === "Все розыгрыши") {
+      //   choosedWinners = this.allWinners;
+      // } else {
+      //   choosedWinners = this.winners
+      //     .find(
+      //       ({ date }) =>
+      //         date.toLocaleString("ru", this.timeOptions) ===
+      //         this.choosedTournament
+      //     )
+      //     .winners.map((el) => ({ ...el, date: this.choosedTournament }));
+      // }
 
-      return choosedWinners;
+      // return choosedWinners;
+      return this.items;
+
     },
     calculatedChoosedWinners() {
       const { page } = this;
       if (page > 1) {
-        return this.choosedWinners.slice(10 * (page - 1), 10 * page);
+        return this.choosedWinners.slice(
+          this.perPage * (page - 1),
+          this.perPage * page
+        );
       } else if (this.page === 1) {
-        return this.choosedWinners.slice(0, 10);
+        return this.choosedWinners.slice(0, this.perPage);
       }
     },
     foundedWinners() {
+      let foundedNames = []
       if (this.searchName.length) {
-        return this.allWinners.filter((el) =>
+        return this.items.filter((el) =>
           el.name.match(new RegExp(this.searchName, "gi"))
         );
       } else {
