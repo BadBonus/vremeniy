@@ -1,32 +1,36 @@
 <template>
   <footer class="Footer">
     <div class="Footer__content">
-
-      <div class="textblock">
-        <span>
-          <b>Наименование рекламной акции</b>
-          <br class="no-desktop" />
-          «Вернем до 20 рублей на телефон <br class="no-desktop" />
-          за покупку трусиков Pampers» <br />
-          ООО "ЭфСиБи Бел", <br class="no-desktop" />
-          УНП 193185741.
-        </span>
+      <div class="Footer__textBlock">
+        <b
+          >Контактный телефон по вопросам проведения Рекламной <br />
+          игры +375 (44) 583 76 93</b
+        >
         <br />
+        <b>Время работы:</b> с 10.00 до 18.00 понедельник-суббота <br />
+        <b>E-mail:</b> promo@nestle-cereals.by <br /><br /><b>
+          Рекламная игра «Завтракай и выигрывай!». <br />
+          Сроки проведения рекламной игры</b
+        >
+        <br />(с учетом выдачи призов и публикации результатов): <br />
+        1 марта 2021 г. – 22 мая 2021 г. <br />
+        Свидетельство о государственной регистрации №3932 от <br />
+        02.02.2021 г., <br />
+        выданное Министерством антимонопольного регулирования <br />
+        и торговли Республики Беларусь. <br />
+        <b>Организатор:</b> ООО «Проспектпресс», УНП 101520868 <br />
         <br />
-
-        <span>
-          <b> Телефон горячей линии:</b> <br class="no-desktop" />
-          с 01.02.2021 по 31.03.2021 года <br class="no-desktop" />
-          (включительно): <br class="no-desktop" />
-          +375 29 608 19 49.<br />
-          <b>Время работы:</b> с 10:00 до 12:00 <br class="no-desktop" />
-          в будние дни.</span
+        <b>
+          ®Владелец товарных знаков: <br />
+          Société des Produits Nestlé S.A. (Швейцария)</b
         >
       </div>
+      <img src="../assets/footer_boxes.png" alt="footer_boxes" />
+      <div class="Footer__linksToDocs">
+        <a href="#" target="_blank">Политика конфиденциальности и cookies</a>
+        <a href="#" target="_blank">Политика в отношении персональных данных</a>
+      </div>
     </div>
-    <button class="btn" @click="isOpenWinners = !isOpenWinners">
-      Победители рекламной игры "Живи моментом с Always"
-    </button>
     <!-- <Winners v-if="isOpenWinners" /> -->
   </footer>
 </template>
@@ -49,11 +53,43 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import "../styles/media.less";
+@import "../styles/variables.less";
 
 @-moz-document url-prefix() {
 }
 
 .Footer {
+  color: @main_color1;
+  text-align: center;
+  font-size: 3.25vw;
+  padding-bottom: 5.5vw;
+  .bcgImage("../assets/footerDecor_m.png");
+  background-position: bottom;
+  background-size: contain;
 
+  img {
+    width: 94vw;
+    display: block;
+    margin: auto;
+    margin-bottom: 3vw;
+  }
+  &__content {
+    margin-top: 11.1vw;
+  }
+  img {
+    margin-top: 10.1vw;
+  }
+  &__linksToDocs {
+    a {
+      color: @main_color2;
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+      font-size: 3.2vw;
+      &:first-child {
+        margin-bottom: 3vw;
+      }
+    }
+  }
 }
 </style>
