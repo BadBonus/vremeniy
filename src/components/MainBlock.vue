@@ -73,6 +73,52 @@
         Выберите игровую сеть, <br />
         в которой купили продукты
       </span>
+      <div class="MainBlock__listBtns">
+        <a  href="#" class="btn btn-gippo">
+          <img src="../assets/gippo_logo.png" alt="gippo logo" />
+        </a>
+        <a  href="#" class="btn btn-green">
+          <img src="../assets/green_logo.png" alt="green_logo" />
+        </a>
+        <a  href="#" class="btn btn-vita">
+          <img src="../assets/vita_logo.png" alt="vita_logo" />
+        </a>
+      </div>
+      <div class="MainBlock__Calculations">
+        <h4>
+          Завтракай и выигрывай <br />
+          призы вместе с Nestlé®!
+        </h4>
+        <div class="MainBlock__calcItem">
+          <p>
+            Каждые 2 Игровых продукта в чеке
+            <br /><b> = </b> <br />
+          </p>
+
+          <p>1 Игровой код</p>
+        </div>
+        <div class="MainBlock__calcItem">
+          <p>
+            4 Игровых продукта в чеке
+            <br /><b> = </b> <br />
+          </p>
+
+          <p>2 Игровых кода</p>
+        </div>
+        <div class="MainBlock__calcItem">
+          <p>
+            6 Игровых продуктов в чеке
+            <br /><b> = </b> <br />
+          </p>
+
+          <p>3 Игровых кода и т.д.</p>
+        </div>
+      </div>
+      <img
+        src="../assets/boxCereals_m.png"
+        alt="cereals"
+        class="MainBlock__bottomDecor"
+      />
     </div>
   </div>
 </template>
@@ -226,6 +272,8 @@ export default {
     background: @main_color1;
     color: @main_color2;
     text-align: center;
+    padding-bottom: 9.8vw;
+    border-radius: 0 0 0 27px;
   }
 
   &__decorMessage {
@@ -234,6 +282,73 @@ export default {
     margin-top: 12.1vw;
     font-size: 6.5vw;
     line-height: 8vw;
+  }
+  &__listBtns {
+    margin-top: 9.8vw;
+    .btn {
+      margin-bottom: 7.6vw;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media @desktop {
+      }
+      &-gippo {
+        img {
+          width: 33.2vw;
+          @media @desktop {
+          }
+        }
+      }
+      &-green {
+        img {
+          width: 21.8vw;
+          @media @desktop {
+          }
+        }
+      }
+      &-vita {
+        img {
+          width: 36vw;
+          @media @desktop {
+          }
+        }
+      }
+    }
+  }
+
+  &__Calculations {
+    margin-top: 18.2vw;
+    font-size: 4.6vw;
+    @media @desktop {
+    }
+    h4 {
+      font-family: "Lobster";
+      font-size: 6.4vw;
+      line-height: 8vw;
+      margin-bottom: 8.1vw;
+      @media @desktop {
+      }
+    }
+    b {
+      font-size: 13vw;
+      line-height: 11.4vw;
+    }
+  }
+  &__calcItem {
+    font-weight: 600;
+    font-size: 4.85vw;
+    margin-bottom: 10.9vw;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media @desktop {
+    }
+  }
+  &__bottomDecor {
+    margin: auto;
+    display: block;
+    margin-top: 16.2vw;
+    width: 80.4vw;
   }
 }
 </style>
