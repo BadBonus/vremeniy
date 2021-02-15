@@ -205,9 +205,13 @@ export default {
       padding: 3.3vw 0;
       margin-bottom: 3.7vw;
       cursor: pointer;
+      .Questions__title{
+        transition: 0s;
+      }
       &:hover {
         .Questions__title {
           color: #133e13;
+          transition: .3s;
         }
       }
       @media @desktop {
