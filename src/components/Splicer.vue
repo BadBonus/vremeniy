@@ -1,8 +1,10 @@
 <template>
   <div class="Splicer">
-    <span>
+    <slot></slot>
+    <span v-if="!this.$slots.default">
       {{ value }}
     </span>
+    <!-- <img src="../assets/icons/decor_splicer.png" alt="decoration"> -->
   </div>
 </template>
 
@@ -19,6 +21,7 @@ export default {
   data() {
     return {};
   },
+  mounted() {},
 };
 </script>
 
