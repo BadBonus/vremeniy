@@ -3,7 +3,7 @@
     <Splicer>
       <img
         class="Splicer__nestleLogo"
-        src="../assets/icons/nestle_logo.png"
+        src="../assets/icons/nestle_logo2.png"
         alt="nestle logo"
       />
       <span>с 1 марта по 30 апреля</span>
