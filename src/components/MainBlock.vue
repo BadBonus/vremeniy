@@ -157,9 +157,9 @@ export default {
 }
 
 .MainBlock {
-  // .bcgImage('../assets/bcg_head_m.png');
-  // background-position: 0 6vw;
-  // background-size:contain;
+  .bcgImage("../assets/bcg_head_m.png");
+  background-position: 0 -3vw;
+  background-size: contain;
   @media @desktop {
   }
   .Splicer {
@@ -222,13 +222,13 @@ export default {
       display: block;
       position: absolute;
       left: 0;
-      top: 0;
-      .bcgImage("../assets/bcg_head_m.png");
-      background-position: 0 6vw;
-      background-size: contain;
+      top: -9.6vw;
+      // .bcgImage("../assets/bcg_head_m.png");
+      // background-position: 0 6vw;
+      // background-size: contain;
       width: 100%;
       background-color: @main_color1;
-      height:100px;
+      height: 9.8vw;
     }
     @media @desktop {
     }
