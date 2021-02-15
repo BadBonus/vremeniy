@@ -1,7 +1,7 @@
 <template>
   <div class="Splicer">
     <slot></slot>
-    <span v-if="!this.$slots.default">
+    <span v-if="!this.$slots.default" :id="id">
       {{ value }}
     </span>
     <!-- <img src="../assets/icons/decor_splicer.png" alt="decoration"> -->
@@ -16,6 +16,10 @@ export default {
       type: String,
       required: false,
       default: "Вы потрясающий!",
+    },
+    id: {
+      type: String,
+      required: false,
     },
   },
   data() {

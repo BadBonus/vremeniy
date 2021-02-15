@@ -5,6 +5,7 @@ import VueLazyload from "vue-lazyload";
 import VueScreenSize from "vue-screen-size";
 import VueFormulate from "@braid/vue-formulate";
 import VueSplide from "@splidejs/vue-splide";
+import VueScrollTo from "vue-scrollto";
 
 import CustomFormulateSelect from "./components/CustomFormulateSelect";
 import CustomFormulateCheckbox from "./components/CustomFormulateCheckbox";
@@ -14,9 +15,10 @@ Vue.component("CustomFormulateSelect", CustomFormulateSelect);
 Vue.component("CustomFormulateCheckbox", CustomFormulateCheckbox);
 import vco from "v-click-outside";
 
-
 Vue.use(VueSplide);
 Vue.use(vco);
+Vue.use(VueScrollTo);
+
 
 Vue.use(VueFormulate, {
   library: {

@@ -74,13 +74,13 @@
         в которой купили продукты
       </span>
       <div class="MainBlock__listBtns">
-        <a  href="#" class="btn btn-gippo">
+        <a  v-scroll-to="'#GippoSertificate'" class="btn btn-gippo">
           <img src="../assets/gippo_logo.png" alt="gippo logo" />
         </a>
-        <a  href="#" class="btn btn-green">
+        <a  v-scroll-to="'#GreenSertificate'" class="btn btn-green">
           <img src="../assets/green_logo.png" alt="green_logo" />
         </a>
-        <a  href="#" class="btn btn-vita">
+        <a  v-scroll-to="'#VitalSertificate'" class="btn btn-vita">
           <img src="../assets/vita_logo.png" alt="vita_logo" />
         </a>
       </div>

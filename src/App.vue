@@ -136,8 +136,8 @@ a {
     // padding: 1.5vw 0;
 
     &:hover:not([disabled]) {
-      color: @main_color1;
-      background: @main_color2;
+      // color: @main_color1;
+      background: #48c13c;
     }
   }
 }

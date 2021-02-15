@@ -1,6 +1,6 @@
 <template>
   <div class="Sertificates">
-    <Splicer value="Еженедельный розыгрыш призов" />
+    <Splicer value="Еженедельный розыгрыш призов" id="GippoSertificate" />
     <div class="Sertificates__container">
       <img
         src="../assets/gippo_logo2.png"
@@ -27,9 +27,9 @@
       <a href="" class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
-      <a href="" class="btn">Зарегистрироваться</a>
+      <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
-    <Splicer value="Еженедельный розыгрыш призов" />
+    <Splicer value="Еженедельный розыгрыш призов" id="GreenSertificate" />
     <div class="Sertificates__container" :style="{ 'background-size': '94%' }">
       <img
         src="../assets/green_logo2.png"
@@ -56,10 +56,10 @@
       <a href="" class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
-      <a href="" class="btn">Зарегистрироваться</a>
+      <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
 
-    <Splicer value="Еженедельный розыгрыш призов" />
+    <Splicer value="Еженедельный розыгрыш призов" id="VitalSertificate" />
     <div class="Sertificates__container">
       <img
         src="../assets/vita_logo2.png"
@@ -86,7 +86,7 @@
       <a href="" class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
-      <a href="" class="btn">Зарегистрироваться</a>
+      <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
   </div>
 </template>

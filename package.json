@@ -23,6 +23,7 @@
     "vue-masked-input": "^0.5.2",
     "vue-pagination-2": "^3.0.8",
     "vue-screen-size": "^1.0.1",
+    "vue-scrollto": "^2.20.0",
     "vue-select": "^3.11.2",
     "vue-simple-accordion": "^0.1.0"
   },
