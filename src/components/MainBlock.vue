@@ -239,6 +239,7 @@ export default {
         font-size: 6.4vw;
         margin-top: 5.3vw;
         text-decoration: underline;
+        font-weight: normal;
         @media @desktop {
         }
       }
