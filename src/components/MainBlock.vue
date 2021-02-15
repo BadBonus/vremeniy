@@ -74,13 +74,13 @@
         в которой купили продукты
       </span>
       <div class="MainBlock__listBtns">
-        <a  v-scroll-to="'#GippoSertificate'" class="btn btn-gippo">
+        <a v-scroll-to="'#GippoSertificate'" class="btn btn-gippo">
           <img src="../assets/gippo_logo.png" alt="gippo logo" />
         </a>
-        <a  v-scroll-to="'#GreenSertificate'" class="btn btn-green">
+        <a v-scroll-to="'#GreenSertificate'" class="btn btn-green">
           <img src="../assets/green_logo.png" alt="green_logo" />
         </a>
-        <a  v-scroll-to="'#VitalSertificate'" class="btn btn-vita">
+        <a v-scroll-to="'#VitalSertificate'" class="btn btn-vita">
           <img src="../assets/vita_logo.png" alt="vita_logo" />
         </a>
       </div>
@@ -157,6 +157,11 @@ export default {
 }
 
 .MainBlock {
+  // .bcgImage('../assets/bcg_head_m.png');
+  // background-position: 0 6vw;
+  // background-size:contain;
+  @media @desktop {
+  }
   .Splicer {
     padding: 2vw 0;
     margin-top: 2.7vw;
@@ -202,12 +207,29 @@ export default {
     display: block;
     margin: auto;
     margin-top: 5.7vw;
+    position: relative;
+    z-index: 5;
     @media @desktop {
     }
   }
   ul {
     background-color: @main_color1;
     margin-top: 12vw;
+    position: relative;
+    &::before {
+      content: "";
+      z-index: 2;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      .bcgImage("../assets/bcg_head_m.png");
+      background-position: 0 6vw;
+      background-size: contain;
+      width: 100%;
+      background-color: @main_color1;
+      height:100px;
+    }
     @media @desktop {
     }
     li {
