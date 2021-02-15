@@ -116,7 +116,7 @@
               tag="div"
               rules="required"
               v-slot="{ validate, errors }"
-              :name="'itemName' + index"
+              :name="'itemName'"
               class="ValidationProvider"
             >
               <CustomSelector
