@@ -1,78 +1,95 @@
 <template>
   <div class="MainBlock">
-    <Splicer>
-      <img
-        class="Splicer__nestleLogo"
-        src="../assets/icons/nestle_logo2.png"
-        alt="nestle logo"
-      />
-      <span>с 1 марта по 30 апреля</span>
-      <img
-        class="Splicer__applyIcon"
-        src="../assets/icons/decor_splicer.png"
-        alt="decoration"
-      />
-    </Splicer>
-    <h1>
-      Завтракай <br />
-      и выигрывай!
-    </h1>
-    <div class="MainBlock__top_content">
-      <img class="MainBlock__boxes" src="./../assets/boxes.png" alt="boxes" />
-      <ul>
-        <li>
-          <img
-            v-if="!isMobileSize"
-            src="./../assets/icons/basket.png"
-            alt="Покупайте 2 любых"
-          />
-          <img
-            v-if="isMobileSize"
-            src="./../assets/icons/basket_m.png"
-            alt="Покупайте 2 любых"
-          />
-          <h4>Покупайте 2 любых</h4>
-          <p>
-            готовых завтрака Nestlé® <br />
-            в ГИППО, GREEN, ВИТАЛЮР <br />
-          </p>
-          <a href="">Полный список игровых продуктов</a>
-        </li>
-        <li>
-          <img
-            v-if="!isMobileSize"
-            src="./../assets/icons/registration.png"
-            alt="Регистрируйте"
-          />
-          <img
-            v-if="isMobileSize"
-            src="./../assets/icons/registration_m.png"
-            alt="Регистрируйте"
-          />
-          <h4>Регистрируйте</h4>
-          <p>чек на сайте nestle-cereals.by</p>
-        </li>
-        <li>
-          <img
-            v-if="!isMobileSize"
-            src="./../assets/icons/present.png"
-            alt="Регистрируйте"
-          />
-          <img
-            v-if="isMobileSize"
-            src="./../assets/icons/present_m.png"
-            alt="Регистрируйте"
-          />
-          <h4>Выигрывайте призы</h4>
-        </li>
-      </ul>
+    <div class="MainBlockFirstContent">
+      <Splicer>
+        <img
+          class="Splicer__nestleLogo"
+          src="../assets/icons/nestle_logo2.png"
+          alt="nestle logo"
+        />
+        <span>с 1 марта по 30 апреля</span>
+        <img
+          class="Splicer__applyIcon"
+          src="../assets/icons/decor_splicer.png"
+          alt="decoration"
+        />
+      </Splicer>
+      <h1>
+        Завтракай <br v-if="isMobileSize" />
+        и выигрывай!
+      </h1>
+      <div class="MainBlock__top_content">
+        <img class="MainBlock__boxes" src="./../assets/boxes.png" alt="boxes" />
+        <ul>
+          <li>
+            <img
+              v-if="!isMobileSize"
+              src="./../assets/icons/basket.png"
+              alt="Покупайте 2 любых"
+              class="MainBlock__basketImg"
+            />
+            <img
+              v-if="isMobileSize"
+              src="./../assets/icons/basket_m.png"
+              alt="Покупайте 2 любых"
+            />
+            <div class="MainBlock__textContent">
+              <h4>Покупайте 2 любых</h4>
+              <p>
+                готовых завтрака Nestlé® <br />
+                в ГИППО, GREEN, ВИТАЛЮР <br />
+              </p>
+              <a href="">Полный список игровых продуктов</a>
+            </div>
+          </li>
+          <li>
+            <img
+              v-if="!isMobileSize"
+              src="./../assets/icons/registration.png"
+              alt="Регистрируйте"
+            />
+            <img
+              v-if="isMobileSize"
+              src="./../assets/icons/registration_m.png"
+              alt="Регистрируйте"
+            />
+            <div class="MainBlock__textContent">
+              <h4>Регистрируйте</h4>
+              <p>чек на сайте nestle-cereals.by</p>
+            </div>
+          </li>
+          <li>
+            <img
+              v-if="!isMobileSize"
+              src="./../assets/icons/present.png"
+              alt="Регистрируйте"
+            />
+            <img
+              v-if="isMobileSize"
+              src="./../assets/icons/present_m.png"
+              alt="Регистрируйте"
+            />
+            <div class="MainBlock__textContent">
+              <h4>Выигрывайте призы</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="MainBlock__bottomContent">
       <div class="MainBlock__decorBtn">Правила рекламной игры</div>
-      <span class="MainBlock__decorMessage">
+      <span v-if="isMobileSize" class="MainBlock__decorMessage">
         Выберите игровую сеть, <br />
         в которой купили продукты
       </span>
+      <Splicer
+        ><span> Выберите игровую сеть, в которой купили продукты </span
+        ><img
+          class="Splicer__applyIcon"
+          v-if="!isMobileSize"
+          src="../assets/icons/decor_splicer.png"
+          alt="decoration"
+      /></Splicer>
       <div class="MainBlock__listBtns">
         <a v-scroll-to="'#GippoSertificate'" class="btn btn-gippo">
           <img src="../assets/gippo_logo.png" alt="gippo logo" />
@@ -219,6 +236,9 @@ export default {
     color: @main_color1;
     font-weight: normal;
     @media @desktop {
+      font-size: 6.9vw;
+      margin-top: 0;
+      line-height: 9.4vw;
     }
   }
 
@@ -230,12 +250,21 @@ export default {
     position: relative;
     z-index: 5;
     @media @desktop {
+      width: 53vw;
+      margin-top: 1.7vw;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
   ul {
     background-color: @main_color1;
     margin-top: 12vw;
     position: relative;
+    @media @desktop {
+      background-color: unset;
+      margin-top: 5.4vw;
+      margin-left: 2.5vw;
+    }
     &::before {
       content: "";
       z-index: 2;
@@ -249,9 +278,12 @@ export default {
       width: 100%;
       background-color: @main_color1;
       height: 9.8vw;
+
+      @media @desktop {
+        display: none;
+      }
     }
-    @media @desktop {
-    }
+
     li {
       text-align: center;
       color: @main_color2;
@@ -260,6 +292,10 @@ export default {
         margin: 0;
       }
       @media @desktop {
+        color: @main_color1;
+        display: flex;
+        text-align: left;
+        margin-bottom: 3.1vw;
       }
       a {
         color: @main_color2;
@@ -268,11 +304,16 @@ export default {
         margin-top: 1.2vw;
         display: inline-block;
         @media @desktop {
+          font-size: 1.66vw;
+          margin-top: 0.3vw;
+          color: @main_color1;
         }
       }
       img {
         width: 28.8vw;
         @media @desktop {
+          width: 6.8vw;
+          margin-right: 1.8vw;
         }
       }
 
@@ -283,6 +324,8 @@ export default {
         text-decoration: underline;
         font-weight: normal;
         @media @desktop {
+          font-size: 3.35vw;
+          margin-top: 0;
         }
       }
       p {
@@ -290,6 +333,9 @@ export default {
         font-size: 4.9vw;
         line-height: 7.4vw;
         @media @desktop {
+          font-size: 2vw;
+          line-height: 2.5vw;
+          margin-top: 0.3vw;
         }
       }
     }
@@ -308,6 +354,14 @@ export default {
     margin: auto;
     font-size: 6.4vw;
     padding: 1.8vw 0;
+    @media @desktop {
+      position: absolute;
+      top: 56.2vw;
+      font-size: 2.5vw;
+      width: 33.6vw;
+      right: 7.6vw;
+      padding: 1vw 0;
+    }
   }
 
   &__bottomContent {
@@ -317,6 +371,16 @@ export default {
     text-align: center;
     padding-bottom: 9.8vw;
     border-radius: 0 0 0 27px;
+    @media @desktop {
+      padding-top: 2.5vw;
+    }
+    .Splicer {
+      span {
+        font-family: "Lobster";
+        right: 0;
+        left: 3vw;
+      }
+    }
   }
 
   &__decorMessage {
@@ -328,17 +392,28 @@ export default {
   }
   &__listBtns {
     margin-top: 9.8vw;
+    @media @desktop {
+      display: flex;
+      margin-top: 3.8vw;
+      padding: 0 5vw;
+    }
     .btn {
       margin-bottom: 7.6vw;
       &:last-child {
         margin-bottom: 0;
       }
       @media @desktop {
+        margin-bottom: 7.6vw;
+        padding: 2.1vw 0;
+        width: 28vw;
+        margin-bottom: 0;
+        max-height: 7vw;
       }
       &-gippo {
         img {
           width: 33.2vw;
           @media @desktop {
+            width: 13.2vw;
           }
         }
       }
@@ -346,6 +421,7 @@ export default {
         img {
           width: 21.8vw;
           @media @desktop {
+            width: 12.2vw;
           }
         }
       }
@@ -353,6 +429,7 @@ export default {
         img {
           width: 36vw;
           @media @desktop {
+            width: 18vw;
           }
         }
       }
@@ -392,6 +469,23 @@ export default {
     display: block;
     margin-top: 16.2vw;
     width: 80.4vw;
+  }
+
+  &__top_content {
+    @media @desktop {
+      display: flex;
+    }
+  }
+  &__basketImg {
+    height: 6.7vw;
+  }
+
+  .MainBlockFirstContent {
+    @media @desktop {
+      .bcgImage("../assets/bcg_head.png");
+      background-size: cover;
+      padding-bottom: 1vw;
+    }
   }
 }
 </style>
