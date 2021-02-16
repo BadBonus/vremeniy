@@ -1,6 +1,13 @@
 <template>
   <div class="TournamentsWinners">
-    <Splicer value="Розыгрыши и победители" />
+    <Splicer>
+      <span>Розыгрыши и победители</span>
+      <img
+        class="Splicer__applyIcon"
+        v-if="!isMobileSize"
+        src="../assets/icons/decor_splicer.png"
+        alt="decoration"
+    /></Splicer>
     <div class="TournamentsWinners__content">
       <button class="btn" @click="choosePrize('first')">
         Подарочный сертификат <br />
@@ -256,7 +263,11 @@ export default {
       choosedWinners: [],
     };
   },
-  computed: {},
+  computed: {
+    isMobileSize() {
+      return this.$vssWidth < this.$desktopSize;
+    },
+  },
   methods: {
     closeModal() {
       this.choosedPrize = null;
@@ -293,16 +304,43 @@ export default {
     &:last-child {
       margin-bottom: 0;
       padding: 5.9vw 0;
+      @media @desktop {
+        padding: 1.8vw 0vw;
+        font-size: 2.45vw;
+        margin-top: 3.7vw;
+        width: 31vw;
+      }
     }
     @media @desktop {
+      font-size: 1.95vw;
+      margin-bottom: 0;
+      width: 28vw;
+      padding: 0.6vw 0;
     }
     p {
       font-size: 6.5vw;
+      @media @desktop {
+        font-size: 2.45vw;
+      }
     }
   }
 
   &__content {
     margin-top: 8.4vw;
+    @media @desktop {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0px 4.9vw;
+      margin-top: 4.3vw;
+    }
+  }
+
+  .Splicer {
+    span {
+      @media @desktop {
+        margin-left: 24.1vw;
+      }
+    }
   }
 }
 </style>
