@@ -51,11 +51,30 @@ export default {
   background-position: right;
   background-size: 100%;
   padding: 5.7vw 0 8.4vw 0;
+  @media @desktop {
+    .bcgImage("../assets/decor_splicer.png");
+    font-size: 3.3vw;
+    width: 92vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 0 2vw;
+  }
   span {
     display: inline-block;
     padding-left: 1.2vw;
+    @media @desktop {
+    }
   }
-  @media @desktop {
+
+  &__applyIcon {
+    width: 8vw;
+    margin-right: 5.5vw;
+    @media @desktop {
+      width: 4.4vw;
+      margin-right: 6.8vw;
+      padding-left: 0;
+    }
   }
 }
 </style>

@@ -1,6 +1,20 @@
 <template>
   <div class="Sertificates">
-    <Splicer value="Еженедельный розыгрыш призов" id="GippoSertificate" />
+    <Splicer id="GippoSertificate">
+      <img
+        class="Splicer__shopLogo Splicer__shopLogo-gippo"
+        v-if="!isMobileSize"
+        src="../assets/gippo_logo.png"
+        alt="gippo logo"
+      />
+      <span>Еженедельный розыгрыш призов</span>
+      <img
+        class="Splicer__applyIcon"
+        v-if="!isMobileSize"
+        src="../assets/icons/decor_splicer.png"
+        alt="decoration"
+      />
+    </Splicer>
     <div class="Sertificates__container">
       <img
         src="../assets/gippo_logo2.png"
@@ -29,7 +43,20 @@
       >
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
-    <Splicer value="Еженедельный розыгрыш призов" id="GreenSertificate" />
+    <Splicer id="GreenSertificate">
+        <img
+        class="Splicer__shopLogo Splicer__shopLogo-green"
+        v-if="!isMobileSize"
+        src="../assets/green_logo.png"
+        alt="gippo logo"
+      />
+      <span>Еженедельный розыгрыш призов</span>
+      <img
+        class="Splicer__applyIcon"
+        v-if="!isMobileSize"
+        src="../assets/icons/decor_splicer.png"
+        alt="decoration"
+    /></Splicer>
     <div class="Sertificates__container" :style="{ 'background-size': '94%' }">
       <img
         src="../assets/green_logo2.png"
@@ -59,7 +86,20 @@
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
 
-    <Splicer value="Еженедельный розыгрыш призов" id="VitalSertificate" />
+    <Splicer id="VitalSertificate">
+        <img
+        class="Splicer__shopLogo Splicer__shopLogo-vita"
+        v-if="!isMobileSize"
+        src="../assets/vita_logo.png"
+        alt="gippo logo"
+      />
+      <span>Еженедельный розыгрыш призов</span>
+      <img
+        class="Splicer__applyIcon"
+        v-if="!isMobileSize"
+        src="../assets/icons/decor_splicer.png"
+        alt="decoration"
+    /></Splicer>
     <div class="Sertificates__container">
       <img
         src="../assets/vita_logo2.png"
@@ -124,6 +164,11 @@ export default {
         vit200,
       },
     };
+  },
+  computed: {
+    isMobileSize() {
+      return this.$vssWidth < this.$desktopSize;
+    },
   },
 };
 </script>
@@ -193,6 +238,14 @@ export default {
     font-size: 4.6vw;
     margin-bottom: 5.8vw;
     text-decoration: underline;
+  }
+
+  .Splicer__shopLogo {
+    @media @desktop {
+      width: 13.2vw;
+      margin-right: 0;
+      margin-left: 4.1vw;
+    }
   }
 }
 </style>

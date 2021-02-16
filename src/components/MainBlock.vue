@@ -8,7 +8,7 @@
       />
       <span>с 1 марта по 30 апреля</span>
       <img
-        class="Splicer_applyIcon"
+        class="Splicer__applyIcon"
         src="../assets/icons/decor_splicer.png"
         alt="decoration"
       />
@@ -177,10 +177,6 @@ export default {
       }
     }
     @media @desktop {
-    }
-    .Splicer_applyIcon {
-      width: 8vw;
-      margin-right: 5.5vw;
     }
 
     .Splicer__nestleLogo {
