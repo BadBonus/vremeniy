@@ -295,6 +295,7 @@ export default {
 .TournamentsWinners {
   padding-bottom: 13.5vw;
   @media @desktop {
+    padding-bottom: 4.5vw;
   }
   .btn {
     display: flex;
