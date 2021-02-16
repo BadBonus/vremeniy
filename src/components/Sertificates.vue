@@ -62,13 +62,16 @@
         src="../assets/icons/decor_splicer.png"
         alt="decoration"
     /></Splicer>
-    <div class="Sertificates__container" :style="{ 'background-size': '94%' }">
+    <div
+      class="Sertificates__container"
+      :style="{ 'background-size': isMobileSize ? '94%' : auto }"
+    >
       <img
         src="../assets/green_logo2.png"
         alt="logo of green"
-        class="Sertificates__logo"
+        class="Sertificates__logo Sertificates__logo-green"
       />
-      <ul class="Sertificates__listItems">
+      <ul class="Sertificates__listItems Sertificates__listItems-green">
         <SertificateItem
           :img="ser_images.green50"
           :value="'50'"
@@ -211,6 +214,7 @@ export default {
       background-repeat: no-repeat;
       background-size: 100vw 54.8vw;
       background-position-x: -0.2vw;
+      margin-bottom: 4.1vw;
     }
   }
 
@@ -224,6 +228,9 @@ export default {
       flex-direction: row;
       margin-top: 4.7vw;
       justify-content: space-around;
+      &-green {
+        margin-top: 2vw;
+      }
     }
 
     .SertificateItem {
@@ -241,6 +248,10 @@ export default {
     @media @desktop {
       width: 23.6vw;
       padding-top: 3.5vw;
+
+      &-green {
+        width: 18.5vw;
+      }
     }
   }
 
@@ -262,6 +273,11 @@ export default {
     font-size: 4.6vw;
     margin-bottom: 5.8vw;
     text-decoration: underline;
+    @media @desktop {
+      font-size: 1.5vw;
+      margin-top: 9.2vw;
+      margin-bottom: 2.7vw;
+    }
   }
 
   .Splicer__shopLogo {
@@ -269,6 +285,13 @@ export default {
       width: 13.2vw;
       margin-right: 0;
       margin-left: 4.1vw;
+    }
+  }
+  .btn {
+    @media @desktop {
+      width: 28vw;
+      font-size: 2.6vw;
+      padding: 2vw 0;
     }
   }
 }

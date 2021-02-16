@@ -61,6 +61,7 @@ export default {
     }
   }
   @media @desktop {
+    margin-bottom: 0;
   }
   &__itemTextBlock {
     font-family: "Lobster";
