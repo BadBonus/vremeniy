@@ -52,6 +52,13 @@ export default {
   margin-bottom: 11.4vw;
   img {
     width: 80.9vw;
+    @media @desktop {
+      width: 28.2vw;
+      // margin-right: 0;
+      min-height: 407px;
+      margin: auto;
+      display: block;
+    }
   }
   @media @desktop {
   }
@@ -62,6 +69,11 @@ export default {
     text-align: center;
     margin-top: 1.6vw;
     @media @desktop {
+      font-size: 2vw;
+      margin-top: 0;
+      position: relative;
+      bottom: 0.4vw;
+      padding-left: 0.4vw;
     }
     span {
       text-decoration: underline;
@@ -76,10 +88,13 @@ export default {
       font-size: 9.3vw;
       text-decoration: underline;
       @media @desktop {
+        font-size: 2.5vw;
+        margin-top: 1.1vw;
       }
       & > span:nth-child(2) {
         margin: 0 2vw;
         @media @desktop {
+          margin: 0;
         }
       }
     }
@@ -90,6 +105,8 @@ export default {
       margin-top: 5.3vw;
       font-size: 4.7vw;
       @media @desktop {
+        margin-top: 1.7vw;
+        font-size: 1.7vw;
       }
     }
   }
@@ -97,6 +114,13 @@ export default {
     & > span:first-child {
       margin-right: 2vw;
       @media @desktop {
+        margin-right: 0;
+      }
+    }
+    & > span:last-child {
+      @media @desktop {
+        position: relative;
+        left: 1vw;
       }
     }
   }

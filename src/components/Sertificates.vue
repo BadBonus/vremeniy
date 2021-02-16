@@ -1,6 +1,12 @@
 <template>
   <div class="Sertificates">
-    <Splicer id="GippoSertificate">
+    <Splicer
+      id="GippoSertificate"
+      :style="{
+        position: 'relative',
+        bottom: '2vw',
+      }"
+    >
       <img
         class="Splicer__shopLogo Splicer__shopLogo-gippo"
         v-if="!isMobileSize"
@@ -44,12 +50,11 @@
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
     </div>
     <Splicer id="GreenSertificate">
-        <img
+      <img
         class="Splicer__shopLogo Splicer__shopLogo-green"
         v-if="!isMobileSize"
         src="../assets/green_logo.png"
-        alt="gippo logo"
-      />
+        alt="gippo logo" />
       <span>Еженедельный розыгрыш призов</span>
       <img
         class="Splicer__applyIcon"
@@ -87,12 +92,11 @@
     </div>
 
     <Splicer id="VitalSertificate">
-        <img
+      <img
         class="Splicer__shopLogo Splicer__shopLogo-vita"
         v-if="!isMobileSize"
         src="../assets/vita_logo.png"
-        alt="gippo logo"
-      />
+        alt="gippo logo" />
       <span>Еженедельный розыгрыш призов</span>
       <img
         class="Splicer__applyIcon"
@@ -190,6 +194,9 @@ export default {
 
   .Splicer {
     margin-bottom: 4vw;
+    @media @desktop {
+      margin-bottom: 1.3vw;
+    }
   }
 
   &__container {
@@ -200,6 +207,10 @@ export default {
     // background-size: 94% 404.8vw;  //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
     margin-bottom: 22.7vw;
     @media @desktop {
+      background-image: url("../assets/background_cards.png");
+      background-repeat: no-repeat;
+      background-size: 100vw 54.8vw;
+      background-position-x: -0.2vw;
     }
   }
 
@@ -210,10 +221,16 @@ export default {
     flex-direction: column;
     margin-top: 14.7vw;
     @media @desktop {
+      flex-direction: row;
+      margin-top: 4.7vw;
+      justify-content: space-around;
     }
 
     .SertificateItem {
       margin-right: 3.7vw;
+      @media @desktop {
+        margin-right: 0;
+      }
     }
   }
   &__logo {
@@ -221,12 +238,19 @@ export default {
     display: block;
     width: 43.6vw;
     padding-top: 8.5vw;
+    @media @desktop {
+      width: 23.6vw;
+      padding-top: 3.5vw;
+    }
   }
 
   & .SertificateItem:nth-of-type(2n) {
     img {
       position: relative;
       right: 1.8vw;
+      @media @desktop {
+        right: 0;
+      }
     }
   }
   &__linkRegistration {
