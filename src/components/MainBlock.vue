@@ -170,10 +170,22 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media @desktop {
+      margin-top: 0vw;
+      padding: 1vw 0 2vw;
+      width: 93vw;
+      margin-top: 0.4vw;
+      background-size: 100% 7.3vw;
+    }
     span {
       font-family: "Roboto";
       font-size: 4.35vw;
       @media @desktop {
+        font-size: 3.35vw;
+        font-weight: 500;
+        position: relative;
+        right: 2.7vw;
       }
     }
     @media @desktop {
@@ -182,6 +194,18 @@ export default {
     .Splicer__nestleLogo {
       margin-left: 8vw;
       width: 21vw;
+      @media @desktop {
+        width: 13.8vw;
+        margin-left: 1.4vw;
+        position: relative;
+        top: 0.6vw;
+      }
+    }
+
+    &__applyIcon {
+      @media @desktop {
+        margin-right: 8.2vw;
+      }
     }
   }
   @media @desktop {
