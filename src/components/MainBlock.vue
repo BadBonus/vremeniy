@@ -101,41 +101,50 @@
           <img src="../assets/vita_logo.png" alt="vita_logo" />
         </a>
       </div>
-      <div class="MainBlock__Calculations">
-        <h4>
-          Завтракай и выигрывай <br />
-          призы вместе с Nestlé®!
-        </h4>
-        <div class="MainBlock__calcItem">
-          <p>
-            Каждые 2 Игровых продукта в чеке
-            <br /><b> = </b> <br />
-          </p>
+      <div class="MainBlock__BottomDownContent">
+        <div class="MainBlock__Calculations">
+          <h4>
+            Завтракай и выигрывай <br v-if="isMobileSize" />
+            призы вместе с Nestlé®!
+          </h4>
+          <div class="MainBlock__calcItem">
+            <p>
+              Каждые 2 Игровых продукта в чеке
+              <br v-if="isMobileSize" /><b> = </b> <br />
+            </p>
 
-          <p>1 Игровой код</p>
-        </div>
-        <div class="MainBlock__calcItem">
-          <p>
-            4 Игровых продукта в чеке
-            <br /><b> = </b> <br />
-          </p>
+            <p>1 Игровой код</p>
+          </div>
+          <div class="MainBlock__calcItem">
+            <p>
+              4 Игровых продукта в чеке
+              <br v-if="isMobileSize" /><b> = </b> <br />
+            </p>
 
-          <p>2 Игровых кода</p>
-        </div>
-        <div class="MainBlock__calcItem">
-          <p>
-            6 Игровых продуктов в чеке
-            <br /><b> = </b> <br />
-          </p>
+            <p>2 Игровых кода</p>
+          </div>
+          <div class="MainBlock__calcItem">
+            <p>
+              6 Игровых продуктов в чеке
+              <br v-if="isMobileSize" /><b> = </b> <br />
+            </p>
 
-          <p>3 Игровых кода и т.д.</p>
+            <p>3 Игровых кода и т.д.</p>
+          </div>
         </div>
+        <img
+          v-if="isMobileSize"
+          src="../assets/boxCereals_m.png"
+          alt="cereals"
+          class="MainBlock__bottomDecor"
+        />
+        <img
+          v-if="!isMobileSize"
+          src="../assets/boxCereals_desk.png"
+          alt="cereals"
+          class="MainBlock__bottomDecor"
+        />
       </div>
-      <img
-        src="../assets/boxCereals_m.png"
-        alt="cereals"
-        class="MainBlock__bottomDecor"
-      />
     </div>
   </div>
 </template>
@@ -178,6 +187,7 @@ export default {
   background-position: 0 -3vw;
   background-size: contain;
   @media @desktop {
+    background-image: none;
   }
   .Splicer {
     padding: 2vw 0;
@@ -373,6 +383,8 @@ export default {
     border-radius: 0 0 0 27px;
     @media @desktop {
       padding-top: 2.5vw;
+      padding-bottom: 2.8vw;
+      border-radius: 0 0 0 187px;
     }
     .Splicer {
       span {
@@ -440,6 +452,8 @@ export default {
     margin-top: 18.2vw;
     font-size: 4.6vw;
     @media @desktop {
+      margin-top: 5.3vw;
+      margin-left: 7vw;
     }
     h4 {
       font-family: "Lobster";
@@ -447,11 +461,22 @@ export default {
       line-height: 8vw;
       margin-bottom: 8.1vw;
       @media @desktop {
+        line-height: 4.3vw;
+        font-size: 3.3vw;
+        width: 35vw;
+        margin: auto;
+        position: relative;
+        left: 2.4vw;
+        margin-bottom: 2.5vw;
       }
     }
     b {
       font-size: 13vw;
       line-height: 11.4vw;
+      @media @desktop {
+        font-size: inherit;
+        line-height: inherit;
+      }
     }
   }
   &__calcItem {
@@ -462,6 +487,17 @@ export default {
       margin-bottom: 0;
     }
     @media @desktop {
+      font-size: 1.5vw;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin-bottom: 1.3vw;
+      position: relative;
+      left: 2vw;
+
+      b {
+        margin: 0vw 0.7vw 0 0.5vw !important;
+      }
     }
   }
   &__bottomDecor {
@@ -469,6 +505,11 @@ export default {
     display: block;
     margin-top: 16.2vw;
     width: 80.4vw;
+    @media @desktop {
+      width: 43.4vw;
+      margin-right: 5.7vw;
+      margin-top: 55px;
+    }
   }
 
   &__top_content {
@@ -485,6 +526,12 @@ export default {
       .bcgImage("../assets/bcg_head.png");
       background-size: cover;
       padding-bottom: 1vw;
+    }
+  }
+  &__BottomDownContent {
+    @media @desktop {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
