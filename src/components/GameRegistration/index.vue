@@ -9,7 +9,15 @@
         @submit.prevent="onSubmit"
         v-if="!isFinishedRegistration"
       >
-        <Splicer value="Регистрация" />
+        <Splicer>
+          <span>Регистрация</span>
+          <img
+            class="Splicer__applyIcon"
+            v-if="!isMobileSize"
+            src="../../assets/icons/decor_splicer.png"
+            alt="decoration"
+          />
+        </Splicer>
         <div class="GameRegistration__formContent">
           <span
             class="GameRegistration__blockContentTitle GameRegistration__blockContentTitle-duoBlock"
@@ -112,6 +120,52 @@
 
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
+            <ValidationProvider
+              tag="div"
+              rules="required"
+              v-slot="{ validate, errors }"
+              :name="'itemName'"
+              class="ValidationProvider"
+              v-if="isMobileSize"
+            >
+              <CustomSelector
+                v-model="model.shop"
+                placeholder="Выберите торговую сеть"
+                :options="['Гиппо', 'Green', 'Виталюр']"
+              />
+              <span class="errorContainer">{{ errors[0] }}</span>
+            </ValidationProvider>
+            <ValidationProvider
+              tag="div"
+              class="ValidationProvider"
+              rules="required|mimes:image/jpeg,image/png|size:40000"
+              v-slot="{ validate, errors }"
+              name="fileCheck"
+              v-if="isMobileSize"
+            >
+              <div class="customFileInput">
+                <input
+                  type="file"
+                  @change="
+                    validate($event);
+                    onFileChange($event);
+                  "
+                  placeholder="Загрузить картинку"
+                  accept="image/jpeg,image/png"
+                />
+                <span class="customFileInput__fileName">
+                  {{
+                    model.file_name ? model.file_name : "Загрузить фото чека*"
+                  }}
+                </span>
+                <div class="customFileInput__helper">
+                  <img src="./../../assets/icons/camera.svg" alt="" />
+                </div>
+              </div>
+              <span class="errorContainer">{{ errors[0] }}</span>
+            </ValidationProvider>
+          </div>
+          <div v-if="!isMobileSize" class="GameRegistration__blockContent GameRegistration__blockContent-deskShopCheck">
             <ValidationProvider
               tag="div"
               rules="required"

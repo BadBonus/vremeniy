@@ -55,7 +55,7 @@ export default {
     @media @desktop {
       width: 28.2vw;
       // margin-right: 0;
-      min-height: 407px;
+      min-height: 28.3vw;
       margin: auto;
       display: block;
     }
