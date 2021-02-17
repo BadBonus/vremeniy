@@ -44,7 +44,10 @@
           :shop="'в торговую сеть Гиппо'"
         />
       </ul>
-      <a href="" class="Sertificates__linkRegistration"
+      <a
+        href="/rulesSertificates_gippo.pdf"
+        target="_blank"
+        class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
@@ -85,7 +88,10 @@
           :shop="'в торговую сеть Green'"
         />
       </ul>
-      <a href="" class="Sertificates__linkRegistration"
+      <a
+        href="/rulesSertificates_green.pdf"
+        target="_blank"
+        class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
@@ -127,7 +133,10 @@
           :shop="'в торговую сеть Виталюр'"
         />
       </ul>
-      <a href="" class="Sertificates__linkRegistration"
+      <a
+        href="/rulesSertificates_Vitalur.pdf"
+        target="_blank"
+        class="Sertificates__linkRegistration"
         >Правила использования сертификатов</a
       >
       <a v-scroll-to="'#GameRegistration'" class="btn">Зарегистрироваться</a>
