@@ -62,9 +62,7 @@
         src="../assets/icons/decor_splicer.png"
         alt="decoration"
     /></Splicer>
-    <div
-      class="Sertificates__container Sertificates__container-green"
-    >
+    <div class="Sertificates__container Sertificates__container-green">
       <img
         src="../assets/green_logo2.png"
         alt="logo of green"
@@ -208,8 +206,11 @@ export default {
     background-size: 94% 395.8vw;
     // background-size: 94% 404.8vw;  //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
     margin-bottom: 22.7vw;
-    &:last-child{
+    &:last-child {
       margin-bottom: 17vw;
+      @media @desktop {
+        margin-bottom: 3.3vw;
+      }
     }
     @media @desktop {
       background-image: url("../assets/background_cards.png");
@@ -228,8 +229,11 @@ export default {
         margin-bottom: 10vw;
       }
 
-      .Sertificates__linkRegistration{
+      .Sertificates__linkRegistration {
         margin-top: 18vw;
+        @media @desktop {
+          margin-top: 6.5vw;
+        }
       }
     }
   }

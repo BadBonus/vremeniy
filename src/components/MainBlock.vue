@@ -202,7 +202,7 @@ export default {
       margin-top: 0vw;
       padding: 1vw 0 2vw;
       width: 93vw;
-      margin-top: 0.4vw;
+      margin-top: 2.7vw;
       background-size: 100% 7.3vw;
     }
     span {
@@ -214,7 +214,8 @@ export default {
         font-size: 3.35vw;
         font-weight: 500;
         position: relative;
-        right: 2.7vw;
+        right: 4vw;
+        bottom: 0vw;
       }
     }
     @media @desktop {
@@ -224,8 +225,8 @@ export default {
       margin-left: 4vw;
       width: 16vw;
       @media @desktop {
-        width: 13.8vw;
-        margin-left: 1.4vw;
+        margin-left: 4.1vw;
+        width: 15.3vw;
         position: relative;
         top: 0.6vw;
       }
@@ -237,7 +238,9 @@ export default {
       position: relative;
       bottom: 0.7vw;
       @media @desktop {
-        margin-right: 8.2vw;
+        margin-right: 7.2vw;
+        width: 4.1vw;
+        bottom: 0;
       }
     }
   }
@@ -255,6 +258,8 @@ export default {
       font-size: 6.9vw;
       margin-top: 0;
       line-height: 9.4vw;
+      position: relative;
+      bottom: 1.5vw;
     }
   }
 
@@ -271,9 +276,11 @@ export default {
     margin-bottom: -2vw;
     @media @desktop {
       width: 53vw;
-      margin-top: 1.7vw;
+      margin-top: 0.1vw;
       margin-left: 0;
       margin-right: 0;
+      position: relative;
+      left: -0.2vw;
     }
   }
   ul {
@@ -283,7 +290,7 @@ export default {
     padding-top: 2.7vw;
     @media @desktop {
       background-color: unset;
-      margin-top: 5.4vw;
+      margin-top: 3.5vw;
       margin-left: 2.5vw;
       padding-top: 0;
     }
@@ -317,7 +324,7 @@ export default {
         color: @main_color1;
         display: flex;
         text-align: left;
-        margin-bottom: 3.1vw;
+        margin-bottom: 3.2vw;
       }
       a {
         color: @main_color2;
@@ -376,6 +383,7 @@ export default {
     margin: auto;
     font-size: 6.4vw;
     padding: 1.8vw 0;
+    cursor: default;
     @media @desktop {
       position: absolute;
       top: 56.2vw;
@@ -539,12 +547,28 @@ export default {
       .bcgImage("../assets/bcg_head.png");
       background-size: cover;
       padding-bottom: 1vw;
+      padding-top: 1.5vw;
+    }
+
+    .Splicer {
+      @media @desktop {
+        margin-top: 0;
+        position: relative;
+        bottom: 0.9vw;
+      }
     }
   }
   &__BottomDownContent {
     @media @desktop {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &__textContent {
+    @media @desktop {
+      position: relative;
+      top: 0.4vw;
     }
   }
 }
