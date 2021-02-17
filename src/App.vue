@@ -6,6 +6,7 @@
     <TournamentsWinners />
     <Questions />
     <Footer />
+    <ModalChatbot />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import Sertificates from "./components/Sertificates";
 import GameRegistration from "./components/GameRegistration";
 import TournamentsWinners from "./components/TournamentsWinners";
 import Questions from "./components/Questions";
+import ModalChatbot from "./components/ModalChatbot";
 
 export default {
   name: "App",
@@ -30,6 +32,7 @@ export default {
     Sertificates,
     TournamentsWinners,
     Questions,
+    ModalChatbot,
   },
   data() {
     return {
@@ -73,8 +76,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   @media @desktop {
-  background-image: url("./assets/background.png");
-
+    background-image: url("./assets/background.png");
   }
 }
 
