@@ -7,7 +7,7 @@
           src="../assets/icons/nestle_logo2.png"
           alt="nestle logo"
         />
-        <span>с 1 марта по 30 апреля</span>
+        <span>с 1 марта по 30 апреля 2021 года</span>
         <img
           class="Splicer__applyIcon"
           src="../assets/icons/decor_splicer.png"

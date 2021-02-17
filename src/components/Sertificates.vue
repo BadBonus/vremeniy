@@ -64,7 +64,7 @@
     /></Splicer>
     <div
       class="Sertificates__container"
-      :style="{ 'background-size': isMobileSize ? '94%' : auto }"
+      :style="{ 'background-size': isMobileSize ? '94%' : 'auto' }"
     >
       <img
         src="../assets/green_logo2.png"

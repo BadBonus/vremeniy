@@ -432,6 +432,7 @@ export default {
       this.model["file"] = null;
       this.model["file_name"] = null;
       this.model["phone"] = null;
+      this.model["shop"] = null;
       this.model["rule1"] = false;
       this.model["rule2"] = false;
       this.$nextTick(() => {
@@ -485,23 +486,22 @@ export default {
           file,
           lastName,
           phone,
-          operator,
           day,
           month,
-          choosedItems,
           address,
+          shop
         },
       } = this;
 
-      choosedItems.forEach((value, index) => {
-        form.append(`product[${index}]`, value.name);
-      });
-      choosedItems.forEach((value, index) => {
-        form.append(`count[${index}]`, value.count);
-      });
-      choosedItems.forEach((value, index) => {
-        form.append(`cost[${index}]`, value.cost);
-      });
+      // choosedItems.forEach((value, index) => {
+      //   form.append(`product[${index}]`, value.name);
+      // });
+      // choosedItems.forEach((value, index) => {
+      //   form.append(`count[${index}]`, value.count);
+      // });
+      // choosedItems.forEach((value, index) => {
+      //   form.append(`cost[${index}]`, value.cost);
+      // });
 
       form.append("name", name);
       form.append("email", email);
@@ -510,9 +510,10 @@ export default {
       form.append("purchase_date", day + " " + month);
       form.append("surname", surname);
       form.append("day", day);
-      form.append("operator", operator);
       form.append("address", address);
       form.append("lastName", lastName);
+      form.append("shop", shop);
+
 
       axios
         .post(postRegistration, form)
