@@ -232,7 +232,9 @@ export default {
     &-green {
       background-size: 94% 93.3%;
       @media @desktop {
-        background-size: auto;
+        // background-size: 97.2vw 54.8vw;
+        background-size: 96.8% 79.5%;
+        background-position-x: 1.8vw;
       }
       .Splicer {
         margin-bottom: 10vw;
@@ -241,7 +243,7 @@ export default {
       .Sertificates__linkRegistration {
         margin-top: 18vw;
         @media @desktop {
-          margin-top: 6.5vw;
+          margin-top: 5.9vw;
         }
       }
     }
