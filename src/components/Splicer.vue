@@ -1,7 +1,7 @@
 <template>
-  <div class="Splicer">
+  <div class="Splicer" :id="id">
     <slot></slot>
-    <span v-if="!this.$slots.default" :id="id">
+    <span v-if="!this.$slots.default">
       {{ value }}
     </span>
     <!-- <img src="../assets/icons/decor_splicer.png" alt="decoration"> -->

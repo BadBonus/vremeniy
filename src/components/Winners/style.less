@@ -142,19 +142,26 @@
     margin: auto;
     margin-bottom: auto;
     display: block;
-    margin-bottom: 4vw;
+    // margin-bottom: 4vw;
     border-radius: 100px;
     padding: 1.6vw 2.4vw;
+    font-size: 3vw;
     background: green;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
     border: 1px solid #fff;
-    font-size: 3vw;
     cursor: pointer;
+    position: relative;
+    bottom: 1%;
     &:hover {
       background-color: @main_color2;
       color: @main_color1;
+    }
+    @media @desktop {
+      padding: 0.8vw 1vw;
+      font-size: 1vw;
+      bottom: 4%;
     }
   }
 }
