@@ -1,4 +1,4 @@
-// @mobile: ~"(max-width: 768px)";
+@mobile: ~"(max-width: 768px)";
 @tablet: ~"(min-width: 769px) and (max-width: 1024px) and (orientation: portrait), (min-width: 864px) and (max-width: 1366px) and (orientation: landscape)";
 @tabletLandscape: ~"(min-width: 864px) and (max-width: 1366px) and (orientation: landscape)";
 @tabletPortrait: ~"(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)";
@@ -20,8 +20,7 @@
 }
 
 .no-mobile {
-  display: none;
-  @media @desktop {
-    display: block !important;
+  @media @mobile {
+    display: none;
   }
 }

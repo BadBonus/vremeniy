@@ -125,8 +125,7 @@
               rules="required"
               v-slot="{ validate, errors }"
               :name="'itemName'"
-              class="ValidationProvider"
-              v-if="isMobileSize"
+              class="ValidationProvider no-desktop"
             >
               <CustomSelector
                 v-model="model.shop"
@@ -137,11 +136,10 @@
             </ValidationProvider>
             <ValidationProvider
               tag="div"
-              class="ValidationProvider"
+              class="ValidationProvider no-desktop"
               rules="required|mimes:image/jpeg,image/png|size:40000"
               v-slot="{ validate, errors }"
               name="fileCheck"
-              v-if="isMobileSize"
             >
               <div class="customFileInput">
                 <input
@@ -165,7 +163,7 @@
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
-          <div v-if="!isMobileSize" class="GameRegistration__blockContent GameRegistration__blockContent-deskShopCheck">
+          <div class="GameRegistration__blockContent GameRegistration__blockContent-deskShopCheck no-mobile">
             <ValidationProvider
               tag="div"
               rules="required"

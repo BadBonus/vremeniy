@@ -34,8 +34,12 @@
       </div>
       <img src="../assets/footer_boxes.png" alt="footer_boxes" />
       <div class="Footer__linksToDocs">
-        <a href="#" target="_blank">Политика конфиденциальности и cookies</a>
-        <a href="#" target="_blank">Политика в отношении персональных данных</a>
+        <a href="politics_cookies.pdf" target="_blank"
+          >Политика конфиденциальности и cookies</a
+        >
+        <a href="politics_relToData.pdf" target="_blank"
+          >Политика в отношении персональных данных</a
+        >
       </div>
     </div>
     <!-- <Winners v-if="isOpenWinners" /> -->
