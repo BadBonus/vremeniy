@@ -82,7 +82,7 @@
         Выберите игровую сеть, <br />
         в которой купили продукты
       </span>
-      <Splicer
+      <Splicer v-if="!isMobileSize"
         ><span> Выберите игровую сеть, в которой купили продукты </span
         ><img
           class="Splicer__applyIcon"
@@ -190,8 +190,8 @@ export default {
     background-image: none;
   }
   .Splicer {
-    padding: 2vw 0;
-    margin-top: 2.7vw;
+    margin-top: 0;
+    padding: 3.1vw 0;
     background-size: 100% 15.2vw;
 
     display: flex;
@@ -207,7 +207,9 @@ export default {
     }
     span {
       font-family: "Roboto";
-      font-size: 4.35vw;
+      font-size: 3.85vw;
+      position: relative;
+      bottom: 1vw;
       @media @desktop {
         font-size: 3.35vw;
         font-weight: 500;
@@ -219,8 +221,8 @@ export default {
     }
 
     .Splicer__nestleLogo {
-      margin-left: 8vw;
-      width: 21vw;
+      margin-left: 4vw;
+      width: 16vw;
       @media @desktop {
         width: 13.8vw;
         margin-left: 1.4vw;
@@ -230,6 +232,10 @@ export default {
     }
 
     &__applyIcon {
+      width: 8vw;
+      margin-right: 3.6vw;
+      position: relative;
+      bottom: 0.7vw;
       @media @desktop {
         margin-right: 8.2vw;
       }
@@ -240,8 +246,8 @@ export default {
   h1 {
     text-align: center;
     font-family: "Lobster";
-    font-size: 12.7vw;
-    margin-top: 3.6vw;
+    font-size: 14.7vw;
+    margin-top: 0;
     line-height: 15.2vw;
     color: @main_color1;
     font-weight: normal;
@@ -253,12 +259,16 @@ export default {
   }
 
   &__boxes {
-    width: 95vw;
+    width: 100vw;
     display: block;
     margin: auto;
-    margin-top: 5.7vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 3.8vw;
     position: relative;
     z-index: 5;
+    right: 1.1vw;
+    margin-bottom: -2vw;
     @media @desktop {
       width: 53vw;
       margin-top: 1.7vw;
@@ -270,10 +280,12 @@ export default {
     background-color: @main_color1;
     margin-top: 12vw;
     position: relative;
+    padding-top: 2.7vw;
     @media @desktop {
       background-color: unset;
       margin-top: 5.4vw;
       margin-left: 2.5vw;
+      padding-top: 0;
     }
     &::before {
       content: "";
@@ -522,6 +534,7 @@ export default {
   }
 
   .MainBlockFirstContent {
+    padding-top: 1.7vw;
     @media @desktop {
       .bcgImage("../assets/bcg_head.png");
       background-size: cover;

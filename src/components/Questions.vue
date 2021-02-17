@@ -40,7 +40,8 @@
       </li>
       <li tabindex="0">
         <span class="Questions__title">
-          Какой продукт нужно купить для участия в рекламной игре?
+          Какой продукт нужно купить <br />
+          для участия в рекламной игре?
         </span>
         <p class="Questions__content Questions__content-long">
           <br />Lion. Готовый завтрак карамельно-шоколадный, обогащ. витамин. и
@@ -227,7 +228,7 @@ export default {
   .Splicer {
     position: relative;
     bottom: 1.2vw;
-    margin-bottom: 8vw;
+    margin-bottom: 6.7vw;
     @media @desktop {
       bottom: 0.5vw;
       margin-bottom: 3.4vw;
@@ -246,8 +247,13 @@ export default {
       width: 94vw;
       margin: auto;
       border-radius: 50px;
-      padding: 3.3vw 0;
+      // padding: 3.3vw 0;
       margin-bottom: 3.7vw;
+      height: 11vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       cursor: pointer;
       .Questions__title {
         transition: 0s;
@@ -266,10 +272,15 @@ export default {
       }
 
       &:focus {
+        height: auto;
+        padding-top: 2vw;
+
+        padding-bottom: 4vw;
         cursor: default;
         .Questions__title {
           color: #133e13;
           font-size: 4.8vw;
+          padding-top: 1vw;
         }
         p {
           display: block;

@@ -63,8 +63,7 @@
         alt="decoration"
     /></Splicer>
     <div
-      class="Sertificates__container"
-      :style="{ 'background-size': isMobileSize ? '94%' : 'auto' }"
+      class="Sertificates__container Sertificates__container-green"
     >
       <img
         src="../assets/green_logo2.png"
@@ -209,12 +208,29 @@ export default {
     background-size: 94% 395.8vw;
     // background-size: 94% 404.8vw;  //криво элементы расположены на макете, высоту лучше меньше сделать для аккуратности
     margin-bottom: 22.7vw;
+    &:last-child{
+      margin-bottom: 17vw;
+    }
     @media @desktop {
       background-image: url("../assets/background_cards.png");
       background-repeat: no-repeat;
-      background-size: 100vw 54.8vw;
-      background-position-x: -0.2vw;
+      background-size: 97.2vw 54.8vw;
+      background-position-x: 0.9vw;
       margin-bottom: 4.1vw;
+    }
+
+    &-green {
+      background-size: 94% 93.3%;
+      @media @desktop {
+        background-size: auto;
+      }
+      .Splicer {
+        margin-bottom: 10vw;
+      }
+
+      .Sertificates__linkRegistration{
+        margin-top: 18vw;
+      }
     }
   }
 
@@ -224,6 +240,9 @@ export default {
     justify-content: flex-start;
     flex-direction: column;
     margin-top: 14.7vw;
+    &-green {
+      margin-top: 19.4vw;
+    }
     @media @desktop {
       flex-direction: row;
       margin-top: 4.7vw;
@@ -245,6 +264,14 @@ export default {
     display: block;
     width: 43.6vw;
     padding-top: 8.5vw;
+
+    &-green {
+      position: relative;
+      top: 7vw;
+      @media @desktop {
+        top: 0;
+      }
+    }
     @media @desktop {
       width: 23.6vw;
       padding-top: 3.5vw;
