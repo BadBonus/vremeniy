@@ -531,7 +531,7 @@ export default {
     },
   },
   mounted() {
-    axios.post(getGoods).then(({ data }) => (this.items = [...data.data]));
+    // axios.post(getGoods).then(({ data }) => (this.items = [...data.data]));
   },
 };
 </script>

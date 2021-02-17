@@ -42,7 +42,7 @@
     font-size: 6vw;
 
     @media @desktop {
-      font-size:80px;
+      font-size: 80px;
     }
   }
 
@@ -84,15 +84,16 @@
       padding-bottom: 1vw;
       border-bottom: 1px solid lightgray;
       border-radius: 100px;
+      transition: 0s !important;
+      &:hover {
+        font-weight: bold;
+      }
     }
     td {
+      transition: 0s !important;
       padding: 1vw 0;
       width: 33%;
       cursor: default;
-      &:hover {
-        background-color: @main_color1;
-        color: @main_color2;
-      }
     }
 
     tbody {

@@ -18,14 +18,14 @@
       <thead>
         <tr>
           <td>ФИО</td>
-          <!-- <td>Дата розыгрыша</td> -->
+          <td>Дата розыгрыша</td>
           <!-- <td>Приз</td> -->
         </tr>
       </thead>
       <tbody>
         <tr v-for="(winner, index) in calculatedChoosedWinners" :key="index">
           <td>{{ winner.name }}</td>
-          <!-- <td>{{ winner.date }}</td> -->
+          <td>{{ winner.date }}</td>
           <!-- <td>{{ winner.prise }}</td> -->
         </tr>
         <tr v-if="!calculatedChoosedWinners.length">
@@ -43,7 +43,13 @@
       :texts="{}"
     >
     </pagination>
-    <button v-if="$listeners.closeFunction" @click="close" class="Winners__closeBtn">X</button>
+    <button
+      v-if="$listeners.closeFunction"
+      @click="close"
+      class="Winners__closeBtn"
+    >
+      X
+    </button>
   </div>
 </template>
 
@@ -54,7 +60,7 @@ import Pagination from "vue-pagination-2";
 import "vue-select/dist/vue-select.css";
 import "./style.less";
 
- export default {
+export default {
   name: "Winner",
   components: {
     Pagination,
@@ -76,7 +82,6 @@ import "./style.less";
       require: false,
       default: 10,
     },
-
   },
   data() {
     return {
@@ -127,7 +132,6 @@ import "./style.less";
 
       // return choosedWinners;
       return this.items;
-
     },
     calculatedChoosedWinners() {
       const { page } = this;
@@ -141,7 +145,6 @@ import "./style.less";
       }
     },
     foundedWinners() {
-
       if (this.searchName.length) {
         return this.items.filter((el) =>
           el.name.match(new RegExp(this.searchName, "gi"))
@@ -160,9 +163,9 @@ import "./style.less";
     callback: function (page) {
       // console.log(`Page ${page} was selected. Do something about it`);
     },
-    close(){
-      this.$emit('closeFunction');
-    }
+    close() {
+      this.$emit("closeFunction");
+    },
   },
   mounted() {
     // this.winners.push(...mock_winners);

@@ -9,15 +9,15 @@
         alt="decoration"
     /></Splicer>
     <div class="TournamentsWinners__content">
-      <button class="btn" @click="choosePrize('first')">
+      <button class="btn" @click="choosePrize('50 рублей')">
         Подарочный сертификат <br />
         <p>на 50 рублей</p>
       </button>
-      <button class="btn" @click="choosePrize('second')">
+      <button class="btn" @click="choosePrize('100 рублей')">
         Подарочный сертификат <br />
         <p>на 100 рублей</p>
       </button>
-      <button class="btn" @click="choosePrize('third')">
+      <button class="btn" @click="choosePrize('200 рублей')">
         Подарочный сертификат <br />
         <p>на 200 рублей</p></button
       ><button class="btn" @click="isOpenCalendar = true">
@@ -37,6 +37,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import { getWinners } from "../API";
+
 import Splicer from "./Splicer";
 import Winners from "./Winners";
 
@@ -244,20 +247,23 @@ export default {
   },
   data() {
     return {
-      winners: {
-        first: {
+      winners: [
+        {
           prize: "Подарочный сертификат на 50 рублей",
+          name: "50 рублей",
           winners: [...mock_winners1],
         },
-        second: {
+        {
           prize: "Подарочный сертификат на 100 рублей",
+          name: "100 рублей",
           winners: [...mock_winners2],
         },
-        third: {
+        {
           prize: "Подарочный сертификат на 200 рублей",
+          name: "200 рублей",
           winners: [...mock_winners3],
         },
-      },
+      ],
       choosedPrize: null,
       isOpenCalendar: false,
       choosedWinners: [],
@@ -274,9 +280,32 @@ export default {
       this.currentHeader = null;
     },
     choosePrize(prize) {
-      this.choosedPrize = this.winners[prize].prize;
-      this.choosedWinners = this.winners[prize].winners;
+      const currentObj = this.winners.find((el) => el.name === prize);
+      this.choosedPrize = currentObj.prize;
+      this.choosedWinners = currentObj.winners;
     },
+    parsingWinners(rawdata) {
+      const winners = [];
+
+      rawdata.forEach((element) => {
+        winners.push({ winners: [], name: element.name });
+        const currentArray = winners.find((el) => el.name === element.name);
+        element.draw.forEach(({ date_draw, winners }) => {
+          winners.forEach(({ name }) =>
+            currentArray.winners.push({ name, date: date_draw })
+          );
+        });
+      });
+      winners.forEach(({ name, winners }) => {
+        const currentArray = this.winners.find((el) => el.name === name);
+        currentArray.winners = [...winners];
+      });
+    },
+  },
+  mounted() {
+    axios.post(getWinners).then(({ data }) => {
+      this.parsingWinners(data.data);
+    });
   },
 };
 </script>
