@@ -122,7 +122,10 @@
     &__Phone {
       display: flex;
       justify-content: flex-start;
-      width: 26.9vw;
+      width: 100%;
+      @media @desktop {
+        width: 26.9vw;
+      }
       & > *:first-child {
         width: 100%;
         @media @desktop {

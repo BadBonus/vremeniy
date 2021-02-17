@@ -72,6 +72,10 @@ body {
   background-image: url("./assets/background_m.png");
   background-repeat: no-repeat;
   background-size: cover;
+  @media @desktop {
+  background-image: url("./assets/background.png");
+
+  }
 }
 
 b {
