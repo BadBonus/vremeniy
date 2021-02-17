@@ -428,18 +428,19 @@
 
   .errorContainer {
     position: absolute;
-    bottom: -2vw;
-    left: 0;
-    font-size: 2.1vw;
+    bottom: -2.9vw;
+    left: 4vw;
+    font-size: 2.7vw;
     border-radius: 20px;
-    color: red;
-    background: unset;
+    background: #0009;
+    color: #fff;
+    text-align: center;
     padding: 0 0.5vw;
     @media @desktop {
-      bottom: -1vw;
-      left: 0;
+      bottom: -0.7vw;
+      left: 1.4vw;
       font-size: 0.7vw;
-      min-width: 12vw;
+      // min-width: 23vw;
       z-index: 5;
     }
   }
@@ -517,6 +518,13 @@
       font-size: 1.25vw;
       padding-left: 18.5vw;
       margin-bottom: 2.3vw;
+    }
+  }
+
+  &__RulesBlock {
+    .errorContainer {
+      left: 10vw;
+      bottom: -3.5vw !important;
     }
   }
 }
