@@ -261,7 +261,7 @@
                 >Регистрируясь, Вы подтверждаете, что изучили
                 <br class="no-desktop" />
                 и согласны с
-                <a href="rules_new.pdf" target="_blank"
+                <a href="rules.pdf" target="_blank"
                   >правилами рекламной акции.</a
                 ></span
               >
