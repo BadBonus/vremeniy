@@ -7751,6 +7751,11 @@ vue-awesome-swiper@^4.1.1:
   resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-4.1.1.tgz#8f7ab221ad003021d756b86aa618f429924900fe"
   integrity sha512-50um10t6N+lJaORkpwSi1wWuMmBI1sgFc9Znsi5oUykw2cO5DzLaBHcO2JNX21R+Ue4TGoIJDhhxjBHtkFrTEQ==
 
+vue-easy-lightbox@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/vue-easy-lightbox/-/vue-easy-lightbox-0.14.1.tgz#733d43913d14e4662409f7519c27c51d58d92003"
+  integrity sha512-hXC0kGSqO1/Pj8jimbfMtFhJ4SOVFkwS4p79d4cjkfyZZdou+X40eSFX346+kq6yE8YIKxGeGPkDGcaCs8kPCQ==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

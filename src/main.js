@@ -7,7 +7,7 @@ import VueFormulate from "@braid/vue-formulate";
 import VueSplide from "@splidejs/vue-splide";
 import VueScrollTo from "vue-scrollto";
 import VueWaypoint from "vue-waypoint";
-import VueSilentbox from "vue-silentbox";
+import Lightbox from 'vue-easy-lightbox'
 
 import CustomFormulateSelect from "./components/CustomFormulateSelect";
 import CustomFormulateCheckbox from "./components/CustomFormulateCheckbox";
@@ -21,7 +21,7 @@ Vue.use(VueSplide);
 Vue.use(vco);
 Vue.use(VueScrollTo);
 Vue.use(VueWaypoint);
-Vue.use(VueSilentbox);
+Vue.use(Lightbox);
 
 Vue.use(VueFormulate, {
   library: {

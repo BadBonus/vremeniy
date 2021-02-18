@@ -31,7 +31,14 @@
         :perPage="8"
       />
     </transition>
-    <silent-box class="lightbox" ref="lightbox" :gallery="gallery"></silent-box>
+    <vue-easy-lightbox
+      escDisabled
+      moveDisabled
+      :visible="visible"
+      :imgs="gallery"
+      :index="index"
+      @hide="handleHide"
+    ></vue-easy-lightbox>
   </div>
 </template>
 
@@ -61,6 +68,8 @@ export default {
           src: calendar2,
         },
       ],
+      visible: false,
+      index: 0,
       winners: [
         {
           prize: "Подарочный сертификат на 50 рублей",
@@ -116,8 +125,10 @@ export default {
       });
     },
     openLightbox() {
-      console.log(this.$refs.lightbox);
-      this.$refs.lightbox.openOverlay(this.gallery[0],);
+      this.visible = true;
+    },
+    handleHide() {
+      this.visible = false;
     },
   },
   mounted() {
@@ -188,13 +199,6 @@ export default {
       @media @desktop {
         margin-left: 24.1vw;
       }
-    }
-  }
-
-  .lightbox {
-    // display: none;
-    .silentbox-item {
-      display: none;
     }
   }
 
