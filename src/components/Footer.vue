@@ -83,7 +83,7 @@ export default {
       // going: in, out
       // direction: top, right, bottom, left
       if (going === this.$waypointMap.GOING_IN) {
-        setTimeout(() => (this.isFooterArea = true), 5000);
+        setTimeout(() => (this.isFooterArea = true), 4000);
       }
 
       // if (direction === this.$waypointMap.DIRECTION_TOP) {
