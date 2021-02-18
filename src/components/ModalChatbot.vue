@@ -71,15 +71,15 @@ export default {
   left: 0;
   @media @desktop {
     border-radius: 91px;
-    opacity: 0.2;
+    opacity: 0.5;
     padding-top: 2vw;
     padding-bottom: 1.27vw;
     width: 34vw;
     font-size: 2.2vw;
-    right: 0;
+    right: .5vw;
     left: unset;
     top: unset;
-    bottom: 0;
+    bottom: 3vw;
     height: auto;
     &:hover {
       opacity: 1;
