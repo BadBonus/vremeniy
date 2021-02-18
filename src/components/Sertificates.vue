@@ -327,6 +327,15 @@ export default {
       width: 13.2vw;
       margin-right: 0;
       margin-left: 4.1vw;
+
+      &-green {
+        position: relative;
+        top: 0.3vw;
+      }
+       &-vita {
+        position: relative;
+        top: 0.3vw;
+      }
     }
   }
   .btn {

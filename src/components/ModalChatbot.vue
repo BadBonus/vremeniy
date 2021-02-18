@@ -10,6 +10,12 @@
           <span>Telegram</span></a
         >
       </li>
+      <!-- <li>
+        <a href="#"
+          ><img src="../assets/icons/viber.ico" alt="decor" />
+          <span>Viber</span></a
+        >
+      </li> -->
     </ul>
   </div>
 </template>
@@ -34,50 +40,71 @@ export default {
 @import "../styles/media.less";
 @import "../styles/variables.less";
 
-@-moz-document url-prefix() {
-  .ModalChatbot {
-  }
-}
-
 .ModalChatbot {
-  width: 47.3vw;
   background: #1e7d14;
-
   color: #fff;
-  font-size: 2.94vw;
   font-family: "Lobster";
   text-align: center;
   border: 5px solid #f0dac0;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px #0f390a;
   border-radius: 91px;
-  padding-top: 2vw;
-  padding-bottom: 4vw;
   background: @main_color1;
+  z-index: 9999;
+  padding-bottom: 2vw;
+
+  font-size: 8vw;
+  width: 100%;
+  height: 38vw;
 
   position: fixed;
-  right: 0;
   bottom: 0;
-  z-index: 9999;
+  top: 0;
+  margin: auto;
+  left: 0;
+  @media @desktop {
+    opacity: 0.2;
+    padding-top: 2vw;
+    padding-bottom: 1.27vw;
+    width: 34vw;
+    font-size: 2.54vw;
+    right: 0;
+    left: unset;
+    top:unset;
+    bottom: 0;
+    height: auto;
+    &:hover {
+      opacity: 1;
+    }
+  }
 
   &__title {
     position: relative;
+    cursor: default;
     &::after {
       content: "";
       position: absolute;
-      right: 6.8vw;
-      top: 4.7vw;
-      width: 4.8vw;
-      height: 4.932vw;
+      right: 2.6vw;
+      top: 13vw;
+      width: 12.8vw;
+      height: 9.532vw;
+
       .bcgImage("../assets/icons/strela.png");
       background-repeat: no-repeat;
       background-size: contain;
-    }
-    @media @desktop {
+
+      @media @desktop {
+        right: 1.6vw;
+        top: 4.2vw;
+        width: 4.8vw;
+        height: 3.532vw;
+      }
     }
   }
   &__list {
+    margin-top: 4vw;
     @media @desktop {
+      margin-top: 0.9vw;
     }
     li {
       .bcgImage("../assets/chatbot_decor.png");
@@ -86,8 +113,12 @@ export default {
       align-items: center;
       justify-content: center;
       margin: auto;
+      background-size: 100%;
+      background-position: center;
+      width: 80%;
+      height: 14vw;
       @media @desktop {
-        width: 40vw;
+        width: 30vw;
         height: 6.7vw;
       }
 
@@ -99,8 +130,22 @@ export default {
       }
 
       span {
-        font-size: 2.611vw;
+        font-size: 7vw;
         font-family: "Roboto";
+        @media @desktop {
+          font-size: 2.111vw;
+        }
+      }
+
+      img {
+        position: relative;
+
+        right: 2.1vw;
+        width: 7vw;
+        @media @desktop {
+          right: 1.1vw;
+          width: 3vw;
+        }
       }
     }
   }

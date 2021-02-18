@@ -1,5 +1,11 @@
 <template>
-  <footer class="Footer">
+  <footer
+    class="Footer"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+    }"
+  >
     <div class="Footer__content">
       <div class="Footer__textBlock">
         <b
@@ -43,24 +49,46 @@
       </div>
     </div>
     <!-- <Winners v-if="isOpenWinners" /> -->
+    <transition name="fade">
+      <ModalChatbot v-if="isModalChatbotActive" />
+    </transition>
   </footer>
 </template>
 
 <script>
 import Winners from "./Winners";
+import ModalChatbot from "./ModalChatbot";
 export default {
   name: "Footer",
   components: {
     Winners,
+    ModalChatbot,
   },
   data() {
     return {
       isOpenWinners: false,
+      isFooterArea: false,
     };
   },
   computed: {
     isMobileSize() {
       return this.$vssWidth < this.$desktopSize;
+    },
+    isModalChatbotActive() {
+      return !this.isMobileSize || this.isFooterArea;
+    },
+  },
+  methods: {
+    onWaypoint({ going, direction }) {
+      // going: in, out
+      // direction: top, right, bottom, left
+      if (going === this.$waypointMap.GOING_IN) {
+        setTimeout(() => (this.isFooterArea = true), 5000);
+      }
+
+      // if (direction === this.$waypointMap.DIRECTION_TOP) {
+      //   console.log("waypoint going top!");
+      // }
     },
   },
 };
