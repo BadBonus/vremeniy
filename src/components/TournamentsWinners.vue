@@ -31,14 +31,12 @@
         :perPage="8"
       />
     </transition>
-    <!-- <LightBox :media="media" showThumbs='false'></LightBox> -->
     <silent-box class="lightbox" ref="lightbox" :gallery="gallery"></silent-box>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import LightBox from "vue-it-bigger";
 import { getWinners } from "../API";
 
 import Splicer from "./Splicer";
@@ -52,7 +50,6 @@ export default {
   components: {
     Splicer,
     Winners,
-    LightBox,
   },
   data() {
     return {
