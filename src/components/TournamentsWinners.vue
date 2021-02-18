@@ -20,9 +20,7 @@
       <button class="btn" @click="choosePrize('200 рублей')">
         Подарочный сертификат <br />
         <p>на 200 рублей</p></button
-      ><button class="btn" @click="isOpenCalendar = true">
-        Календарь розыгрышей
-      </button>
+      ><button class="btn" @click="openLightbox">Календарь розыгрышей</button>
     </div>
     <transition name="fade">
       <Winners
@@ -33,26 +31,39 @@
         :perPage="8"
       />
     </transition>
+    <!-- <LightBox :media="media" showThumbs='false'></LightBox> -->
+    <silent-box class="lightbox" ref="lightbox" :gallery="gallery"></silent-box>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import LightBox from "vue-it-bigger";
 import { getWinners } from "../API";
 
 import Splicer from "./Splicer";
 import Winners from "./Winners";
 
-
+import calendar1 from "./../assets/calendar-1.jpg";
+import calendar2 from "./../assets/calendar-2.jpg";
 
 export default {
   name: "TournamentsWinners",
   components: {
     Splicer,
     Winners,
+    LightBox,
   },
   data() {
     return {
+      gallery: [
+        {
+          src: calendar1,
+        },
+        {
+          src: calendar2,
+        },
+      ],
       winners: [
         {
           prize: "Подарочный сертификат на 50 рублей",
@@ -106,6 +117,10 @@ export default {
         const currentArray = this.winners.find((el) => el.name === name);
         currentArray.winners = [...winners];
       });
+    },
+    openLightbox() {
+      console.log(this.$refs.lightbox);
+      this.$refs.lightbox.openOverlay(this.gallery[0],);
     },
   },
   mounted() {
@@ -177,6 +192,21 @@ export default {
         margin-left: 24.1vw;
       }
     }
+  }
+
+  .lightbox {
+    // display: none;
+    .silentbox-item {
+      display: none;
+    }
+  }
+
+  #silentbox-overlay__close-button .icon {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 }
 </style>

@@ -56,7 +56,7 @@ export default {
   box-shadow: 0px 0px 10px #0f390a;
   border-radius: 50px;
   background: @main_color1;
-  z-index: 9999;
+  z-index: 998;
   padding-bottom: 2vw;
   padding-top: 5vw;
 
