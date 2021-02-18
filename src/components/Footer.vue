@@ -50,7 +50,7 @@
     </div>
     <!-- <Winners v-if="isOpenWinners" /> -->
     <transition name="fade">
-      <ModalChatbot v-if="isModalChatbotActive" />
+      <ModalChatbot v-if="isModalChatbotActive" v-on:onCloseModal="onCloseModal" />
     </transition>
   </footer>
 </template>
@@ -68,6 +68,7 @@ export default {
     return {
       isOpenWinners: false,
       isFooterArea: false,
+      isClosedByClick: false,
     };
   },
   computed: {
@@ -75,7 +76,7 @@ export default {
       return this.$vssWidth < this.$desktopSize;
     },
     isModalChatbotActive() {
-      return !this.isMobileSize || this.isFooterArea;
+      return !this.isClosedByClick && (!this.isMobileSize || this.isFooterArea);
     },
   },
   methods: {
@@ -89,6 +90,9 @@ export default {
       // if (direction === this.$waypointMap.DIRECTION_TOP) {
       //   console.log("waypoint going top!");
       // }
+    },
+    onCloseModal() {
+      this.isClosedByClick = true;
     },
   },
 };
