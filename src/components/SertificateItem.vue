@@ -7,7 +7,7 @@
         <span>сертификат</span>
       </div>
       <p>
-        <span>на</span><span> {{ value }} </span> <span> рублей</span>
+        <span>на</span> <span> {{ value }} </span> <span> рублей</span>
       </p>
       <span>{{ shop }}</span>
     </div>
@@ -87,7 +87,7 @@ export default {
     & > p {
       margin-top: 3.2vw;
       font-size: 9.3vw;
-      text-decoration: underline;
+      // text-decoration: underline;
       @media @desktop {
         font-size: 2.5vw;
         margin-top: 1.1vw;
