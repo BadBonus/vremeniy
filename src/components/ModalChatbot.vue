@@ -6,7 +6,7 @@
     </div>
     <ul class="ModalChatbot__list">
       <li>
-        <a href="#"
+        <a href="https://t.me/nestle_reach_and_target_bot"
           ><img src="../assets/icons/telegram.png" alt="decor" />
           <span>Telegram</span></a
         >
@@ -76,7 +76,7 @@ export default {
     padding-bottom: 1.27vw;
     width: 34vw;
     font-size: 2.2vw;
-    right: .5vw;
+    right: 0.5vw;
     left: unset;
     top: unset;
     bottom: 3vw;

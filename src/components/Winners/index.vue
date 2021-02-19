@@ -54,6 +54,30 @@
         <div class="name">{{ winner.name }}</div>
         <div class="Winners__listDate">{{ winner.date }}</div>
       </li>
+      <li
+        class="Winners__listItem"
+        v-for="(winner, index) in calculatedChoosedWinners"
+        :key="index"
+      >
+        <div class="name">{{ winner.name }}</div>
+        <div class="Winners__listDate">{{ winner.date }}</div>
+      </li>
+      <li
+        class="Winners__listItem"
+        v-for="(winner, index) in calculatedChoosedWinners"
+        :key="index"
+      >
+        <div class="name">{{ winner.name }}</div>
+        <div class="Winners__listDate">{{ winner.date }}</div>
+      </li>
+      <li
+        class="Winners__listItem"
+        v-for="(winner, index) in calculatedChoosedWinners"
+        :key="index"
+      >
+        <div class="name">{{ winner.name }}</div>
+        <div class="Winners__listDate">{{ winner.date }}</div>
+      </li>
     </ul>
     <pagination
       :records="choosedWinners.length"
