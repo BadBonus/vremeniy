@@ -163,7 +163,9 @@
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
-          <div class="GameRegistration__blockContent GameRegistration__blockContent-deskShopCheck no-mobile">
+          <div
+            class="GameRegistration__blockContent GameRegistration__blockContent-deskShopCheck no-mobile"
+          >
             <ValidationProvider
               tag="div"
               rules="required"
@@ -363,6 +365,7 @@ export default {
       items: [],
       model: {
         name: null,
+        address: null,
         surname: null,
         email: null,
         lastName: null,
@@ -433,6 +436,7 @@ export default {
       this.model["shop"] = null;
       this.model["rule1"] = false;
       this.model["rule2"] = false;
+      this.model["address"] = null;
       this.$nextTick(() => {
         this.$refs.form.reset();
       });
@@ -487,7 +491,7 @@ export default {
           day,
           month,
           address,
-          shop
+          shop,
         },
       } = this;
 
@@ -511,7 +515,6 @@ export default {
       form.append("address", address);
       form.append("lastName", lastName);
       form.append("shop", shop);
-
 
       axios
         .post(postRegistration, form)
