@@ -79,7 +79,9 @@
       </div>
     </div>
     <div class="MainBlock__bottomContent">
-      <div class="MainBlock__decorBtn">Правила рекламной игры</div>
+      <a href="rules.pdf" target="_blank" class="MainBlock__decorBtn"
+        >Правила рекламной игры</a
+      >
       <span v-if="isMobileSize" class="MainBlock__decorMessage">
         Выберите игровую сеть, <br />
         в которой купили продукты
@@ -376,6 +378,9 @@ export default {
   }
 
   &__decorBtn {
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
     background: #f0dac0;
     width: 94vw;
     border: 3px solid @main_color1;
@@ -388,7 +393,6 @@ export default {
     margin: auto;
     font-size: 6.4vw;
     padding: 1.8vw 0;
-    cursor: default;
     @media @desktop {
       position: absolute;
       top: 56.2vw;
@@ -396,6 +400,9 @@ export default {
       width: 33.6vw;
       right: 7.6vw;
       padding: 1vw 0;
+    }
+    &:hover {
+      color: #fff;
     }
   }
 
