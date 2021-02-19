@@ -21,8 +21,6 @@ import GameRegistration from "./components/GameRegistration";
 import TournamentsWinners from "./components/TournamentsWinners";
 import Questions from "./components/Questions";
 
-
-
 export default {
   name: "App",
   components: {
@@ -71,11 +69,12 @@ body {
   // color: @main_color2;
   font-family: "Roboto", "Sans-serif";
   // background-color: @main_color3;
-  background-image: url("./assets/background_m.png");
+  background-image: url("./assets/background.png");
   background-repeat: repeat;
   background-size: contain;
+  // background-color: red;
   @media @desktop {
-    background-image: url("./assets/background.png");
+    // background-image: url("./assets/background.png");
   }
 }
 

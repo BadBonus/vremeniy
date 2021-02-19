@@ -1,5 +1,10 @@
 <template>
   <div class="Winners">
+    <img
+      src="../../assets/winners_decor.png"
+      class="Winners__titleDecoration"
+      alt="decoration winners"
+    />
     <h1>{{ header }}</h1>
 
     <div class="Winners__filterBlock">
@@ -38,16 +43,16 @@
 
     <ul class="Winners__list">
       <li class="Winners__listHead">
-        <div class="Winners__listName">Фио</div>
+        <div class="Winners__listName">ФИО</div>
         <div class="Winners__listDate">Дата розыгрыша</div>
       </li>
-      <li class="Winners__listItem">
-        <div class="name">Ракуть Леонид</div>
-        <div class="Winners__listDate">2021-02-19</div>
-      </li>
-      <li class="Winners__listItem">
-        <div class="name">Есипов Артур</div>
-        <div class="Winners__listDate">2021-02-19</div>
+      <li
+        class="Winners__listItem"
+        v-for="(winner, index) in calculatedChoosedWinners"
+        :key="index"
+      >
+        <div class="name">{{ winner.name }}</div>
+        <div class="Winners__listDate">{{ winner.date }}</div>
       </li>
     </ul>
     <pagination
@@ -62,9 +67,7 @@
       v-if="$listeners.closeFunction"
       @click="close"
       class="Winners__closeBtn"
-    >
-      X
-    </button>
+    ></button>
   </div>
 </template>
 
