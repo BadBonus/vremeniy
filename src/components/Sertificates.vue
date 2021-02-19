@@ -110,7 +110,7 @@
         src="../assets/icons/decor_splicer.png"
         alt="decoration"
     /></Splicer>
-    <div class="Sertificates__container">
+    <div class="Sertificates__container Sertificates__container-vita">
       <img
         src="../assets/vita_logo2.png"
         alt="logo of green"
@@ -247,6 +247,24 @@ export default {
         }
       }
     }
+
+    &-vita {
+      position: relative;
+      @media @desktop {
+        &::before {
+          content: "";
+          position: absolute;
+          width: 15vw;
+          height: 2vw;
+          background-color: #ffff;
+          left: 0;
+          right: 0;
+          top: 7vw;
+          margin: auto;
+          z-index: 1;
+        }
+      }
+    }
   }
 
   &__listItems {
@@ -279,15 +297,17 @@ export default {
     display: block;
     width: 43.6vw;
     padding-top: 8.5vw;
+    position: relative;
+    z-index: 5;
 
     &-green {
-      position: relative;
       top: 7vw;
       @media @desktop {
         top: 0;
       }
     }
     @media @desktop {
+      position: relative;
       width: 23.6vw;
       padding-top: 3.5vw;
 
@@ -332,7 +352,7 @@ export default {
         position: relative;
         top: 0.3vw;
       }
-       &-vita {
+      &-vita {
         position: relative;
         top: 0.3vw;
       }
