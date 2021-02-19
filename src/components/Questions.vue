@@ -38,7 +38,7 @@
           понадобится фотография чека. Не спешите его выбрасывать :)
         </p>
       </li>
-      <li tabindex="0">
+      <li tabindex="0" id="longListItems" @blur="onBlurListItems">
         <span class="Questions__title">
           Какой продукт нужно купить <br />
           для участия в рекламной игре?
@@ -200,6 +200,14 @@ export default {
   computed: {
     isMobileSize() {
       return this.$vssWidth < this.$desktopSize;
+    },
+  },
+  methods: {
+    onBlurListItems() {
+      document.getElementById("longListItems").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     },
   },
 };
