@@ -39,16 +39,17 @@
     border: 10px solid #f0dac0;
   }
 
-  @media @mini-mobileLandscape {
-    background: red;
-  }
-  @media @tabletLandscape {
-    background: red;
-  }
+  // @media @tabletLandscape {
+  //   background: red;
+  // }
 
-  @media @mobileLandscape {
-    background: red;
-  }
+  // @media @mobileLandscape {
+  //   background: red;
+  // }
+
+  //  @media only screen and (min-width: 873px) and (orientation: landscape) {
+  //   background: red;
+  // }
 
   h1 {
     text-align: center;
@@ -67,6 +68,12 @@
       padding: 0 8vw;
       margin-top: 2.7vw;
     }
+
+    @media @mini-mobileLandscape {
+      padding-top: 2.5vw;
+      font-size: 4vw;
+      padding-bottom: 4.5vw;
+    }
   }
 
   &__filterBlock {
@@ -79,6 +86,10 @@
     height: 9.3vw;
     @media @desktop {
       height: 4.3vw;
+    }
+
+    @media @mini-mobileLandscape {
+      height: 5vw;
     }
 
     input {
@@ -232,6 +243,10 @@
     @media @desktop {
       height: 29vw;
     }
+
+    @media @mini-mobileLandscape {
+      height: 23vw;
+    }
     li {
       background: #fff;
       display: flex;
@@ -253,6 +268,10 @@
         height: 4.3vw;
         margin-bottom: 0.4vw;
         font-size: 1.75vw;
+      }
+
+      @media @mini-mobileLandscape {
+        height: 5vw;
       }
     }
   }
@@ -290,6 +309,7 @@
       padding: 0.2vw 0.4vw;
       margin: 0 0.1vw;
     }
+
     &.active {
       background-color: @main_color1;
       color: #fff;
