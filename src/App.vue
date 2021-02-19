@@ -72,8 +72,8 @@ body {
   font-family: "Roboto", "Sans-serif";
   // background-color: @main_color3;
   background-image: url("./assets/background_m.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
   @media @desktop {
     background-image: url("./assets/background.png");
   }

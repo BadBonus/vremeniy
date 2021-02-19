@@ -38,7 +38,7 @@
           >
         </div>
       </div>
-      <img src="../assets/footer_boxes.png" alt="footer_boxes" />
+      <img v-lazy="images[0]" alt="footer_boxes" />
       <div class="Footer__linksToDocs">
         <a href="politics_cookies.pdf" target="_blank"
           >Политика конфиденциальности и cookies</a
@@ -50,7 +50,10 @@
     </div>
     <!-- <Winners v-if="isOpenWinners" /> -->
     <transition name="fade">
-      <ModalChatbot v-if="isModalChatbotActive" v-on:onCloseModal="onCloseModal" />
+      <ModalChatbot
+        v-if="isModalChatbotActive"
+        v-on:onCloseModal="onCloseModal"
+      />
     </transition>
   </footer>
 </template>
@@ -58,6 +61,8 @@
 <script>
 import Winners from "./Winners";
 import ModalChatbot from "./ModalChatbot";
+import footboxes from "../assets/footer_boxes.png";
+
 export default {
   name: "Footer",
   components: {
@@ -69,6 +74,7 @@ export default {
       isOpenWinners: false,
       isFooterArea: false,
       isClosedByClick: false,
+      images: [footboxes],
     };
   },
   computed: {

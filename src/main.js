@@ -22,6 +22,7 @@ Vue.use(vco);
 Vue.use(VueScrollTo);
 Vue.use(VueWaypoint);
 Vue.use(Lightbox);
+Vue.use(VueLazyload)
 
 Vue.use(VueFormulate, {
   library: {

@@ -1,6 +1,6 @@
 <template>
   <li class="SertificateItem">
-    <img :src="img" alt="sertificate card" />
+    <img v-lazy="img" alt="sertificate card" />
     <div class="SertificateItem__itemTextBlock">
       <div class="SertificateItem__itemTextBlockFirst">
         <span>Подарочный </span>

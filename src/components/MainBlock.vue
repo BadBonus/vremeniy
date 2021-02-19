@@ -141,13 +141,13 @@
         </div>
         <img
           v-if="isMobileSize"
-          src="../assets/boxCereals_m.png"
+          v-lazy="images[0]"
           alt="cereals"
           class="MainBlock__bottomDecor"
         />
         <img
           v-if="!isMobileSize"
-          src="../assets/boxCereals_desk.png"
+          v-lazy="images[1]"
           alt="cereals"
           class="MainBlock__bottomDecor"
         />
@@ -159,13 +159,18 @@
 <script>
 import Splicer from "./Splicer";
 
+import img1 from "../assets/boxCereals_m.png";
+import img2 from "../assets/boxCereals_desk.png";
+
 export default {
   name: "MainBlock",
   components: {
     Splicer,
   },
   data() {
-    return {};
+    return {
+      images: [img1, img2],
+    };
   },
   computed: {
     isMobileSize() {
