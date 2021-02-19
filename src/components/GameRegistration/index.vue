@@ -323,7 +323,7 @@ extend("required", {
 });
 extend("email", {
   ...email,
-  message: "Указан невалидный адрес электронной почты",
+  message: "Указан неверный адрес электронной почты",
 });
 
 extend("alpha", alpha);
