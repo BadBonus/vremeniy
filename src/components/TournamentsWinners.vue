@@ -38,7 +38,13 @@
       :imgs="gallery"
       :index="index"
       @hide="handleHide"
-    ></vue-easy-lightbox>
+    >
+      <template slot="close-btn" slot-scope="props">
+        <button class="TournamentsWinners__closeBtn" @click="props.close">
+          X
+        </button>
+      </template></vue-easy-lightbox
+    >
   </div>
 </template>
 
@@ -208,6 +214,25 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
+  }
+  &__closeBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background: #1e7d14;
+    width: 15vw;
+    height: 7.2vw;
+    font-size: 5vw;
+    border-radius: 0 0 0 21px;
+
+    @media @desktop {
+      font-size: 2vw;
+      width: 5vw;
+      height: 3vw;
+    }
   }
 }
 </style>
