@@ -112,7 +112,8 @@
           <div class="MainBlock__calcItem">
             <p>
               Каждые 2 Игровых продукта в чеке
-              <br v-if="isMobileSize" /><b> = </b> <br />
+              <br v-if="isMobileSize" /><b class="MainBlock__equalPic"> = </b>
+              <br />
             </p>
 
             <p>1 Игровой код</p>
@@ -120,7 +121,8 @@
           <div class="MainBlock__calcItem">
             <p>
               4 Игровых продукта в чеке
-              <br v-if="isMobileSize" /><b> = </b> <br />
+              <br v-if="isMobileSize" /><b class="MainBlock__equalPic"> = </b>
+              <br />
             </p>
 
             <p>2 Игровых кода</p>
@@ -128,7 +130,8 @@
           <div class="MainBlock__calcItem">
             <p>
               6 Игровых продуктов в чеке
-              <br v-if="isMobileSize" /><b> = </b> <br />
+              <br v-if="isMobileSize" /><b class="MainBlock__equalPic"> = </b>
+              <br />
             </p>
 
             <p>3 Игровых кода и т.д.</p>
@@ -572,6 +575,13 @@ export default {
       position: relative;
       top: 0.4vw;
     }
+  }
+
+  &__equalPic {
+    display: inline-block;
+    transform: scaleX(1.2);
+    font-size: 10vw;
+    font-weight: 500;
   }
 }
 </style>
