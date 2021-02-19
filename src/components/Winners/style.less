@@ -39,6 +39,17 @@
     border: 10px solid #f0dac0;
   }
 
+  @media @mini-mobileLandscape {
+    background: red;
+  }
+  @media @tabletLandscape {
+    background: red;
+  }
+
+  @media @mobileLandscape {
+    background: red;
+  }
+
   h1 {
     text-align: center;
     margin-top: 2.5%;
@@ -165,9 +176,7 @@
     position: absolute;
     display: block;
     border-color: unset;
-    width: 20px;
-    height: 20px;
-    .bcgImage("../assets/icons/cross.png");
+    // .bcgImage("../assets/icons/cross.png");
     position: absolute;
 
     opacity: 1;
@@ -176,15 +185,21 @@
     background-size: cover;
     background-color: unset;
 
-    right: 1.3vw;
-    top: 2.2vw;
-    width: 4.4vw;
-    height: 4.4vw;
+    right: 1vw;
+    top: 3.2vw;
+    z-index: 20;
+    img {
+      width: 5.4vw;
+      display: block;
+      box-sizing: border-box;
+    }
     @media @desktop {
       right: 3vw;
       top: 2.2vw;
-      width: 1.4vw;
-      height: 1.4vw;
+
+      img {
+        width: 1.4vw;
+      }
     }
     // margin-bottom: 4vw;
     // border-radius: 100px;

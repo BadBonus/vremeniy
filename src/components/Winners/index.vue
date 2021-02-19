@@ -91,7 +91,9 @@
       v-if="$listeners.closeFunction"
       @click="close"
       class="Winners__closeBtn"
-    ></button>
+    >
+      <img src="../../assets/icons/cross.png" alt="" />
+    </button>
   </div>
 </template>
 
