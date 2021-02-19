@@ -158,9 +158,11 @@
                 </span>
                 <div class="customFileInput__helper">
                   <div class="customFileInput__helperModal">
-                    <p>ВНИМАНИЕ!</p>
-                    <p>Фото чека должно быть четким.</p>
-                    <p>
+                    <p class="customFileInput__helperModal_p">ВНИМАНИЕ!</p>
+                    <p class="customFileInput__helperModal_p">
+                      Фото чека должно быть четким.
+                    </p>
+                    <p class="customFileInput__helperModal_p">
                       Чек должен включать следующую информацию о продукции,
                       участвующей в рекламной игре:
                     </p>
@@ -228,9 +230,11 @@
                 </span>
                 <div class="customFileInput__helper">
                   <div class="customFileInput__helperModal">
-                    <p>ВНИМАНИЕ!</p>
-                    <p>Фото чека должно быть четким.</p>
-                    <p>
+                    <p class="customFileInput__helperModal_p">ВНИМАНИЕ!</p>
+                    <p class="customFileInput__helperModal_p">
+                      Фото чека должно быть четким.
+                    </p>
+                    <p class="customFileInput__helperModal_p">
                       Чек должен включать следующую информацию о продукции,
                       участвующей в рекламной игре:
                     </p>
@@ -244,7 +248,7 @@
                       <li>УНП магазина</li>
                       <li>Номер кассового чека</li>
                     </ol>
-                    <br>
+                    <br />
                     <p>
                       Если в чеке нет данной информации, возьмите копию
                       товарного чека в магазине, где совершали покупку, и
