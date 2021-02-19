@@ -227,6 +227,20 @@ export default {
       background-size: 97.2vw 54.8vw;
       background-position-x: 0.9vw;
       margin-bottom: 4.1vw;
+
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 15vw;
+        height: 2vw;
+        background-color: #ffff;
+        left: 0;
+        right: 0;
+        top: 7vw;
+        margin: auto;
+        z-index: 1;
+      }
     }
 
     &-green {
@@ -244,24 +258,6 @@ export default {
         margin-top: 18vw;
         @media @desktop {
           margin-top: 5.9vw;
-        }
-      }
-    }
-
-    &-vita {
-      position: relative;
-      @media @desktop {
-        &::before {
-          content: "";
-          position: absolute;
-          width: 15vw;
-          height: 2vw;
-          background-color: #ffff;
-          left: 0;
-          right: 0;
-          top: 7vw;
-          margin: auto;
-          z-index: 1;
         }
       }
     }

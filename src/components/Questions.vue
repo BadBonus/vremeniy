@@ -140,7 +140,7 @@
         <span class="Questions__title">Когда будут проходить розыгрыши? </span>
         <p class="Questions__content" st>
           Дата розыгрыша, в котором Вы участвуете, зависит от того, когда Вы
-          прошли регистрацию:
+          прошли регистрацию:<br />
           <br />с 01.03.2021 по 07.03.2021– розыгрыш 09.03.2021 года; <br />с
           01.03.2021 по 14.03.2021 – розыгрыш 16.03.2021 года; <br />с
           01.03.2021 по 21.03.2021 – розыгрыш 23.03.2021 года; <br />с
@@ -273,11 +273,16 @@ export default {
       }
 
       &:focus {
+        transition: 0s;
         height: auto;
         padding-top: 2vw;
+        border-radius: 5.5vw;
 
         padding-bottom: 4vw;
         cursor: default;
+        @media @desktop {
+          border-radius: 50px;
+        }
         .Questions__title {
           color: #133e13;
 
