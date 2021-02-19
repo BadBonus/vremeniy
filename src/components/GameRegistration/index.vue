@@ -572,9 +572,9 @@ export default {
       form.append("email", email);
       form.append("file", file);
       form.append("phone", phone);
-      form.append("purchase_date", day + " " + month);
+      // form.append("purchase_date", day + " " + month);
       form.append("surname", surname);
-      form.append("day", day);
+      // form.append("day", day);
       form.append("address", address);
       form.append("lastName", lastName);
       form.append("shop", shop);

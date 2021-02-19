@@ -14,19 +14,19 @@
       /> -->
       <input type="text" placeholder="Найти победителя" v-model="searchName" />
     </div>
-    <table class="Winners__winners">
+    <!-- <table class="Winners__winners">
       <thead>
         <tr>
           <td>ФИО</td>
           <td>Дата розыгрыша</td>
-          <!-- <td>Приз</td> -->
+
         </tr>
       </thead>
       <tbody>
         <tr v-for="(winner, index) in calculatedChoosedWinners" :key="index">
           <td>{{ winner.name }}</td>
           <td>{{ winner.date }}</td>
-          <!-- <td>{{ winner.prise }}</td> -->
+
         </tr>
         <tr v-if="!calculatedChoosedWinners.length">
           <td></td>
@@ -34,7 +34,22 @@
           <td></td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+
+    <ul class="Winners__list">
+      <li class="Winners__listHead">
+        <div class="Winners__listName">Фио</div>
+        <div class="Winners__listDate">Дата розыгрыша</div>
+      </li>
+      <li class="Winners__listItem">
+        <div class="name">Ракуть Леонид</div>
+        <div class="Winners__listDate">2021-02-19</div>
+      </li>
+      <li class="Winners__listItem">
+        <div class="name">Есипов Артур</div>
+        <div class="Winners__listDate">2021-02-19</div>
+      </li>
+    </ul>
     <pagination
       :records="choosedWinners.length"
       v-model="page"

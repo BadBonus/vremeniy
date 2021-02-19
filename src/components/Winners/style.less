@@ -9,16 +9,12 @@
 }
 
 .Winners {
-  // background: #fff;
-  width: 95%;
+  width: 95.5%;
   margin: auto;
   margin-top: auto;
   margin-top: 1vw;
   padding-top: 1.5vw;
   padding-bottom: 1.5vw;
-  // min-height: 60vw;
-  border-radius: 25px;
-  background-color: #031701d6;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -30,19 +26,33 @@
   z-index: 99999;
   overflow: scroll;
   padding-bottom: 1.5vw;
+
+  background: #1e7d14;
+  border: 10px solid #f0dac0;
+  box-shadow: 0px 0px 10px #0f390a;
+  border-radius: 91px;
+
+  font-family: "Roboto";
+
+  .bcgImage("../assets/winners_decor.png");
+  background-position: 4.3vw 2.2vw;
+  background-size: 87vw;
   @media @desktop {
   }
 
   h1 {
     text-align: center;
-    text-transform: uppercase;
     margin-top: 2.5%;
     padding-bottom: 2.5%;
-    color: #fff;
+    color: @main_color1;
     font-size: 6vw;
+    font-weight: normal;
+    padding: 0 8vw;
 
     @media @desktop {
-      font-size: 80px;
+      font-size: 96px;
+      font-family: "Lobster";
+      padding: 0 8vw;
     }
   }
 
@@ -51,10 +61,19 @@
     justify-content: space-between;
     width: 90%;
     margin: auto;
-    margin-bottom: 1vw;
+    margin-bottom: 3.2vw;
+    margin-top: 6.3vw;
+    height: 4.3vw;
     input {
       padding-left: 0.5vw;
       text-align: center;
+      width: inherit;
+      border-radius: 31px;
+      border: none;
+      text-align: left;
+      padding-left: 8vw;
+      font-size: 1.65vw;
+      height: inherit;
     }
     @media @desktop {
     }
@@ -123,17 +142,17 @@
     min-width: 12.65vw;
   }
 
-  input {
-    color: #000;
-    width: 100%;
-    height: 6vw;
-    font-size: 4vw;
-    @media @desktop {
-      font-size: 20px;
-      width: auto;
-      height: auto;
-    }
-  }
+  // input {
+  //   color: #000;
+  //   width: 100%;
+  //   height: 6vw;
+  //   font-size: 4vw;
+  //   @media @desktop {
+  //     font-size: 20px;
+  //     // width: auto;
+  //     // height: auto;
+  //   }
+  // }
 
   &__closeBtn {
     // position: absolute;
@@ -204,5 +223,14 @@
     font-size: 14px;
     margin: auto;
     padding: 16px 20px;
+  }
+
+  &__list {
+    width: 90%;
+    margin: auto;
+    li {
+      background: #fff;
+      display: flex;
+    }
   }
 }
