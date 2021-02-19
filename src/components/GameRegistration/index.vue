@@ -151,7 +151,12 @@
                   placeholder="Загрузить картинку"
                   accept="image/jpeg,image/png"
                 />
-                <span class="customFileInput__fileName">
+                <span
+                  class="customFileInput__fileName"
+                  :style="{
+                    color: model.file_name ? '#1E7D14 ' : 'gray ',
+                  }"
+                >
                   {{
                     model.file_name ? model.file_name : "Загрузить фото чека*"
                   }}
@@ -223,7 +228,12 @@
                   placeholder="Загрузить картинку"
                   accept="image/jpeg,image/png"
                 />
-                <span class="customFileInput__fileName">
+                <span
+                  class="customFileInput__fileName"
+                  :style="{
+                    color: model.file_name ? '#1E7D14' : 'gray ',
+                  }"
+                >
                   {{
                     model.file_name ? model.file_name : "Загрузить фото чека*"
                   }}
