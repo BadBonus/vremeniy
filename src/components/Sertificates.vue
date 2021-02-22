@@ -361,8 +361,6 @@ export default {
       padding: 2vw 0;
     }
   }
-  .vel-btns-wrapper .btn__prev{
-    background: gold !important;
-  }
+
 }
 </style>
