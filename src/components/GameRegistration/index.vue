@@ -339,7 +339,6 @@
           :disabled="!customIsValidForm && !model.file !== null"
         >
           Зарегистрироваться
-          {{ invalid }}
         </button>
       </form>
     </ValidationObserver>
@@ -408,11 +407,14 @@ extend("is", {
 extend("image", { ...image, message: "Требуется формат png, jpg, jpeg" });
 extend("mimes", { ...mimes, message: "Требуется формат png, jpg, jpeg" });
 
-extend("length", {
-  ...length,
-  message: (fieldName, placeholders) => {
-    return `Номер в формате +37529XXXXXXX`;
-  },
+extend("length", (value) => {
+  let checkNumber = value !== null && value.trim();
+  const re = /(\s*)?(\+)?\d{12}/;
+
+  if (value !== null && re.test(checkNumber) && checkNumber.length === 13) {
+    return true;
+  }
+  return `Номер в формате +37529XXXXXXX`;
 });
 
 export default {
@@ -452,7 +454,14 @@ export default {
       return finishDate < new Date();
     },
     isCorrectedPhoneNumber() {
-      return this.model.phone !== null && this.model.phone.length === 13;
+      let checkNumber = this.model.phone !== null && this.model.phone.trim();
+      const re = /(\s*)?(\+)?\d{12}/;
+
+      return (
+        this.model.phone !== null &&
+        re.test(checkNumber) &&
+        checkNumber.length === 13
+      );
     },
     isEmailValid() {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
