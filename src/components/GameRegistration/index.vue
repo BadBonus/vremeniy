@@ -297,7 +297,7 @@
               </div>
               <span
                 >Регистрируясь, Вы подтверждаете свое <br class="no-desktop" />
-                согласие на участие в рекламной акции.</span
+                согласие на участие в рекламной игре.</span
               >
               <span class="errorContainer">{{ errors[0] }}</span>
             </div>
@@ -325,7 +325,7 @@
                 <br class="no-desktop" />
                 и согласны с
                 <a href="rules.pdf" target="_blank"
-                  >правилами рекламной акции.</a
+                  >правилами рекламной игры.</a
                 ></span
               >
               <span class="errorContainer">{{ errors[0] }}</span>
