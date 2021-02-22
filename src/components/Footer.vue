@@ -49,12 +49,17 @@
       </div>
     </div>
     <!-- <Winners v-if="isOpenWinners" /> -->
-    <transition name="fade">
-      <ModalChatbot
-        v-if="isModalChatbotActive"
-        v-on:onCloseModal="onCloseModal"
-      />
-    </transition>
+    <ModalChatbot
+      v-if="isModalChatbotActive"
+      v-on:onCloseModal="onCloseModal"
+    />
+    <img
+      v-if="!isModalChatbotActive"
+      class="ModalChatbot__dummy"
+      src="../assets/icons/telegram.png"
+      alt="telegram icon"
+      @click="isClosedByClick = false"
+    />
   </footer>
 </template>
 
@@ -177,6 +182,20 @@ export default {
   &__lastPartOfText {
     @media @desktop {
       font-size: 1.24vw;
+    }
+  }
+  .ModalChatbot__dummy {
+    width: 12vw;
+    position: fixed;
+    right: 0.5vw;
+    bottom: 1vw;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+    cursor: pointer;
+    @media @desktop {
+      width: 4vw;
     }
   }
 }
