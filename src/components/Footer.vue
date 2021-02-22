@@ -78,7 +78,7 @@ export default {
     return {
       isOpenWinners: false,
       isFooterArea: false,
-      isClosedByClick: false,
+      isClosedByClick: true,
       images: [footboxes],
     };
   },
@@ -87,7 +87,7 @@ export default {
       return this.$vssWidth < this.$desktopSize;
     },
     isModalChatbotActive() {
-      return !this.isClosedByClick && (!this.isMobileSize || this.isFooterArea);
+      return !this.isClosedByClick;
     },
   },
   methods: {
