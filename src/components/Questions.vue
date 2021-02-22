@@ -205,7 +205,7 @@ export default {
   methods: {
     onBlurListItems() {
       document.getElementById("longListItems").scrollIntoView({
-        behavior: "smooth",
+        // behavior: "smooth",
         block: "start",
       });
     },
