@@ -212,9 +212,16 @@ export default {
   .btn__next {
     border-radius: 100px;
     border: 2px solid #fff;
-    padding: 0.5vw;
+    padding: 1.7vw;
     position: relative;
     background: @main_color1;
+    opacity: 1 !important;
+    @media @desktop {
+      padding: 0.5vw;
+    }
+    &.disable {
+      opacity: 0.5 !important;
+    }
     svg {
       position: relative;
       fill: #fff;
