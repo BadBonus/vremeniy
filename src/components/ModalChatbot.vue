@@ -54,7 +54,7 @@ export default {
   border: 5px solid #f0dac0;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px #0f390a;
-  border-radius: 50px;
+  border-radius: 91px;
   background: @main_color1;
   z-index: 998;
   padding-bottom: 2vw;
@@ -72,10 +72,10 @@ export default {
   @media @desktop {
     border-radius: 91px;
     opacity: 0.5;
-    padding-top: 2vw;
+    padding-top: 0.6vw;
     padding-bottom: 1.27vw;
     width: 34vw;
-    font-size: 2.2vw;
+    font-size: 1.4vw;
     right: 0.5vw;
     left: unset;
     top: unset;
@@ -102,17 +102,18 @@ export default {
       background-size: contain;
 
       @media @desktop {
-        right: 3.7vw;
-        top: 3vw;
+        right: 3.3vw;
+        top: 1.9vw;
         width: 3.8vw;
         height: 3.132vw;
+        transform: rotate(-13.9turn);
       }
     }
   }
   &__list {
     margin-top: 4vw;
     @media @desktop {
-      margin-top: 0.9vw;
+      margin-top: 0;
     }
     li {
       .bcgImage("../assets/chatbot_decor.png");
@@ -126,7 +127,10 @@ export default {
       height: 14vw;
       @media @desktop {
         width: 30vw;
-        height: 6.7vw;
+        height: 3.1vw;
+        background-size: 63%;
+        position: relative;
+        top: 0.6vw;
       }
 
       a {
@@ -140,7 +144,7 @@ export default {
         font-size: 7vw;
         font-family: "Roboto";
         @media @desktop {
-          font-size: 2.111vw;
+          font-size: 1.3vw;
         }
       }
 
@@ -150,8 +154,8 @@ export default {
         right: 2.1vw;
         width: 7vw;
         @media @desktop {
-          right: 1.1vw;
-          width: 3vw;
+          right: 0.6vw;
+          width: 2.2vw;
         }
       }
     }
@@ -174,9 +178,9 @@ export default {
 
     z-index: 500;
     @media @desktop {
-      right: 3vw;
-      width: 4vw;
-      top: 0.5vw;
+      right: 1.4vw;
+      width: 2vw;
+      top: 0.1vw;
       height: 3vw;
     }
   }
