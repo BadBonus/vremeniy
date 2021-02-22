@@ -114,7 +114,7 @@
             >
               <input
                 v-model="model.address"
-                placeholder="Адрес проживания*"
+                placeholder="Ваш адрес проживания"
                 type="text"
               />
 
