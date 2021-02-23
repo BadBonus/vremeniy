@@ -361,5 +361,6 @@ export default {
       padding: 2vw 0;
     }
   }
+
 }
 </style>

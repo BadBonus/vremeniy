@@ -208,6 +208,44 @@ export default {
     }
   }
 
+  .btn__prev,
+  .btn__next {
+    border-radius: 100px;
+    border: 2px solid #fff;
+    padding: 1.7vw;
+    position: relative;
+    background: @main_color1;
+    opacity: 1 !important;
+    @media @desktop {
+      padding: 0.5vw;
+    }
+    &.disable {
+      opacity: 0.5 !important;
+    }
+    svg {
+      position: relative;
+      fill: #fff;
+
+      // left: 2px;
+    }
+  }
+  .btn__prev {
+    svg {
+      // right: 2px;
+      fill: #fff;
+    }
+  }
+  .btn__prev {
+    @media @desktop {
+      left: 6vw !important;
+    }
+  }
+  .btn__next {
+    @media @desktop {
+      right: 6vw !important;
+    }
+  }
+
   #silentbox-overlay__close-button .icon {
     margin: auto;
     left: 0;

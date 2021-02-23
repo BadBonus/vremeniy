@@ -62,7 +62,7 @@
               <input
                 v-model="model.lastName"
                 type="text"
-                placeholder="Отчетство"
+                placeholder="отчество"
               />
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
@@ -114,7 +114,7 @@
             >
               <input
                 v-model="model.address"
-                placeholder="Адрес проживания*"
+                placeholder="Ваш адрес проживания"
                 type="text"
               />
 
@@ -285,14 +285,14 @@
             class="ValidationProvider"
           >
             <div class="CustomCheckbox">
-              <input type="checkbox" v-model="model.rule1" />
+              <input type="checkbox" v-model="rule1" />
               <div
                 :class="{
                   CustomCheckbox__pseudoInput: true,
-                  active: model.rule1,
+                  active: rule1,
                 }"
               >
-                <span v-if="model.rule1">√</span>
+                <span v-if="rule1">√</span>
                 <!-- <img src="" alt="TEST" /> -->
               </div>
               <span
@@ -310,14 +310,14 @@
             class="ValidationProvider"
           >
             <div class="CustomCheckbox">
-              <input type="checkbox" v-model="model.rule2" />
+              <input type="checkbox" v-model="rule2" />
               <div
                 :class="{
                   CustomCheckbox__pseudoInput: true,
-                  active: model.rule2,
+                  active: rule2,
                 }"
               >
-                <span v-if="model.rule2">√</span>
+                <span v-if="rule2">√</span>
                 <!-- <img src="" alt="test" /> -->
               </div>
               <span
@@ -333,7 +333,11 @@
           </ValidationProvider>
         </div>
 
-        <button type="submit" class="btn" :disabled="invalid || !model.file">
+        <button
+          type="submit"
+          class="btn"
+          :disabled="!customIsValidForm && !model.file !== null"
+        >
           Зарегистрироваться
         </button>
       </form>
@@ -403,11 +407,14 @@ extend("is", {
 extend("image", { ...image, message: "Требуется формат png, jpg, jpeg" });
 extend("mimes", { ...mimes, message: "Требуется формат png, jpg, jpeg" });
 
-extend("length", {
-  ...length,
-  message: (fieldName, placeholders) => {
-    return `Номер в формате +37529XXXXXXX`;
-  },
+extend("length", (value) => {
+  let checkNumber = value !== null && value.trim();
+  const re = /(\s*)?(\+)?\d{12}/;
+
+  if (value !== null && re.test(checkNumber) && checkNumber.length === 13) {
+    return true;
+  }
+  return `Номер в формате +37529XXXXXXX`;
 });
 
 export default {
@@ -426,6 +433,8 @@ export default {
       formErrors: [],
       inputErrors: {},
       items: [],
+      rule1: false,
+      rule2: false,
       model: {
         name: null,
         address: null,
@@ -436,8 +445,6 @@ export default {
         file_name: null,
         phone: null,
         shop: null,
-        rule1: false,
-        rule2: false,
       },
     };
   },
@@ -445,6 +452,20 @@ export default {
     isFinishedRegistration() {
       const finishDate = new Date("2021-03-31");
       return finishDate < new Date();
+    },
+    isCorrectedPhoneNumber() {
+      let checkNumber = this.model.phone !== null && this.model.phone.trim();
+      const re = /(\s*)?(\+)?\d{12}/;
+
+      return (
+        this.model.phone !== null &&
+        re.test(checkNumber) &&
+        checkNumber.length === 13
+      );
+    },
+    isEmailValid() {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(this.model.email);
     },
     febrDays() {
       return periodOfNumbers(28);
@@ -454,6 +475,26 @@ export default {
     },
     modItems() {
       return this.items.map((el) => ({ label: el.name, value: String(el.id) }));
+    },
+    customIsValidForm() {
+      const {
+        rule1,
+        rule2,
+        model: { name, address, surname, file, file_name, shop },
+      } = this;
+
+      return (
+        rule1 &&
+        rule2 &&
+        name !== null &&
+        address !== null &&
+        surname !== null &&
+        this.isEmailValid &&
+        file !== null &&
+        file_name !== null &&
+        this.isCorrectedPhoneNumber &&
+        shop !== null
+      );
     },
   },
   methods: {
@@ -497,8 +538,8 @@ export default {
       this.model["file_name"] = null;
       this.model["phone"] = null;
       this.model["shop"] = null;
-      this.model["rule1"] = false;
-      this.model["rule2"] = false;
+      this.rule1 = false;
+      this.rule2 = false;
       this.model["address"] = null;
       this.$nextTick(() => {
         this.$refs.form.reset();
@@ -544,18 +585,7 @@ export default {
       let form = new FormData();
 
       const {
-        model: {
-          name,
-          surname,
-          email,
-          file,
-          lastName,
-          phone,
-          day,
-          month,
-          address,
-          shop,
-        },
+        model: { name, surname, email, file, lastName, phone, address, shop },
       } = this;
 
       // choosedItems.forEach((value, index) => {
@@ -572,9 +602,7 @@ export default {
       form.append("email", email);
       form.append("file", file);
       form.append("phone", phone);
-      // form.append("purchase_date", day + " " + month);
       form.append("surname", surname);
-      // form.append("day", day);
       form.append("address", address);
       form.append("lastName", lastName);
       form.append("shop", shop);
@@ -592,6 +620,12 @@ export default {
             this.finishedMessage = "Произошла ошибка, попробуйте позже";
           }
         });
+    },
+  },
+  watch: {
+    rule1: function () {
+      console.log(this.model);
+      console.log(this.customIsValidForm);
     },
   },
   mounted() {
