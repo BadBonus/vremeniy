@@ -1,5 +1,10 @@
 <template>
-  <div class="Winners">
+  <div
+    class="Winners"
+    :style="{
+      overflow: calculatedChoosedWinners.length > 1 ? 'scroll' : 'unset',
+    }"
+  >
     <img
       src="../../assets/winners_decor.png"
       class="Winners__titleDecoration"
@@ -8,38 +13,8 @@
     <h1>{{ header }}</h1>
 
     <div class="Winners__filterBlock">
-      <!-- <vSelect
-        v-model="choosedTournament"
-        placeholder="Выбери розыгрыш"
-        name="provider"
-        :options="tournaments"
-        :clearable="false"
-        :searchable="false"
-        class="Winners__SelectTournament"
-      /> -->
       <input type="text" placeholder="Найти победителя" v-model="searchName" />
     </div>
-    <!-- <table class="Winners__winners">
-      <thead>
-        <tr>
-          <td>ФИО</td>
-          <td>Дата розыгрыша</td>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(winner, index) in calculatedChoosedWinners" :key="index">
-          <td>{{ winner.name }}</td>
-          <td>{{ winner.date }}</td>
-
-        </tr>
-        <tr v-if="!calculatedChoosedWinners.length">
-          <td></td>
-          <td><h3>Ничего не найдено</h3></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table> -->
 
     <ul class="Winners__list">
       <li class="Winners__listHead">
@@ -55,14 +30,17 @@
         <div class="Winners__listDate">{{ winner.date }}</div>
       </li>
     </ul>
-    <pagination
+    <!-- <pagination
       :records="choosedWinners.length"
       v-model="page"
       :per-page="perPage"
       @paginate="callback"
       :texts="{}"
     >
-    </pagination>
+    </pagination> -->
+    <!-- <span>
+      Победителей пока нет !
+    </span> -->
     <button
       v-if="$listeners.closeFunction"
       @click="close"
