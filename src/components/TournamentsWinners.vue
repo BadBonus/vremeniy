@@ -43,7 +43,8 @@
         <button class="TournamentsWinners__closeBtn" @click="props.close">
           X
         </button>
-      </template></vue-easy-lightbox
+      </template>
+      </vue-easy-lightbox
     >
   </div>
 </template>

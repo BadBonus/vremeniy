@@ -54,7 +54,7 @@ export default {
   border: 5px solid #f0dac0;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px #0f390a;
-  border-radius: 91px;
+  border-radius: 13vw;
   background: @main_color1;
   z-index: 998;
   padding-bottom: 2vw;
@@ -171,10 +171,10 @@ export default {
     background-position: center;
 
     position: absolute;
-    right: 5vw;
+    right: 3.2vw;
     width: 10vw;
     height: 5vw;
-    top: 1.5vw;
+    top: 2.6vw;
 
     z-index: 500;
     @media @desktop {
