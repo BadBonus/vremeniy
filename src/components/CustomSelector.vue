@@ -119,10 +119,10 @@ export default {
     openList() {
       this.open = true;
     },
-    blur(){
-      console.log('blur');
-      this.$emit('blur');
-    }
+    blur() {
+      console.log("blur");
+      this.$emit("blur");
+    },
   },
   created() {
     var vm = this;
@@ -173,9 +173,15 @@ export default {
     position: absolute;
     right: 5vw;
     width: 3.3vw;
+    height: 3.3vw;
+    top:0;
+    bottom:0;
+    margin-top: auto;
+    margin-bottom: auto;
     @media @desktop {
       right: 2vw;
       width: 0.8vw;
+      height: 0.8vw;
     }
   }
   &.active {
