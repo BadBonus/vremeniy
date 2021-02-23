@@ -40,7 +40,15 @@
       @hide="handleHide"
     >
       <template slot="close-btn" slot-scope="props">
-        <button class="TournamentsWinners__closeBtn" @click="props.close">
+        <button
+          class="TournamentsWinners__closeBtn"
+          @click="
+            function () {
+              currentIndex = 0;
+              props.close();
+            }
+          "
+        >
           <img src="../assets/icons/close2.svg" alt="close" />
         </button>
       </template>
@@ -306,6 +314,7 @@ export default {
   }
   .controlBtn {
     position: absolute;
+    cursor: pointer;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -330,6 +339,9 @@ export default {
       margin: auto;
       top: 0;
       bottom: 0;
+      @media @desktop {
+        max-width: 90px;
+      }
     }
 
     @media @desktop {
@@ -355,6 +367,7 @@ export default {
 
     &[disabled] {
       opacity: 0.5;
+      cursor: default;
     }
   }
   .vel-toolbar {
