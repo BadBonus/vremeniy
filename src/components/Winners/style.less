@@ -99,17 +99,18 @@
     }
 
     input {
-      padding-left: 0.5vw;
       text-align: center;
-      width: inherit;
+      width: 100%;
       border-radius: 31px;
       border: none;
       text-align: left;
-      padding-left: 8vw;
       height: inherit;
       font-size: 3vw;
+      text-align: left;
+      padding-left: 3vw;
       @media @desktop {
         font-size: 1.65vw;
+        padding-left: 2vw;
       }
     }
   }
@@ -262,7 +263,12 @@
       margin-bottom: 1.5vw;
       & > div {
         width: 50%;
-        text-align: center;
+        text-align: left;
+        padding-left: 3vw;
+        @media @desktop {
+        padding-left: 2vw;
+
+        }
       }
 
       &.Winners__listHead {
