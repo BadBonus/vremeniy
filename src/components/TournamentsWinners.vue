@@ -45,13 +45,21 @@
         </button>
       </template>
       <template v-slot:prev-btn="{ prev }">
-        <button class="controlBtn controlBtn-prev" @click="prev">
+        <button
+          :disabled="currentIndex === 0"
+          class="controlBtn controlBtn-prev"
+          @click="prevImg(prev)"
+        >
           <img src="../assets/icons/controlarrow.svg" alt="" />
         </button>
       </template>
 
       <template v-slot:next-btn="{ next }">
-        <button class="controlBtn controlBtn-next" @click="next">
+        <button
+          :disabled="currentIndex === 1"
+          class="controlBtn controlBtn-next"
+          @click="nextImg(next)"
+        >
           <img src="../assets/icons/controlarrow.svg" alt="" />
         </button> </template
     ></vue-easy-lightbox>
@@ -76,6 +84,7 @@ export default {
   },
   data() {
     return {
+      currentIndex: 0,
       gallery: [
         {
           src: calendar1,
@@ -145,6 +154,14 @@ export default {
     },
     handleHide() {
       this.visible = false;
+    },
+    nextImg(next) {
+      next();
+      this.currentIndex = 1;
+    },
+    prevImg(prev) {
+      prev();
+      this.currentIndex = 0;
     },
   },
   mounted() {
@@ -322,6 +339,10 @@ export default {
       @media @desktop {
         right: 5vw;
       }
+    }
+
+    &[disabled] {
+      opacity: 0.5;
     }
   }
 }
