@@ -122,10 +122,11 @@
             </ValidationProvider>
             <ValidationProvider
               tag="div"
-              rules="customRequired"
+              rules="required"
               v-slot="{ validate, errors }"
               :name="'itemName'"
               class="ValidationProvider no-desktop"
+              v-if="forceBadRerender"
             >
               <CustomSelector
                 v-model="model.shop"
@@ -419,8 +420,6 @@ extend("length", (value) => {
 });
 
 extend("customRequired", (value, ...some) => {
-  console.log(some);
-  console.log();
   // if (this.model.shop !== null) {
   //   return true;
   // }
@@ -445,6 +444,7 @@ export default {
       items: [],
       rule1: false,
       rule2: false,
+      forceBadRerender: true,
       model: {
         name: null,
         address: null,
@@ -622,6 +622,8 @@ export default {
         .then(({ data }) => {
           this.finishedMessage = data.data.message;
           this.reset();
+          this.forceBadRerender = false;
+          setTimeout(() => (this.forceBadRerender = true), 0);
         })
         .catch((error) => {
           if (error.response) {
