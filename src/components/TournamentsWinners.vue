@@ -322,7 +322,14 @@ export default {
     justify-content: center;
     left: 1vw;
     img {
-      width: 100%;
+      width: 4vw;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 0;
+      bottom: 0;
     }
 
     @media @desktop {
