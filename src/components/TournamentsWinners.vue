@@ -41,7 +41,7 @@
     >
       <template slot="close-btn" slot-scope="props">
         <button class="TournamentsWinners__closeBtn" @click="props.close">
-          <img src="../assets/icons/close2.svg" alt="close">
+          <img src="../assets/icons/close2.svg" alt="close" />
         </button>
       </template>
       <template v-slot:prev-btn="{ prev }">
@@ -292,12 +292,16 @@ export default {
     height: 7.2vw;
     font-size: 5vw;
     border-radius: 0 0 0 21px;
-    width: 100%;
-
+    img {
+      width: 4vw;
+    }
     @media @desktop {
       font-size: 2vw;
       width: 5vw;
       height: 3vw;
+      img {
+        width: 2vw;
+      }
     }
   }
   .controlBtn {
@@ -346,8 +350,8 @@ export default {
       opacity: 0.5;
     }
   }
-  .vel-toolbar{
-    display:none !important;
+  .vel-toolbar {
+    display: none !important;
   }
 }
 </style>
