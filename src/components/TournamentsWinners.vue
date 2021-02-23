@@ -44,8 +44,17 @@
           X
         </button>
       </template>
-      </vue-easy-lightbox
-    >
+      <template v-slot:prev-btn="{ prev }">
+        <button class="controlBtn controlBtn-prev" @click="prev">
+          <img src="../assets/icons/controlarrow.svg" alt="" />
+        </button>
+      </template>
+
+      <template v-slot:next-btn="{ next }">
+        <button class="controlBtn controlBtn-next" @click="next">
+          <img src="../assets/icons/controlarrow.svg" alt="" />
+        </button> </template
+    ></vue-easy-lightbox>
   </div>
 </template>
 
@@ -271,6 +280,48 @@ export default {
       font-size: 2vw;
       width: 5vw;
       height: 3vw;
+    }
+  }
+  .controlBtn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10vw;
+    height: 10vw;
+    background: green;
+    border: 2px solid #fff;
+
+    border-radius: 100px;
+    color: #fff;
+    // font-size: 9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 1vw;
+    img {
+      width: 100%;
+    }
+
+    @media @desktop {
+      width: 6vw;
+      // font-size: 6vw;
+      padding: 1vw;
+      height: 6vw;
+      max-width: 125px;
+      max-height: 125px;
+      left: 5vw;
+    }
+
+    &-next {
+      left: unset;
+      right: 1vw;
+      img {
+        transform: rotate(180deg);
+      }
+      @media @desktop {
+        right: 5vw;
+      }
     }
   }
 }
