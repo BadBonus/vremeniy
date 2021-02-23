@@ -345,5 +345,8 @@ export default {
       opacity: 0.5;
     }
   }
+  .vel-toolbar{
+    display:none !important;
+  }
 }
 </style>

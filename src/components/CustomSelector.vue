@@ -12,7 +12,7 @@
     /> -->
     <div
       class="CustomSelector__choosedOption"
-      @blur="$emit('blur')"
+      @blur="blur"
       @click="openList"
       tabindex="0"
       :style="{ color: this.placeholder === choosedName ? 'gray' : '#1E7D14' }"
@@ -119,6 +119,10 @@ export default {
     openList() {
       this.open = true;
     },
+    blur(){
+      console.log('blur');
+      this.$emit('blur');
+    }
   },
   created() {
     var vm = this;

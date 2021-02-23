@@ -122,7 +122,7 @@
             </ValidationProvider>
             <ValidationProvider
               tag="div"
-              rules="required"
+              rules="customRequired"
               v-slot="{ validate, errors }"
               :name="'itemName'"
               class="ValidationProvider no-desktop"
@@ -131,6 +131,7 @@
                 v-model="model.shop"
                 placeholder="Выберите торговую сеть"
                 :options="['Гиппо', 'Green', 'Виталюр']"
+                @blur="validate"
               />
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>
@@ -415,6 +416,15 @@ extend("length", (value) => {
     return true;
   }
   return `Номер в формате +37529XXXXXXX`;
+});
+
+extend("customRequired", (value, ...some) => {
+  console.log(some);
+  console.log();
+  // if (this.model.shop !== null) {
+  //   return true;
+  // }
+  return `Обязательное поле`;
 });
 
 export default {

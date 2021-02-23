@@ -166,7 +166,7 @@ export default {
     outline: none;
     cursor: pointer;
     background-color: unset;
-    .bcgImage("../assets/icons/cross.png");
+    .bcgImage("../assets/icons/close2.svg");
     background-size: 40%;
     background-position: center;
 
@@ -179,9 +179,10 @@ export default {
     z-index: 500;
     @media @desktop {
       right: 1.4vw;
-      width: 2vw;
-      top: 0.1vw;
+      width: 1.5vw;
+      top: 0vw;
       height: 3vw;
+      background-size: 60%;
     }
   }
 }
