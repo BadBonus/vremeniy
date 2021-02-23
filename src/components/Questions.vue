@@ -307,6 +307,8 @@ export default {
       }
     }
     p {
+      text-align: left;
+
       display: none;
       // height: 0;
       overflow: hidden;
@@ -317,7 +319,6 @@ export default {
       padding-bottom: 0;
       @media @desktop {
         font-size: 1.5vw;
-        text-align: center;
       }
     }
   }
