@@ -41,7 +41,7 @@
     >
       <template slot="close-btn" slot-scope="props">
         <button class="TournamentsWinners__closeBtn" @click="props.close">
-          X
+          <img src="../assets/icons/close2.svg" alt="close">
         </button>
       </template>
       <template v-slot:prev-btn="{ prev }">
@@ -292,6 +292,7 @@ export default {
     height: 7.2vw;
     font-size: 5vw;
     border-radius: 0 0 0 21px;
+    width: 100%;
 
     @media @desktop {
       font-size: 2vw;

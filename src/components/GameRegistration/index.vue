@@ -62,7 +62,7 @@
               <input
                 v-model="model.lastName"
                 type="text"
-                placeholder="отчество"
+                placeholder="Отчество"
               />
               <span class="errorContainer">{{ errors[0] }}</span>
             </ValidationProvider>

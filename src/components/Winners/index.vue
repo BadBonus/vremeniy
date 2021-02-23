@@ -68,7 +68,7 @@
       @click="close"
       class="Winners__closeBtn"
     >
-      <img src="../../assets/icons/cross.png" alt="" />
+      <img src="../../assets/icons/close2.svg" alt="close" />
     </button>
   </div>
 </template>
