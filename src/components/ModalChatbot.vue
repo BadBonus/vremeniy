@@ -6,7 +6,7 @@
     </div>
     <ul class="ModalChatbot__list">
       <li>
-        <a href="https://t.me/nestle_reach_and_target_bot"
+        <a target="_blank" href="https://t.me/nestle_reach_and_target_bot"
           ><img src="../assets/icons/telegram.png" alt="decor" />
           <span>Telegram</span></a
         >

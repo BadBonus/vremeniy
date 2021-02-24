@@ -37,7 +37,8 @@
               <h4>Покупайте 2 любых</h4>
               <p>
                 готовых завтрака Nestlé® <br />
-                в ГИППО, GREEN, ВИТАЛЮР <br />
+                в магазинах торговых сетей <br />
+                ГИППО, GREEN, ВИТАЛЮР <br />
               </p>
               <a href="listOfProducts.pdf" target="_blank"
                 >Полный список игровых продуктов</a
@@ -305,6 +306,7 @@ export default {
       margin-top: 3.5vw;
       margin-left: 2.5vw;
       padding-top: 0;
+      margin-bottom: 10.3vw;
     }
     &::before {
       content: "";
@@ -377,6 +379,7 @@ export default {
           font-size: 2vw;
           line-height: 2.5vw;
           margin-top: 0.3vw;
+          font-weight: 500;
         }
       }
     }
