@@ -338,7 +338,9 @@
         <button
           type="submit"
           class="btn"
-          :disabled="!customIsValidForm && !model.file !== null"
+          :disabled="
+            !customIsValidForm && !model.file !== null || isLoadingData
+          "
         >
           Зарегистрироваться
         </button>
@@ -438,6 +440,7 @@ export default {
 
   data() {
     return {
+      isLoadingData: false,
       finishedMessage: null,
       formErrors: [],
       inputErrors: {},
@@ -592,8 +595,8 @@ export default {
       return sliced;
     },
     onSubmit() {
+      this.isLoadingData = true;
       let form = new FormData();
-
       const {
         model: { name, surname, email, file, lastName, phone, address, shop },
       } = this;
@@ -623,9 +626,11 @@ export default {
           this.finishedMessage = data.data.message;
           this.reset();
           this.forceBadRerender = false;
+          this.isLoadingData = false;
           setTimeout(() => (this.forceBadRerender = true), 0);
         })
         .catch((error) => {
+          this.isLoadingData = false;
           if (error.response) {
             this.finishedMessage = error.response.data.message;
           } else {
