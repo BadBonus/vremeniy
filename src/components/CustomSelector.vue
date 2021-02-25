@@ -120,7 +120,7 @@ export default {
       this.open = true;
     },
     blur() {
-      console.log("blur");
+
       this.$emit("blur");
     },
   },

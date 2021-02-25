@@ -556,10 +556,10 @@ export default {
       });
     },
     submit() {
-      console.log(this.$formulate);
+      // console.log(this.$formulate);
     },
     customReset() {
-      console.log(this.$refs.form);
+      // console.log(this.$refs.form);
       this.$refs.form.reset();
     },
     custom(context) {
@@ -636,8 +636,8 @@ export default {
   },
   watch: {
     rule1: function () {
-      console.log(this.model);
-      console.log(this.customIsValidForm);
+      // console.log(this.model);
+      // console.log(this.customIsValidForm);
     },
   },
   mounted() {
