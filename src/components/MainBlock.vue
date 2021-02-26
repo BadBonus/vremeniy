@@ -270,9 +270,9 @@ export default {
     color: @main_color1;
     font-weight: normal;
     @media @desktop {
-      font-size: 6.9vw;
+      font-size: 5.5vw;
       margin-top: 0;
-      line-height: 7.5vw;
+      line-height: 7vw;
       position: relative;
       bottom: 1.5vw;
     }
@@ -290,13 +290,20 @@ export default {
     right: 1.1vw;
     margin-bottom: -2vw;
     @media @desktop {
-      width: 45vw;
-      margin-top: 0.1vw;
-      margin-left: 9vw;
+      // width: 45vw;
+      // margin-top: 0.1vw;
+      // margin-left: 9vw;
+      // margin-right: 0;
+      // position: relative;
+      // left: -4.2vw;
+      // height: 34vw;
+      width: 37vw;
+      margin-top: 0;
+      margin-left: 17vw;
       margin-right: 0;
       position: relative;
       left: -4.2vw;
-      height: 34vw;
+      height: 28vw;
     }
   }
   ul {
@@ -341,7 +348,7 @@ export default {
         color: @main_color1;
         display: flex;
         text-align: left;
-        margin-bottom: 2.1vw;
+        margin-bottom: 1.4vw;
       }
       a {
         color: @main_color2;
@@ -358,7 +365,7 @@ export default {
       img {
         width: 28.8vw;
         @media @desktop {
-          width: 5.5vw;
+          width: 4.8vw;
           margin-right: 1.8vw;
         }
       }
@@ -370,7 +377,7 @@ export default {
         text-decoration: underline;
         font-weight: normal;
         @media @desktop {
-          font-size: 3.35vw;
+          font-size: 2.7vw;
           margin-top: 0;
         }
       }
@@ -379,8 +386,8 @@ export default {
         font-size: 4.9vw;
         line-height: 7.4vw;
         @media @desktop {
-          font-size: 2vw;
-          line-height: 2.1vw;
+          font-size: 1.7vw;
+          line-height: 1.8vw;
           margin-top: 0.3vw;
           font-weight: 500;
         }
@@ -406,7 +413,7 @@ export default {
     padding: 1.8vw 0;
     @media @desktop {
       position: absolute;
-      top: 45vw;
+      top: 37.1vw;
       font-size: 2.5vw;
       width: 33.6vw;
       right: 5.6vw;
@@ -558,18 +565,20 @@ export default {
   &__top_content {
     @media @desktop {
       display: flex;
+      position: relative;
+      bottom: 0.5vw;
     }
   }
   &__basketImg {
-    height: 5.2vw;
+    height: 4.8vw;
   }
 
   &__registrImg {
-    height: 5.2vw;
+    height: 4.8vw;
   }
 
   &__presentImg {
-    height: 5.2vw;
+    height: 4.8vw;
   }
 
   .MainBlockFirstContent {
@@ -579,7 +588,7 @@ export default {
       background-size: cover;
       padding-bottom: 1vw;
       padding-top: 0.5vw;
-      background-position-y: -8.3vw;
+      background-position-y: -16.3vw;
     }
 
     .Splicer {
@@ -587,6 +596,8 @@ export default {
         margin-top: 0;
         position: relative;
         bottom: 0.9vw;
+        padding: 0.5vw 0 1vw;
+        background-size: 100% 6vw;
       }
     }
   }
