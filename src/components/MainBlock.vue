@@ -50,6 +50,7 @@
               v-if="!isMobileSize"
               src="./../assets/icons/registration.png"
               alt="Регистрируйте"
+              class="MainBlock__registrImg"
             />
             <img
               v-if="isMobileSize"
@@ -66,6 +67,7 @@
               v-if="!isMobileSize"
               src="./../assets/icons/present.png"
               alt="Регистрируйте"
+              class="MainBlock__presentImg"
             />
             <img
               v-if="isMobileSize"
@@ -270,7 +272,7 @@ export default {
     @media @desktop {
       font-size: 6.9vw;
       margin-top: 0;
-      line-height: 9.4vw;
+      line-height: 7.5vw;
       position: relative;
       bottom: 1.5vw;
     }
@@ -288,12 +290,13 @@ export default {
     right: 1.1vw;
     margin-bottom: -2vw;
     @media @desktop {
-      width: 53vw;
+      width: 46vw;
       margin-top: 0.1vw;
-      margin-left: 0;
+      margin-left: 9vw;
       margin-right: 0;
       position: relative;
-      left: -0.2vw;
+      left: -4.2vw;
+      height: 100%;
     }
   }
   ul {
@@ -303,7 +306,7 @@ export default {
     padding-top: 2.7vw;
     @media @desktop {
       background-color: unset;
-      margin-top: 3.5vw;
+      margin-top: 0;
       margin-left: 2.5vw;
       padding-top: 0;
       margin-bottom: 10.3vw;
@@ -338,7 +341,7 @@ export default {
         color: @main_color1;
         display: flex;
         text-align: left;
-        margin-bottom: 3.2vw;
+        margin-bottom: 2.1vw;
       }
       a {
         color: @main_color2;
@@ -355,7 +358,7 @@ export default {
       img {
         width: 28.8vw;
         @media @desktop {
-          width: 6.8vw;
+          width: 5.5vw;
           margin-right: 1.8vw;
         }
       }
@@ -377,7 +380,7 @@ export default {
         line-height: 7.4vw;
         @media @desktop {
           font-size: 2vw;
-          line-height: 2.5vw;
+          line-height: 2.1vw;
           margin-top: 0.3vw;
           font-weight: 500;
         }
@@ -403,11 +406,11 @@ export default {
     padding: 1.8vw 0;
     @media @desktop {
       position: absolute;
-      top: 56.2vw;
+      top: 46.5vw;
       font-size: 2.5vw;
       width: 33.6vw;
-      right: 7.6vw;
-      padding: 1vw 0;
+      right: 5.6vw;
+      padding: 0.5vw 0;
     }
     &:hover {
       color: #fff;
@@ -558,7 +561,15 @@ export default {
     }
   }
   &__basketImg {
-    height: 6.7vw;
+    height: 5.2vw;
+  }
+
+  &__registrImg {
+    height: 5.2vw;
+  }
+
+  &__presentImg {
+    height: 5.2vw;
   }
 
   .MainBlockFirstContent {
@@ -567,7 +578,8 @@ export default {
       .bcgImage("../assets/bcg_head.png");
       background-size: cover;
       padding-bottom: 1vw;
-      padding-top: 1.5vw;
+      padding-top: 0.5vw;
+      background-position-y: -8.3vw;
     }
 
     .Splicer {
