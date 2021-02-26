@@ -290,13 +290,13 @@ export default {
     right: 1.1vw;
     margin-bottom: -2vw;
     @media @desktop {
-      width: 46vw;
+      width: 45vw;
       margin-top: 0.1vw;
       margin-left: 9vw;
       margin-right: 0;
       position: relative;
       left: -4.2vw;
-      height: 100%;
+      height: 34vw;
     }
   }
   ul {
@@ -406,7 +406,7 @@ export default {
     padding: 1.8vw 0;
     @media @desktop {
       position: absolute;
-      top: 46.5vw;
+      top: 45vw;
       font-size: 2.5vw;
       width: 33.6vw;
       right: 5.6vw;
