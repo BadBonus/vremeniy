@@ -152,4 +152,11 @@ h2 {
     font-size: 4vw;
   }
 }
+
+.grecaptcha-badge {
+  // display: none !important;
+  opacity: 1;
+  left: 0 !important;
+  z-index: 10;
+}
 </style>
