@@ -7,7 +7,8 @@ import VueFormulate from "@braid/vue-formulate";
 import VueSplide from "@splidejs/vue-splide";
 import VueScrollTo from "vue-scrollto";
 import VueWaypoint from "vue-waypoint";
-import Lightbox from 'vue-easy-lightbox'
+import Lightbox from "vue-easy-lightbox";
+import { VueReCaptcha } from "vue-recaptcha-v3";
 
 import CustomFormulateSelect from "./components/CustomFormulateSelect";
 import CustomFormulateCheckbox from "./components/CustomFormulateCheckbox";
@@ -22,7 +23,13 @@ Vue.use(vco);
 Vue.use(VueScrollTo);
 Vue.use(VueWaypoint);
 Vue.use(Lightbox);
-Vue.use(VueLazyload)
+Vue.use(VueLazyload);
+Vue.use(VueReCaptcha, {
+  siteKey: `${process.env.VUE_APP_SITE_KEY}`,
+  loaderOptions: {
+    useRecaptchaNet: true,
+  },
+});
 
 Vue.use(VueFormulate, {
   library: {
