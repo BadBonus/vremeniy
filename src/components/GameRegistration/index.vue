@@ -335,12 +335,16 @@
           </ValidationProvider>
         </div>
 
-        <button
+        <!-- <button
           type="submit"
           class="btn"
           :disabled="
-            !customIsValidForm && !model.file !== null || isLoadingData
+            (!customIsValidForm && !model.file !== null) || isLoadingData
           "
+        > -->
+        <button
+          type="submit"
+          class="btn"
         >
           Зарегистрироваться
         </button>
@@ -558,9 +562,6 @@ export default {
         this.$refs.form.reset();
       });
     },
-    submit() {
-      // console.log(this.$formulate);
-    },
     customReset() {
       // console.log(this.$refs.form);
       this.$refs.form.reset();
@@ -594,8 +595,12 @@ export default {
       }
       return sliced;
     },
-    onSubmit() {
+    async onSubmit() {
       this.isLoadingData = true;
+      this.$gtag.event("registr_button", {
+        event_category: "submit",
+      });
+
       let form = new FormData();
       const {
         model: { name, surname, email, file, lastName, phone, address, shop },
@@ -620,23 +625,37 @@ export default {
       form.append("lastName", lastName);
       form.append("shop", shop);
 
-      axios
-        .post(postRegistration, form)
-        .then(({ data }) => {
-          this.finishedMessage = data.data.message;
-          this.reset();
-          this.forceBadRerender = false;
-          this.isLoadingData = false;
-          setTimeout(() => (this.forceBadRerender = true), 0);
-        })
-        .catch((error) => {
-          this.isLoadingData = false;
-          if (error.response) {
-            this.finishedMessage = error.response.data.message;
-          } else {
-            this.finishedMessage = "Произошла ошибка, попробуйте позже";
-          }
-        });
+      await this.$recaptcha("homepage").then((token) => {
+        console.log('test');
+        // this.$httpService
+        //   .post("participate/captcha/verify", {
+        //     secret: `${process.env.VUE_APP_SECRET_SITE_KEY}`,
+        //     token: token,
+        //   })
+        //   .then((response) => {
+        //     if (response.data.success.success) {
+        //       axios
+        //         .post(postRegistration, form)
+        //         .then(({ data }) => {
+        //           this.finishedMessage = data.data.message;
+        //           this.reset();
+        //           this.forceBadRerender = false;
+        //           this.isLoadingData = false;
+        //           setTimeout(() => (this.forceBadRerender = true), 0);
+        //         })
+        //         .catch((error) => {
+        //           this.isLoadingData = false;
+        //           if (error.response) {
+        //             this.finishedMessage = error.response.data.message;
+        //           } else {
+        //             this.finishedMessage = "Произошла ошибка, попробуйте позже";
+        //           }
+        //         });
+        //     } else {
+        //       this.$snotify.error("Похоже, что Вы - робот");
+        //     }
+        //   });
+      });
     },
   },
   watch: {
@@ -646,6 +665,9 @@ export default {
     },
   },
   mounted() {
+    setTimeout(() => {
+      this.$recaptchaInstance.showBadge();
+    }, 2500);
     // axios.post(getGoods).then(({ data }) => (this.items = [...data.data]));
   },
 };
