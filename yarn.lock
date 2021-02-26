@@ -7814,10 +7814,10 @@ vue-pagination-2@^3.0.8:
     vue ">=2.0.0"
     vuex "^2.0.0"
 
-vue-recaptcha-v3@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-recaptcha-v3/-/vue-recaptcha-v3-2.0.0.tgz#d8fd29d74d159895f3c68dd9bcfd0d9538e38f00"
-  integrity sha512-33UEpaBoIHW2XWf+Kc+ny2ri7d2LN/UgaxUNqo30fSzAxmNc71E+/mJrSBhG95iaOQCzj54fxtz/KSfesSS5sA==
+vue-recaptcha-v3@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/vue-recaptcha-v3/-/vue-recaptcha-v3-1.9.0.tgz#6315ea07e2ae34abbb11e840ab9f18a427c5d53b"
+  integrity sha512-WQIlhcOcETk3SYbEC88podUSq1J7UjmHpKgJhSy0Xm3DAjTIPjl19g9kn5KRdyTxNLiS/eR5C6H3Jk3c7b9baA==
   dependencies:
     recaptcha-v3 "^1.8.0"
 
@@ -7857,6 +7857,11 @@ vue-simple-accordion@^0.1.0:
   integrity sha512-y5oovH55smiNkEZ4lWLpE7H9t0TTYofN/zo4/NTap6Va/Ob+WlU7eRA2nzbFIaJUqk4cXHPJbLUblxU1jAL98g==
   dependencies:
     lodash.merge "^4.6.2"
+
+vue-snotify@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/vue-snotify/-/vue-snotify-3.2.1.tgz#1e093838b67ecb4141d6227b6b19175735f4e259"
+  integrity sha512-7kETtCAK3key/mDkz47FY/LuPzDGNwHHrYmS037JuVac2FW/9GTtoCNIrOp+SNbpMHeXFdLIDktkBK0IdPdHew==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
