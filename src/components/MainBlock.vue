@@ -432,7 +432,7 @@ export default {
     padding-bottom: 9.8vw;
     border-radius: 0 0 0 27px;
     @media @desktop {
-      padding-top: 2.5vw;
+      padding-top: .1vw;
       padding-bottom: 2.8vw;
       border-radius: 0 0 0 187px;
     }
@@ -466,8 +466,8 @@ export default {
       }
       @media @desktop {
         margin-bottom: 7.6vw;
-        padding: 2.1vw 0;
-        width: 28vw;
+        padding: 1.1vw 0;
+        width: 20vw;
         margin-bottom: 0;
         max-height: 7vw;
       }
@@ -475,7 +475,7 @@ export default {
         img {
           width: 33.2vw;
           @media @desktop {
-            width: 13.2vw;
+            width: 11.2vw;
           }
         }
       }
@@ -483,7 +483,8 @@ export default {
         img {
           width: 21.8vw;
           @media @desktop {
-            width: 12.2vw;
+            width: 5.7vw;
+            transform: scale(1.5);
           }
         }
       }
@@ -491,7 +492,7 @@ export default {
         img {
           width: 36vw;
           @media @desktop {
-            width: 18vw;
+            width: 11.5vw;
           }
         }
       }
@@ -502,7 +503,7 @@ export default {
     margin-top: 18.2vw;
     font-size: 4.6vw;
     @media @desktop {
-      margin-top: 5.3vw;
+      margin-top: 2.3vw;
       margin-left: 7vw;
     }
     h4 {
@@ -512,11 +513,11 @@ export default {
       margin-bottom: 8.1vw;
       @media @desktop {
         line-height: 4.3vw;
-        font-size: 3.3vw;
+        font-size: 3vw;
         width: 35vw;
         margin: auto;
         position: relative;
-        left: 2.4vw;
+        left: 1.8vw;
         margin-bottom: 2.5vw;
       }
     }
@@ -556,8 +557,8 @@ export default {
     margin-top: 16.2vw;
     width: 80.4vw;
     @media @desktop {
-      width: 43.4vw;
-      margin-right: 5.7vw;
+      width: 33vw;
+      margin-right: 10.7vw;
       margin-top: 55px;
     }
   }
