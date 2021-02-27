@@ -53,12 +53,13 @@ export default {
   padding: 5.7vw 0 8.4vw 0;
   @media @desktop {
     .bcgImage("../assets/decor_splicer.png");
-    font-size: 3.3vw;
+    font-size: 2.7vw;
     width: 92vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1vw 0 2vw;
+    padding: 1vw 0 1.5vw;
+    background-size: 100% 85%;
   }
   span {
     display: inline-block;
@@ -71,7 +72,7 @@ export default {
     width: 8vw;
     margin-right: 5.5vw;
     @media @desktop {
-      width: 4.4vw;
+      width: 3.4vw;
       margin-right: 6.8vw;
       padding-left: 0;
     }

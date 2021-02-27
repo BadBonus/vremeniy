@@ -204,7 +204,7 @@ export default {
   .Splicer {
     margin-bottom: 4vw;
     @media @desktop {
-      margin-bottom: 1.3vw;
+      margin-bottom: 0;
     }
   }
 
@@ -224,9 +224,9 @@ export default {
     @media @desktop {
       background-image: url("../assets/background_cards.png");
       background-repeat: no-repeat;
-      background-size: 97.2vw 54.8vw;
+      background-size: 97.2vw 40.8vw;
       background-position-x: 0.9vw;
-      margin-bottom: 4.1vw;
+      margin-bottom: 2vw;
 
       position: relative;
       &::before {
@@ -274,8 +274,9 @@ export default {
     }
     @media @desktop {
       flex-direction: row;
-      margin-top: 4.7vw;
+      margin-top: 3vw;
       justify-content: space-around;
+      padding: 0vw 3vw;
       &-green {
         margin-top: 2vw;
       }
@@ -304,7 +305,7 @@ export default {
     }
     @media @desktop {
       position: relative;
-      width: 23.6vw;
+      width: 18vw;
       padding-top: 3.5vw;
 
       &-green {
@@ -333,20 +334,21 @@ export default {
     text-decoration: underline;
     @media @desktop {
       font-size: 1.5vw;
-      margin-top: 9.2vw;
+      margin-top: 2.2vw;
       margin-bottom: 2.7vw;
     }
   }
 
   .Splicer__shopLogo {
     @media @desktop {
-      width: 13.2vw;
+      width: 11vw;
       margin-right: 0;
       margin-left: 4.1vw;
 
       &-green {
         position: relative;
         top: 0.3vw;
+        width: 9vw;
       }
       &-vita {
         position: relative;
@@ -356,11 +358,10 @@ export default {
   }
   .btn {
     @media @desktop {
-      width: 28vw;
-      font-size: 2.6vw;
-      padding: 2vw 0;
+      width: 22vw;
+      font-size: 2vw;
+      padding: 1.5vw 0;
     }
   }
-
 }
 </style>
