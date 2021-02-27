@@ -238,7 +238,7 @@ export default {
     bottom: 1.2vw;
     margin-bottom: 6.7vw;
     @media @desktop {
-      bottom: 0.5vw;
+      bottom: 0.6vw;
       margin-bottom: 3vw;
       span {
         margin-left: 28.2vw;

@@ -236,6 +236,10 @@ export default {
   }
 
   .Splicer {
+    @media @desktop {
+      position: relative;
+      bottom: 0.6vw;
+    }
     span {
       @media @desktop {
         margin-left: 24.1vw;
