@@ -150,7 +150,7 @@ export default {
     margin-top: 10.1vw;
     @media @desktop {
       margin-top: 1.5vw;
-      width: 81.3vw;
+      width: 48vw;
       margin-bottom: 0.4vw;
     }
   }

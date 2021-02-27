@@ -316,7 +316,7 @@ export default {
       margin-top: 0;
       margin-left: 2.5vw;
       padding-top: 0;
-      margin-bottom: 10.3vw;
+      margin-bottom: 8.3vw;
     }
     &::before {
       content: "";
