@@ -432,7 +432,7 @@ export default {
     padding-bottom: 9.8vw;
     border-radius: 0 0 0 27px;
     @media @desktop {
-      padding-top: .1vw;
+      padding-top: 2.1vw;
       padding-bottom: 2.8vw;
       border-radius: 0 0 0 187px;
     }
@@ -585,11 +585,11 @@ export default {
   .MainBlockFirstContent {
     padding-top: 1.7vw;
     @media @desktop {
-      .bcgImage("../assets/bcg_head.png");
-      background-size: cover;
+      .bcgImage("../assets/bcg_head_2.png");
+      background-size: 100% 4.5vw;
       padding-bottom: 1vw;
       padding-top: 0.5vw;
-      background-position-y: -16.3vw;
+      background-position-y: 43vw;
     }
 
     .Splicer {
