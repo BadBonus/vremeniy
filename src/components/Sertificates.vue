@@ -224,7 +224,7 @@ export default {
     @media @desktop {
       background-image: url("../assets/background_cards.png");
       background-repeat: no-repeat;
-      background-size: 97.2vw 40.8vw;
+      background-size: 94.2vw 36.6vw;
       background-position-x: 0.9vw;
       margin-bottom: 2vw;
 
@@ -233,7 +233,7 @@ export default {
         content: "";
         position: absolute;
         width: 15vw;
-        height: 2vw;
+        height: 1.3vw;
         background-color: #ffff;
         left: 0;
         right: 0;
@@ -247,7 +247,7 @@ export default {
       background-size: 94% 93.3%;
       @media @desktop {
         // background-size: 97.2vw 54.8vw;
-        background-size: 96.8% 79.5%;
+        background-size: 96% 76.5%;
         background-position-x: 1.8vw;
       }
       .Splicer {
@@ -274,7 +274,7 @@ export default {
     }
     @media @desktop {
       flex-direction: row;
-      margin-top: 3vw;
+      margin-top: 2vw;
       justify-content: space-around;
       padding: 0vw 3vw;
       &-green {
@@ -309,7 +309,7 @@ export default {
       padding-top: 3.5vw;
 
       &-green {
-        width: 18.5vw;
+        width: 14.5vw;
       }
     }
   }

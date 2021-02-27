@@ -70,7 +70,7 @@ export default {
     text-align: center;
     margin-top: 1.6vw;
     @media @desktop {
-      font-size: 2vw;
+      font-size: 1.5vw;
       margin-top: 0;
       position: relative;
       bottom: 0.4vw;
@@ -89,8 +89,8 @@ export default {
       font-size: 9.3vw;
       // text-decoration: underline;
       @media @desktop {
-        font-size: 2.5vw;
-        margin-top: 1.1vw;
+        font-size: 2vw;
+        margin-top: 0.6vw;
       }
       & > span:nth-child(2) {
         margin: 0 2vw;
@@ -106,8 +106,8 @@ export default {
       margin-top: 5.3vw;
       font-size: 4.7vw;
       @media @desktop {
-        margin-top: 1.7vw;
-        font-size: 1.7vw;
+        margin-top: 1vw;
+        font-size: 1.2vw;
       }
     }
   }
