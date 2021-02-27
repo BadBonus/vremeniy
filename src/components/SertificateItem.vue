@@ -53,9 +53,9 @@ export default {
   img {
     width: 80.9vw;
     @media @desktop {
-      width: 20vw;
+      width: 18vw;
       // margin-right: 0;
-      min-height: 20.1vw;
+      min-height: 18.1vw;
       margin: auto;
       display: block;
     }

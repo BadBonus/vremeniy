@@ -21,7 +21,7 @@
         alt="decoration"
       />
     </Splicer>
-    <div class="Sertificates__container">
+    <div class="Sertificates__container Sertificates__container-gippo">
       <img
         src="../assets/gippo_logo2.png"
         alt="logo of gippo"
@@ -218,13 +218,20 @@ export default {
     &:last-child {
       margin-bottom: 17vw;
       @media @desktop {
-        margin-bottom: 3.3vw;
+        margin-bottom: 2vw;
+      }
+    }
+    &-gippo {
+      @media @desktop {
+        position: relative;
+        bottom: 2vw;
+        margin-bottom: 0 !important;
       }
     }
     @media @desktop {
       background-image: url("../assets/background_cards.png");
       background-repeat: no-repeat;
-      background-size: 94.2vw 36.6vw;
+      background-size: 94.2vw 34.6vw;
       background-position-x: 0.9vw;
       margin-bottom: 2vw;
 
@@ -237,7 +244,7 @@ export default {
         background-color: #ffff;
         left: 0;
         right: 0;
-        top: 7vw;
+        top: 4vw;
         margin: auto;
         z-index: 1;
       }
@@ -247,7 +254,7 @@ export default {
       background-size: 94% 93.3%;
       @media @desktop {
         // background-size: 97.2vw 54.8vw;
-        background-size: 96% 76.5%;
+        background-size: 96% 80.5%;
         background-position-x: 1.8vw;
       }
       .Splicer {
@@ -257,7 +264,7 @@ export default {
       .Sertificates__linkRegistration {
         margin-top: 18vw;
         @media @desktop {
-          margin-top: 5.9vw;
+          margin-top: 2.2vw;
         }
       }
     }
@@ -335,7 +342,7 @@ export default {
     @media @desktop {
       font-size: 1.5vw;
       margin-top: 2.2vw;
-      margin-bottom: 2.7vw;
+      margin-bottom: 1.5vw;
     }
   }
 
