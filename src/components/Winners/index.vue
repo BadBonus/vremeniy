@@ -80,7 +80,7 @@ export default {
     perPage: {
       type: Number,
       require: false,
-      default: 10,
+      default: 100,
     },
   },
   data() {
@@ -135,14 +135,15 @@ export default {
     },
     calculatedChoosedWinners() {
       const { page } = this;
-      if (page > 1) {
-        return this.choosedWinners.slice(
-          this.perPage * (page - 1),
-          this.perPage * page
-        );
-      } else if (this.page === 1) {
-        return this.choosedWinners.slice(0, this.perPage);
-      }
+      // if (page > 1) {
+      //   return this.choosedWinners.slice(
+      //     this.perPage * (page - 1),
+      //     this.perPage * page
+      //   );
+      // } else if (this.page === 1) {
+      //   return this.choosedWinners.slice(0, this.perPage);
+      // }
+      return this.choosedWinners;
     },
     foundedWinners() {
       if (this.searchName.length) {
