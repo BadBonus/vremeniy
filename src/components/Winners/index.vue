@@ -4,6 +4,7 @@
     :style="{
       overflow: calculatedChoosedWinners.length > 1 ? 'scroll' : 'unset',
     }"
+    v-click-outside="close"
   >
     <img
       src="../../assets/winners_decor.png"
