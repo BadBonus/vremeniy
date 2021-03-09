@@ -9,15 +9,15 @@
         alt="decoration"
     /></Splicer>
     <div class="TournamentsWinners__content">
-      <button class="btn" @click="choosePrize('50 рублей')">
+      <button class="btn" @click="choosePrize('Сертификат 50 рублей')">
         Подарочный сертификат <br />
         <p>на 50 рублей</p>
       </button>
-      <button class="btn" @click="choosePrize('100 рублей')">
+      <button class="btn" @click="choosePrize('Сертификат 100 рублей')">
         Подарочный сертификат <br />
         <p>на 100 рублей</p>
       </button>
-      <button class="btn" @click="choosePrize('200 рублей')">
+      <button class="btn" @click="choosePrize('Сертификат 200 рублей')">
         Подарочный сертификат <br />
         <p>на 200 рублей</p></button
       ><button class="btn" @click="openLightbox">Календарь розыгрышей</button>
@@ -106,17 +106,17 @@ export default {
       winners: [
         {
           prize: "Подарочный сертификат на 50 рублей",
-          name: "50 рублей",
+          name: "Сертификат 50 рублей",
           winners: [],
         },
         {
           prize: "Подарочный сертификат на 100 рублей",
-          name: "100 рублей",
+          name: "Сертификат 100 рублей",
           winners: [],
         },
         {
           prize: "Подарочный сертификат на 200 рублей",
-          name: "200 рублей",
+          name: "Сертификат 200 рублей",
           winners: [],
         },
       ],
@@ -147,8 +147,8 @@ export default {
         winners.push({ winners: [], name: element.name });
         const currentArray = winners.find((el) => el.name === element.name);
         element.draw.forEach(({ date_draw, winners }) => {
-          winners.forEach(({ name }) =>
-            currentArray.winners.push({ name, date: date_draw })
+          winners.forEach(({ name, game }) =>
+            currentArray.winners.push({ game, name, date: date_draw })
           );
         });
       });
