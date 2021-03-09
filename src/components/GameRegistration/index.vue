@@ -55,12 +55,12 @@
             </ValidationProvider>
             <ValidationProvider
               tag="div"
-              name="lastName"
+              name="secondName"
               v-slot="{ errors }"
               class="ValidationProvider"
             >
               <input
-                v-model="model.lastName"
+                v-model="model.secondName"
                 type="text"
                 placeholder="Отчество"
               />
@@ -175,9 +175,7 @@
                     </p>
                     <ol>
                       <li>Наименование и количество</li>
-                      <li>
-                        Цена продукции, участвующей в игре
-                      </li>
+                      <li>Цена продукции, участвующей в игре</li>
                       <li>Дата продажи</li>
                       <li>УНП магазина</li>
                       <li>Номер кассового чека</li>
@@ -251,9 +249,7 @@
                     </p>
                     <ol>
                       <li>Наименование и количество</li>
-                      <li>
-                        Цена продукции, участвующей в игре
-                      </li>
+                      <li>Цена продукции, участвующей в игре</li>
                       <li>Дата продажи</li>
                       <li>УНП магазина</li>
                       <li>Номер кассового чека</li>
@@ -451,7 +447,7 @@ export default {
         address: null,
         surname: null,
         email: null,
-        lastName: null,
+        secondName: null,
         file: null,
         file_name: null,
         phone: null,
@@ -543,7 +539,7 @@ export default {
     reset() {
       this.model["name"] = null;
       this.model["surname"] = null;
-      this.model["lastName"] = null;
+      this.model["secondName"] = null;
       this.model["email"] = null;
       this.model["file"] = null;
       this.model["file_name"] = null;
@@ -597,7 +593,7 @@ export default {
 
       let form = new FormData();
       const {
-        model: { name, surname, email, file, lastName, phone, address, shop },
+        model: { name, surname, email, file, secondName, phone, address, shop },
       } = this;
 
       // choosedItems.forEach((value, index) => {
@@ -616,7 +612,7 @@ export default {
       form.append("phone", phone);
       form.append("surname", surname);
       form.append("address", address);
-      form.append("lastName", lastName);
+      form.append("secondName", secondName);
       form.append("shop", shop);
 
       await this.$recaptcha("homepage").then((token) => {
