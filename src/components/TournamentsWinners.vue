@@ -145,7 +145,8 @@ export default {
 
       rawdata.forEach((element) => {
         winners.push({ winners: [], name: element.name });
-        const currentArray = winners.find((el) => el.name === element.name);
+        let currentArray = winners.find((el) => el.name === element.name);
+        if (!currentArray) currentArray = {};
         element.draw.forEach(({ date_draw, winners }) => {
           winners.forEach(({ name, game }) =>
             currentArray.winners.push({ game, name, date: date_draw })
