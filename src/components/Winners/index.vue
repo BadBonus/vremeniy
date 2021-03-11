@@ -2,7 +2,7 @@
   <div
     class="Winners"
     :style="{
-      overflow: calculatedChoosedWinners.length > 1 ? 'scroll' : 'unset',
+      overflow: calculatedChoosedWinners.length > 1 ? 'scroll' : 'hidden',
     }"
     v-click-outside="close"
   >
@@ -115,7 +115,7 @@ export default {
       return choosedWinners;
     },
     choosedWinners() {
-      let choosedWinners = [];
+      // let choosedWinners = [];
 
       if (this.searchName.length) return this.foundedWinners;
 
