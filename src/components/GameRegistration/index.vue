@@ -1,13 +1,13 @@
 <template>
   <div class="GameRegistration" id="GameRegistration">
     <ValidationObserver ref="form" v-slot="{ invalid, reset }">
-      <!-- <br v-if="isFinishedRegistration" />
-      <h2 v-if="isFinishedRegistration">Регистрация завершена</h2>
-      <br v-if="isFinishedRegistration" /> -->
+      <br v-if="isFinishedRegistration" />
+      <h2 class="registrationEnd" v-if="isFinishedRegistration">Регистрация завершена</h2>
+      <br v-if="isFinishedRegistration" />
       <form
         class="GameRegistration__form"
         @submit.prevent="onSubmit"
-
+        v-if="!isFinishedRegistration"
       >
         <Splicer>
           <span>Регистрация</span>
@@ -457,7 +457,7 @@ export default {
   },
   computed: {
     isFinishedRegistration() {
-      const finishDate = new Date("2021-03-31");
+      const finishDate = new Date("2021-05-01T00:00:00");
       return finishDate < new Date();
     },
     isCorrectedPhoneNumber() {
