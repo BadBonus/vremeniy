@@ -20,7 +20,7 @@
     <ul class="Winners__list">
       <li class="Winners__listHead">
         <div class="Winners__listName">ФИО</div>
-        <div class="Winners__listDate">Торговая сеть</div>
+        <div class="Winners__listShop">Торговая сеть</div>
         <div class="Winners__listDate">Дата розыгрыша</div>
       </li>
       <li
@@ -28,8 +28,8 @@
         v-for="(winner, index) in calculatedChoosedWinners"
         :key="index"
       >
-        <div class="name">{{ winner.name }}</div>
-        <div class="Winners__listDate">{{ winner.game }}</div>
+        <div class="Winners__listName">{{ winner.name }}</div>
+        <div class="Winners__listShop">{{ winner.game }}</div>
         <div class="Winners__listDate">{{ winner.date }}</div>
       </li>
     </ul>
