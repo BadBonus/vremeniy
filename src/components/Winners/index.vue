@@ -28,7 +28,9 @@
         v-for="(winner, index) in calculatedChoosedWinners"
         :key="index"
       >
-        <div class="Winners__listName">{{ winner.name }}</div>
+        <div class="Winners__listName">
+          {{ winner.name.replace("null", "") }}
+        </div>
         <div class="Winners__listShop">{{ winner.game }}</div>
         <div class="Winners__listDate">{{ winner.date }}</div>
       </li>
