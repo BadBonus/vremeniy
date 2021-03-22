@@ -2,7 +2,9 @@
   <div class="GameRegistration" id="GameRegistration">
     <ValidationObserver ref="form" v-slot="{ invalid, reset }">
       <br v-if="isFinishedRegistration" />
-      <h2 class="registrationEnd" v-if="isFinishedRegistration">Регистрация завершена</h2>
+      <h2 class="registrationEnd" v-if="isFinishedRegistration">
+        Регистрация завершена
+      </h2>
       <br v-if="isFinishedRegistration" />
       <form
         class="GameRegistration__form"
@@ -612,7 +614,11 @@ export default {
       form.append("phone", phone);
       form.append("surname", surname);
       form.append("address", address);
-      form.append("secondName", secondName);
+      if (secondName === null) {
+        form.append("secondName", "");
+      } else {
+        form.append("secondName", secondName);
+      }
       form.append("shop", shop);
 
       await this.$recaptcha("homepage").then((token) => {
