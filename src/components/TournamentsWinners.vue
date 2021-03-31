@@ -179,6 +179,23 @@ export default {
   mounted() {
     axios.post(getWinners).then(({ data }) => {
       this.parsingWinners(data.data);
+      this.winners[0].winners.push(
+        {
+          date: "2021-03-30",
+          game: "Green",
+          name: "Некраш Александра Олеговна",
+        },
+        {
+          date: "2021-03-30",
+          game: "Виталюр",
+          name: "Трухан Глеб Борисович",
+        }
+      );
+      this.winners[2].winners.push({
+        date: "2021-03-30",
+        game: "Green",
+        name: "Подоляк Егор Евгеньевич",
+      });
     });
   },
 };
